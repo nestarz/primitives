@@ -7,7 +7,7 @@ import * as RovingFocusGroup from '@radix-ui/react-roving-focus';
 import { createRovingFocusGroupScope } from '@radix-ui/react-roving-focus';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useDirection } from '@radix-ui/react-direction';
-import { Radio, RadioIndicator, createRadioScope } from './Radio';
+import { Radio, RadioIndicator, createRadioScope } from './Radio.tsx';
 
 import type { Scope } from '@radix-ui/react-context';
 

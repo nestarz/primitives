@@ -13,7 +13,7 @@ export {
   Header,
   Trigger,
   Content,
-} from './Accordion';
+} from './Accordion.tsx';
 export type {
   AccordionSingleProps,
   AccordionMultipleProps,
@@ -21,4 +21,4 @@ export type {
   AccordionHeaderProps,
   AccordionTriggerProps,
   AccordionContentProps,
-} from './Accordion';
+} from './Accordion.tsx';

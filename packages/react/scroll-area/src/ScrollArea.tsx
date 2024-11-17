@@ -10,7 +10,7 @@ import { useDirection } from '@radix-ui/react-direction';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { clamp } from '@radix-ui/number';
 import { composeEventHandlers } from '@radix-ui/primitive';
-import { useStateMachine } from './useStateMachine';
+import { useStateMachine } from './useStateMachine.tsx';
 
 import type { Scope } from '@radix-ui/react-context';
 

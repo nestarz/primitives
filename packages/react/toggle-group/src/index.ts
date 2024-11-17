@@ -7,9 +7,9 @@ export {
   //
   Root,
   Item,
-} from './ToggleGroup';
+} from './ToggleGroup.tsx';
 export type {
   ToggleGroupSingleProps,
   ToggleGroupMultipleProps,
   ToggleGroupItemProps,
-} from './ToggleGroup';
+} from './ToggleGroup.tsx';

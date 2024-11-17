@@ -17,7 +17,7 @@ export {
   Content,
   Close,
   Arrow,
-} from './Popover';
+} from './Popover.tsx';
 export type {
   PopoverProps,
   PopoverAnchorProps,
@@ -26,4 +26,4 @@ export type {
   PopoverContentProps,
   PopoverCloseProps,
   PopoverArrowProps,
-} from './Popover';
+} from './Popover.tsx';

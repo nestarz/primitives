@@ -11,5 +11,5 @@ export {
   Track,
   Range,
   Thumb,
-} from './Slider';
-export type { SliderProps, SliderTrackProps, SliderRangeProps, SliderThumbProps } from './Slider';
+} from './Slider.tsx';
+export type { SliderProps, SliderTrackProps, SliderRangeProps, SliderThumbProps } from './Slider.tsx';

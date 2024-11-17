@@ -15,7 +15,7 @@ export {
   Portal,
   Content,
   Arrow,
-} from './Tooltip';
+} from './Tooltip.tsx';
 export type {
   TooltipProviderProps,
   TooltipProps,
@@ -23,4 +23,4 @@ export type {
   TooltipPortalProps,
   TooltipContentProps,
   TooltipArrowProps,
-} from './Tooltip';
+} from './Tooltip.tsx';

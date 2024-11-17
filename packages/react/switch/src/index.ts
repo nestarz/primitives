@@ -7,5 +7,5 @@ export {
   //
   Root,
   Thumb,
-} from './Switch';
-export type { SwitchProps, SwitchThumbProps } from './Switch';
+} from './Switch.tsx';
+export type { SwitchProps, SwitchThumbProps } from './Switch.tsx';

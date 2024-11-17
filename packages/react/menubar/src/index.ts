@@ -37,7 +37,7 @@ export {
   Sub,
   SubTrigger,
   SubContent,
-} from './Menubar';
+} from './Menubar.tsx';
 export type {
   MenubarProps,
   MenubarMenuProps,
@@ -56,4 +56,4 @@ export type {
   MenubarSubProps,
   MenubarSubTriggerProps,
   MenubarSubContentProps,
-} from './Menubar';
+} from './Menubar.tsx';

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
-import { useStateMachine } from './useStateMachine';
+import { useStateMachine } from './useStateMachine.tsx';
 
 interface PresenceProps {
   children: React.ReactElement | ((props: { present: boolean }) => React.ReactElement);
