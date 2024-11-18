@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/accessible-emoji */
 
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import * as ReactDOM from 'react-dom/client';
 import { FocusScope } from '@radix-ui/react-focus-scope';

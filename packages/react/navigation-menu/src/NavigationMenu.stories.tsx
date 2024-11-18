@@ -1,4 +1,4 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { DirectionProvider } from '@radix-ui/react-direction';

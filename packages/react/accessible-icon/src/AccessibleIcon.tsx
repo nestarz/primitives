@@ -1,4 +1,4 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
 
@@ -21,7 +21,7 @@ const AccessibleIcon: React.FC<AccessibleIconProps> = ({ children, label }) => {
         // accessibility
         'aria-hidden': 'true',
         focusable: 'false', // See: https://allyjs.io/tutorials/focusing-in-svg.html#making-svg-elements-focusable
-      })}
+      } as any)}
       <VisuallyHiddenPrimitive.Root>{label}</VisuallyHiddenPrimitive.Root>
     </>
   );

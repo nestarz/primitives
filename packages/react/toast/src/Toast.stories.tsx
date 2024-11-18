@@ -1,4 +1,4 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { css, keyframes } from '../../../../stitches.config';

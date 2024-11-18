@@ -1,8 +1,8 @@
 /// <reference types="resize-observer-browser" />
 
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
-// @ts-types="@types/react-dom"
+// @ts-types="npm:types-react-dom@^19.0.0-rc"
 import ReactDOM from 'react-dom';
 import { createContextScope } from '@radix-ui/react-context';
 import { composeEventHandlers } from '@radix-ui/primitive';

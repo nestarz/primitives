@@ -1,4 +1,4 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import { Root, Track, Range, Thumb } from '@radix-ui/react-slider';
 

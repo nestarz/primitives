@@ -1,6 +1,6 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
-// @ts-types="@types/react-dom"
+// @ts-types="npm:types-react-dom@^19.0.0-rc"
 import * as ReactDOM from 'react-dom';
 import { clamp } from '@radix-ui/number';
 import { composeEventHandlers } from '@radix-ui/primitive';

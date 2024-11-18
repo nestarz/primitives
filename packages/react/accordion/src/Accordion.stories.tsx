@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Accordion from '@radix-ui/react-accordion';

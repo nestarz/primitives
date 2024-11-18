@@ -1,4 +1,4 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import { Label } from '@radix-ui/react-label';

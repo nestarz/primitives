@@ -1,6 +1,6 @@
-// @ts-types="@types/react"
+// @ts-types="npm:types-react@^19.0.0-rc"
 import * as React from 'react';
-// @ts-types="@types/react-dom"
+// @ts-types="npm:types-react-dom@^19.0.0-rc"
 import ReactDOM from 'react-dom';
 import { Primitive } from '@radix-ui/react-primitive';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';

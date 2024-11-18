@@ -7,6 +7,7 @@ import type { ImportDeclaration, Module } from '@swc/core';
 
 interface PackageJson {
   name: string;
+  version?: string;
   source?: string;
   dependencies?: Record<string, string>;
   devDependencies?: Record<string, string>;
@@ -241,11 +242,22 @@ async function createPackageDenoConfig(
     });
   }
 
-  const imports: Record<string, string> = {};
+  const resizeTypes = '@types/resize-observer-browser';
+  const imports: Record<string, string> = ['navigation-menu', 'scroll-area', 'use-size'].some((v) =>
+    packageJson.name.endsWith(v)
+  )
+    ? {
+        [resizeTypes.replace('@types', '')]: `npm:${resizeTypes}@^${
+          packageJson.dependencies?.[resizeTypes]?.replace(/^\^|~/, '') ?? '0.1.4'
+        }`,
+      }
+    : {};
   specifierImports.forEach((imp) => {
     // Handle workspace dependencies explicitly
     if (workspaceVersions[imp]) {
-      imports[imp] = `jsr:${imp}@${workspaceVersions[imp]}`;
+      imports[imp] = `jsr:${imp.replace('@radix-ui', '@radix-ui-forks')}@^${
+        workspaceVersions[imp]
+      }-fork.1`;
     }
     // Handle external dependencies
     else if (packageJson.dependencies?.[imp] || packageJson.peerDependencies?.[imp]) {
@@ -254,18 +266,24 @@ async function createPackageDenoConfig(
         packageJson.peerDependencies?.[imp]?.split('||').at(-1)?.trim() ||
         '*'
       ).replace(/^\^|~/, '');
-
-      if (imp.startsWith('@jsr/')) {
-        imports[imp] = `jsr:${imp}@${version}`;
-      } else {
-        imports[imp] = `npm:${imp}@${version}`;
+      const mapping = {
+        'aria-hidden': 'jsr:@bureaudouble-forks/aria-hidden@0.0.1',
+        'react-remove-scroll': 'jsr:@bureaudouble-forks/react-remove-scroll@^2.6.0-forks.4',
+        '@floating-ui/react-dom': 'jsr:@bureaudouble-forks/floating-ui-react-dom@^2.1.2-forks.2',
+      };
+      const isReactDep = ['react', 'react-dom'].includes(imp);
+      if (!isReactDep && !(imp in mapping)) throw Error(imp);
+      imports[imp] =
+        imp in mapping ? mapping[imp as keyof typeof mapping] : `npm:${imp}@^${version}`;
+      if (isReactDep) {
+        imports[`@types/${imp}`] = `npm:types-${imp}@^${version}`;
       }
     }
   });
 
   return {
-    name: packageJson.name,
-    version: packageJson.version || '0.0.0',
+    name: packageJson.name.replace('@radix-ui', '@radix-ui-forks'),
+    version: packageJson.version?.concat('-fork.1') ?? '0.0.0',
     exports,
     imports,
   };
