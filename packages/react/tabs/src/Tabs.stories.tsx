@@ -2,7 +2,6 @@ import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Tabs from '@radix-ui/react-tabs';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Comp: JSX.Elementonents/Tabs' };
 
@@ -133,7 +132,14 @@ export const Animated = (): JSX.Element => (
   </>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Uncontrolled</h1>
     <Tabs.Root defaultValue="tab3" className={rootClass()}>

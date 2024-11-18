@@ -3,11 +3,7 @@ import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Accordion from '@radix-ui/react-accordion';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runt: JSX.Elementime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Accordion' };
@@ -499,7 +495,14 @@ export const Horizontal = (): JSX.Element => (
   </>
 );
 
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => {
   const items = ['One', 'Two', 'Three', 'Four'];
   return (
     <>

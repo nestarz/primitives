@@ -1,5 +1,4 @@
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
@@ -40,7 +39,14 @@ export const CustomRatios = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Default ratio</h1>
     <div style={{ width: 300 }}>

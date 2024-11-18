@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Collapsible from '@radix-ui/react-collapsible';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtim: JSX.Elemente';
 import { JSX } from 'react/jsx-runtime';
 
@@ -62,7 +61,14 @@ export const AnimatedHorizontal = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Uncontrolled</h1>
     <h2>Closed</h2>

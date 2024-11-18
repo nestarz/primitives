@@ -1,6 +1,4 @@
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { Label } from '@radix-ui/react-label';
 

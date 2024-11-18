@@ -2,7 +2,6 @@ import * as React from 'react';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Announce } from '@radix-ui/react-announce';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilit: JSX.Elementies/Announce' };
 

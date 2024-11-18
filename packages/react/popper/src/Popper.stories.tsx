@@ -3,9 +3,7 @@ import { css, keyframes } from '../../../../stitches.config';
 import { Portal } from '@radix-ui/react-portal';
 import * as Popper from '@radix-ui/react-popper';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-: JSX.Elementruntime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Popper' };
@@ -134,7 +132,14 @@ export const WithUpdatePositionStrategyAlways = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => {
   const [scrollContainer1, setScrollContainer1] = React.useState<HTMLDivElement | null>(null);
   const [scrollContainer2, setScrollContainer2] = React.useState<HTMLDivElement | null>(null);
 

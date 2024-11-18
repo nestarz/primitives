@@ -4,12 +4,7 @@ import * as Menu from '@radix-ui/react-menu';
 import { foodGroups } from '../../../../test-data/foods';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-run: JSX.Elementtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default {

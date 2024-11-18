@@ -4,9 +4,7 @@ import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import * as Checkbox from '@radix-ui/react-checkbox';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-run: JSX.Elementtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Checkbox' };
@@ -202,7 +200,14 @@ export const Animated = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Uncontrolled</h1>
     <h2>Unchecked</h2>

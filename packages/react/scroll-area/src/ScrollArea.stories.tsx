@@ -3,7 +3,6 @@ import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runt: JSX.Elementime';
 import { JSX } from 'react/jsx-runtime';
 

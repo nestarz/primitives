@@ -4,16 +4,7 @@ import { SIDE_OPTIONS, ALIGN_OPTIONS } from '@radix-ui/react-popper';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Tooltip from '@radix-ui/react-tooltip';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-ru: JSX.Elementntime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
@@ -805,7 +796,14 @@ export const DisableHoverableContent = (): JSX.Element => (
 // change order slightly for more pleasing visual
 const SIDES = [...SIDE_OPTIONS.filter((side) => side !== 'bottom'), 'bottom' as const];
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <Tooltip.Provider>
     <div style={{ padding: 200 }}>
       <h1>Uncontrolled</h1>

@@ -3,9 +3,6 @@ import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime': JSX.Element;
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/NavigationMenu' };
 

@@ -4,13 +4,7 @@ import { css } from '../../../../stitches.config';
 import serialize from 'form-serialize';
 import * as Slider from '@radix-ui/react-slider';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-r: JSX.Elementuntime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 i: JSX.Elementmport { JSX } from 'react/jsx-runtime';
@@ -357,7 +351,14 @@ export const Strict = (): JSX.Element => (
   </React.StrictMode>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Uncontrolled</h1>
     <h2>LTR</h2>

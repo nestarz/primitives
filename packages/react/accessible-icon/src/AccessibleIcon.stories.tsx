@@ -11,7 +11,14 @@ export const Styled = (): JSX.Element => (
   </button>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <p>
     Some text with an inline accessible icon{' '}
     <AccessibleIcon label="Close">

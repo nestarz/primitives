@@ -26,7 +26,14 @@ export const Styled = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Loading (not started)</h1>
     <Progress.Root className={rootClass()} value={0}>

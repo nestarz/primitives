@@ -1,22 +1,19 @@
 import * as React from 'react';
 import { Slot, Slottable } from '@radix-ui/react-slot';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime': JSX.Element;
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Slot' };
 
 export const WithoutSlottable = (): JSX.Element => (
   <SlotWithoutSlottable>
-    <b data-sl: JSX.Elementot-element>hello</b>
+    <b data-slot-element>hello</b>
   </SlotWithoutSlottable>
 );
 
 export const WithSlottable = (): JSX.Element => (
   <SlotWithSlottable>
     <b data-slot-element>hello</b>
-  </SlotWithSlottable>: JSX.Element
+  </SlotWithSlottable>
 );
 
 export const WithComposedEvents = (): JSX.Element => (
@@ -82,7 +79,14 @@ export const ButtonAsLink = (): JSX.Element => (
   </>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Without Slottable</h1>
 

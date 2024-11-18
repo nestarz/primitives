@@ -17,7 +17,14 @@ export const Styled = (): JSX.Element => (
   </>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <div style={{ padding: 50 }}>
     <h1>Example</h1>
     <ToolbarExample />

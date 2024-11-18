@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Form from '@radix-ui/react-form';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Com: JSX.Elementponents/Form' };
 

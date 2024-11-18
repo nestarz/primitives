@@ -582,7 +582,10 @@ interface FormValidityStateProps {
   name?: string;
 }
 
-const FormValidityState = (props: ScopedProps<FormValidityStateProps>) => {
+const FormValidityState: {
+    (props: ScopedProps<FormValidityStateProps>): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} = (props: ScopedProps<FormValidityStateProps>) => {
   const { __scopeForm, name: nameProp, children } = props;
   const validationContext = useValidationContext(VALIDITY_STATE_NAME, __scopeForm);
   const fieldContext = useFormFieldContext(VALIDITY_STATE_NAME, __scopeForm);

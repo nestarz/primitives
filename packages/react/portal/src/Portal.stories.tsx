@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { Portal } from '@radix-ui/react-portal';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Uti: JSX.Elementlities/Portal' };
 
@@ -56,7 +55,14 @@ export const CustomContainer = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => {
   const [portalContainer, setPortalContainer] = React.useState<HTMLDivElement | null>(null);
 
   return (

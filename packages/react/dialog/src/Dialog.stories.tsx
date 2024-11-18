@@ -2,15 +2,7 @@ import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-r: JSX.Elementuntime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
@@ -248,7 +240,7 @@ export const InnerScrollable = (): JSX.Element => (
         <Dialog.Close className={closeClass()}>close</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
-  </Dialog.Ro: JSX.Elementot>
+  </Dialog.Root>
 );
 
 export const OuterScrollable = (): JSX.Element => (
@@ -268,7 +260,14 @@ export const OuterScrollable = (): JSX.Element => (
   </Dialog.Root>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <div
       style={{

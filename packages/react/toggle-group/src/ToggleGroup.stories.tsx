@@ -2,8 +2,6 @@ import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css } from '../../../../stitches.config';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';: JSX.Element
 
 export default {
@@ -115,7 +113,14 @@ export const Multiple = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Single</h1>
     <h2>Off</h2>

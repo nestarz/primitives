@@ -5,9 +5,7 @@ import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import * as RadioGroup from '@radix-ui/react-radio-group';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runti: JSX.Elementme';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/RadioGroup' };
@@ -190,7 +188,14 @@ export const Animated = (): JSX.Element => (
   </Label>
 );
 
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => {
   const manualFocusRef = React.useRef<React.ElementRef<typeof RadioGroup.Item>>(null);
 
   React.useEffect(() => {

@@ -1,7 +1,5 @@
 import { Arrow } from '@radix-ui/react-arrow';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Arrow' };
 

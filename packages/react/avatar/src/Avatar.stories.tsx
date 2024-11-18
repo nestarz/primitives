@@ -37,7 +37,15 @@ export const Styled = (): JSX.Element => (
   </>
 );
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+            delay: number;
+        };
+    };
+} = () => (
   <>
     <h1>Without image & with fallback</h1>
     <Avatar.Root className={rootClass()}>

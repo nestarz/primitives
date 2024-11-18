@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/: JSX.ElementAlertDialog' };
 
@@ -64,7 +63,14 @@ export const Controlled = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <div
     style={{
       display: 'grid',

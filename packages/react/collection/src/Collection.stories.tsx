@@ -1,11 +1,7 @@
 import * as React from 'react';
 import { createCollection } from '@radix-ui/react-collection';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-run: JSX.Elementtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Uti: JSX.Elementlities/Collection' };

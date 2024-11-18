@@ -3,11 +3,7 @@ import * as Dialog from '@radix-ui/react-dialog';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Toast from '@radix-ui/react-toast';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-: JSX.Elementruntime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'reac: JSX.Elementt/jsx-runtime';
 
@@ -266,7 +262,15 @@ export const Cypress = (): JSX.Element => {
 };
 
 const SNAPSHOT_DELAY = 300;
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+            delay: number;
+        };
+    };
+} = () => {
   const [open, setOpen] = React.useState(true);
   return (
     <>

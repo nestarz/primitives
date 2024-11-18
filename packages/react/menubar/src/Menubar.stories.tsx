@@ -4,7 +4,6 @@ import { css } from '../../../../stitches.config';
 import { classes, TickIcon } from '../../menu/src/Menu.stories';
 import { foodGroups } from '../../../../test-data/foods';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 const { contentClass, itemClass, separatorClass, labelClass, subTriggerClass } = classes;
 
@@ -352,7 +351,14 @@ export const Cypress = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => {
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => {
   const checkboxItems = [
     { label: 'Bold', state: React.useState(false) },
     { label: 'Italic', state: React.useState(true) },

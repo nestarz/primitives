@@ -2,7 +2,6 @@ import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import { Toggle } from '@radix-ui/react-toggle';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Compon: JSX.Elementents/Toggle' };
 
@@ -18,7 +17,14 @@ export const Controlled = (): JSX.Element => {
   );
 };
 
-export const Chromatic = () => (
+export const Chromatic: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <>
     <h1>Uncontrolled</h1>
     <h2>Off</h2>

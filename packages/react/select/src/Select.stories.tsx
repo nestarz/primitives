@@ -5,16 +5,7 @@ import { Label } from '@radix-ui/react-label';
 import * as Dialog from '@radix-ui/react-dialog';
 import { foodGroups } from '../../../../test-data/foods';
 import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import: JSX.Element { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
-import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runtime';
@@ -731,47 +722,110 @@ export const WithinDialog = (): JSX.Element => (
   </div>
 );
 
-export const ChromaticShortOptionsPaddedContent = () => (
+export const ChromaticShortOptionsPaddedContent: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryShortOptions paddedElement="content" />
 );
 ChromaticShortOptionsPaddedContent.parameters = { chromatic: { disable: false } };
 
-export const ChromaticShortOptionsPaddedViewport = () => (
+export const ChromaticShortOptionsPaddedViewport: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryShortOptions paddedElement="viewport" />
 );
 ChromaticShortOptionsPaddedViewport.parameters = { chromatic: { disable: false } };
 
-export const ChromaticLongOptionsPaddedContent = () => (
+export const ChromaticLongOptionsPaddedContent: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryLongOptions paddedElement="content" />
 );
 ChromaticLongOptionsPaddedContent.parameters = { chromatic: { disable: false } };
 
-export const ChromaticLongOptionsPaddedViewport = () => (
+export const ChromaticLongOptionsPaddedViewport: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryLongOptions paddedElement="viewport" />
 );
 ChromaticLongOptionsPaddedViewport.parameters = { chromatic: { disable: false } };
 
-export const ChromaticTopFirstPaddedContent = () => (
+export const ChromaticTopFirstPaddedContent: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryTopFirst paddedElement="content" />
 );
 ChromaticTopFirstPaddedContent.parameters = { chromatic: { disable: false } };
 
-export const ChromaticTopFirstPaddedViewport = () => (
+export const ChromaticTopFirstPaddedViewport: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryTopFirst paddedElement="viewport" />
 );
 ChromaticTopFirstPaddedViewport.parameters = { chromatic: { disable: false } };
 
-export const ChromaticBottomLastPaddedContent = () => (
+export const ChromaticBottomLastPaddedContent: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryBottomLast paddedElement="content" />
 );
 ChromaticBottomLastPaddedContent.parameters = { chromatic: { disable: false } };
 
-export const ChromaticBottomLastPaddedViewport = () => (
+export const ChromaticBottomLastPaddedViewport: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <ChromaticStoryBottomLast paddedElement="viewport" />
 );
 ChromaticBottomLastPaddedViewport.parameters = { chromatic: { disable: false } };
 
-export const ChromaticNoDefaultValue = () => (
+export const ChromaticNoDefaultValue: {
+    (): JSX.Element;
+    parameters: {
+        chromatic: {
+            disable: boolean;
+        };
+    };
+} = () => (
   <div
     style={{
       display: 'grid',

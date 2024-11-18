@@ -152,7 +152,10 @@ interface MenubarMenuProps {
   children?: React.ReactNode;
 }
 
-const MenubarMenu = (props: ScopedProps<MenubarMenuProps>) => {
+const MenubarMenu: {
+    (props: ScopedProps<MenubarMenuProps>): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} = (props: ScopedProps<MenubarMenuProps>) => {
   const { __scopeMenubar, value: valueProp, ...menuProps } = props;
   const autoValue = useId();
   // We need to provide an initial deterministic value as `useId` will return
