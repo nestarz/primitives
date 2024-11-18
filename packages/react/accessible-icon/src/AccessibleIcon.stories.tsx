@@ -1,4 +1,5 @@
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/AccessibleIcon' };

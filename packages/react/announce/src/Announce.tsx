@@ -1,4 +1,6 @@
+// @ts-types="@types/react"
 import * as React from 'react';
+// @ts-types="@types/react-dom"
 import ReactDOM from 'react-dom';
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import { Primitive } from '@radix-ui/react-primitive';

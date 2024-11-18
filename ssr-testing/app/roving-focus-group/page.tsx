@@ -1,4 +1,5 @@
 'use client';
+// @ts-types="@types/react"
 import * as React from 'react';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import * as RovingFocusGroup from '@radix-ui/react-roving-focus';

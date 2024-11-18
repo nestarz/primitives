@@ -1,6 +1,7 @@
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Tabs from '@radix-ui/react-tabs';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Comp: JSX.Elementonents/Tabs' };

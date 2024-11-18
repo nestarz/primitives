@@ -1,11 +1,15 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css } from '../../../../stitches.config';
 import serialize from 'form-serialize';
 import * as Slider from '@radix-ui/react-slider';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-r: JSX.Elementuntime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 i: JSX.Elementmport { JSX } from 'react/jsx-runtime';
 

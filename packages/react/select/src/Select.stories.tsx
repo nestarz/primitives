@@ -1,13 +1,18 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Select from '@radix-ui/react-select';
 import { Label } from '@radix-ui/react-label';
 import * as Dialog from '@radix-ui/react-dialog';
 import { foodGroups } from '../../../../test-data/foods';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import: JSX.Element { JSX } from 'react/jsx-runtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Select' };

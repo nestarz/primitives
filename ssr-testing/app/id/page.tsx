@@ -1,4 +1,5 @@
 'use client';
+// @ts-types="@types/react"
 import * as React from 'react';
 import { useId } from '@radix-ui/react-id';
 

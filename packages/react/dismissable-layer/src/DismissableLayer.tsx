@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { Primitive, dispatchDiscreteCustomEvent } from '@radix-ui/react-primitive';

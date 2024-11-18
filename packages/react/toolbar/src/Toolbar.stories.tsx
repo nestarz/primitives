@@ -4,6 +4,7 @@ import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { classes } from '../../menu/src/Menu.stories';
 import { Toggle } from '@radix-ui/react-toggle';
 import * as Toolbar from '@radix-ui/react-toolbar';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 const { contentClass: dropdownMenuContentClass, itemClass: dropdownMenuItemClass } = classes;

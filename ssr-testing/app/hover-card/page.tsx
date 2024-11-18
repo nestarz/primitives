@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as HoverCard from '@radix-ui/react-hover-card';
 

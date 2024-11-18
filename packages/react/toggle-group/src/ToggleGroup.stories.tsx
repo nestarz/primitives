@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css } from '../../../../stitches.config';

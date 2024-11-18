@@ -1,4 +1,6 @@
+// @ts-types="@types/react"
 import * as React from 'react';
+// @ts-types="@types/react-dom"
 import * as ReactDOM from 'react-dom';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { useComposedRefs } from '@radix-ui/react-compose-refs';

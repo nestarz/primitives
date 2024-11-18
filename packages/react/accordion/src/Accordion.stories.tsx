@@ -1,9 +1,12 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Accordion from '@radix-ui/react-accordion';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runt: JSX.Elementime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Accordion' };

@@ -1,5 +1,7 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { Portal } from '@radix-ui/react-portal';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Uti: JSX.Elementlities/Portal' };

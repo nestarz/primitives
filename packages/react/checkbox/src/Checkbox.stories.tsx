@@ -1,10 +1,13 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import * as Checkbox from '@radix-ui/react-checkbox';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-run: JSX.Elementtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Checkbox' };

@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import React from 'react';
 import { FocusScope } from '@radix-ui/react-focus-scope';
 import { JSX } from 'react/jsx-runtime';

@@ -1,4 +1,7 @@
+// @ts-types="@types/react"
 import * as React from 'react';
+// @ts-types="@types/react/jsx-runtime"
+import type { JSX } from "react/jsx-runtime";
 import { createCollection } from '@radix-ui/react-collection';
 import { useDirection } from '@radix-ui/react-direction';
 import { composeEventHandlers } from '@radix-ui/primitive';
@@ -153,7 +156,7 @@ interface MenubarMenuProps {
 }
 
 const MenubarMenu: {
-    (props: ScopedProps<MenubarMenuProps>): import("react/jsx-runtime").JSX.Element;
+    (props: ScopedProps<MenubarMenuProps>): JSX.Element;
     displayName: string;
 } = (props: ScopedProps<MenubarMenuProps>) => {
   const { __scopeMenubar, value: valueProp, ...menuProps } = props;
@@ -690,7 +693,7 @@ function wrapArray<T>(array: T[], startIndex: number) {
 
 const Root: React.ForwardRefExoticComponent<MenubarProps & React.RefAttributes<HTMLDivElement>> = Menubar;
 const Menu: {
-    (props: ScopedProps<MenubarMenuProps>): import("react/jsx-runtime").JSX.Element;
+    (props: ScopedProps<MenubarMenuProps>): JSX.Element;
     displayName: string;
 } = MenubarMenu;
 const Trigger: React.ForwardRefExoticComponent<MenubarTriggerProps & React.RefAttributes<HTMLButtonElement>> = MenubarTrigger;

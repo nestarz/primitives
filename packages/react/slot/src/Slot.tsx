@@ -1,5 +1,7 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { composeRefs } from '@radix-ui/react-compose-refs';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 /* -------------------------------------------------------------------------------------------------

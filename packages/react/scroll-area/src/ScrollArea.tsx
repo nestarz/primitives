@@ -1,5 +1,6 @@
 /// <reference types="resize-observer-browser" />
 
+// @ts-types="@types/react"
 import * as React from 'react';
 import { Primitive } from '@radix-ui/react-primitive';
 import { Presence } from '@radix-ui/react-presence';
@@ -10,7 +11,7 @@ import { useDirection } from '@radix-ui/react-direction';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { clamp } from '@radix-ui/number';
 import { composeEventHandlers } from '@radix-ui/primitive';
-import { useStateMachine } from './useStateMachine.tsx';
+import { useStateMachine } from './useStateMachine.ts';
 
 import type { Scope } from '@radix-ui/react-context';
 

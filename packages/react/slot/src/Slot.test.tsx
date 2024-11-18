@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Slot, Slottable } from '@radix-ui/react-slot';

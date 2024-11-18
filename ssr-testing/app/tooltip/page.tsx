@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as Tooltip from '@radix-ui/react-tooltip';
 

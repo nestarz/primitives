@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import React from 'react';
 import { axe } from 'jest-axe';
 import { render, fireEvent, RenderResult, cleanup } from '@testing-library/react';

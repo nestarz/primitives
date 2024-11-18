@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 

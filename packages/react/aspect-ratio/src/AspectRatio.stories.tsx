@@ -1,3 +1,4 @@
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';

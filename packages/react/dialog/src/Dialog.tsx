@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
@@ -409,7 +410,7 @@ const DialogContentImpl = React.forwardRef<DialogContentImplElement, DialogConte
             onDismiss={() => context.onOpenChange(false)}
           />
         </FocusScope>
-        {process.env.NODE_ENV !== 'production' && (
+        {(globalThis as any).process?.env?.NODE_ENV === 'development' && (
           <>
             <TitleWarning titleId={context.titleId} />
             <DescriptionWarning contentRef={contentRef} descriptionId={context.descriptionId} />

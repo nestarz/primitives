@@ -1,8 +1,10 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as Menubar from '@radix-ui/react-menubar';
 import { css } from '../../../../stitches.config';
 import { classes, TickIcon } from '../../menu/src/Menu.stories';
 import { foodGroups } from '../../../../test-data/foods';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 const { contentClass, itemClass, separatorClass, labelClass, subTriggerClass } = classes;

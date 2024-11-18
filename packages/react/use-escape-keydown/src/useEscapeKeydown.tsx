@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 

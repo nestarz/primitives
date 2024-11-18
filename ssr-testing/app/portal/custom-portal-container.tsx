@@ -1,5 +1,6 @@
 'use client';
 
+// @ts-types="@types/react"
 import * as React from 'react';
 import { Portal } from '@radix-ui/react-portal';
 

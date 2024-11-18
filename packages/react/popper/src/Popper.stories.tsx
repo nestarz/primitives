@@ -1,9 +1,12 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { Portal } from '@radix-ui/react-portal';
 import * as Popper from '@radix-ui/react-popper';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-: JSX.Elementruntime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Popper' };

@@ -1,9 +1,12 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-runt: JSX.Elementime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/ScrollArea' };

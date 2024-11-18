@@ -1,8 +1,11 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { Presence } from '@radix-ui/react-presence';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-r: JSX.Elementuntime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Presence' };

@@ -1,1 +1,1 @@
-export { composeEventHandlers } from './primitive.ts';
+export { composeEventHandlers } from './primitive.tsx';

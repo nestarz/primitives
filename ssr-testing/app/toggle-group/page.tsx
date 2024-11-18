@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
 

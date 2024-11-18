@@ -1,3 +1,4 @@
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import * as Avatar from '@radix-ui/react-avatar';

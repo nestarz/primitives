@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as ContextMenu from '@radix-ui/react-context-menu';
 

@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 
 type PossibleRef<T> = React.Ref<T> | undefined;
@@ -18,7 +19,7 @@ function setRef<T>(ref: PossibleRef<T>, value: T) {
  * A utility to compose multiple refs together
  * Accepts callback refs and RefObject(s)
  */
-function composeRefs<T>(...refs: PossibleRef<T>[]) {
+function composeRefs<T>(...refs: PossibleRef<T>[]): (node: T) => void {
   return (node: T): void => refs.forEach((ref) => setRef(ref, node));
 }
 

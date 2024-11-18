@@ -1,6 +1,8 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Progress from '@radix-ui/react-progress';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default {

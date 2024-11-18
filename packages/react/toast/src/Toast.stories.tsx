@@ -1,9 +1,12 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Toast from '@radix-ui/react-toast';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-: JSX.Elementruntime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'reac: JSX.Elementt/jsx-runtime';
 

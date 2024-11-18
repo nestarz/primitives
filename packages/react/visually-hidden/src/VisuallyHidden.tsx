@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { Primitive } from '@radix-ui/react-primitive';
 

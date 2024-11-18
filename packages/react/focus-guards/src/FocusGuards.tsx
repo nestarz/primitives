@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 
 /** Number of components which have requested interest to have focus guards */

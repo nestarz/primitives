@@ -1,4 +1,7 @@
+// @ts-types="@types/react"
 import * as React from 'react';
+// @ts-types="@types/react/jsx-runtime"
+import type { JSX } from "react/jsx-runtime";
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { useComposedRefs } from '@radix-ui/react-compose-refs';
 import { createContextScope } from '@radix-ui/react-context';
@@ -583,7 +586,7 @@ interface FormValidityStateProps {
 }
 
 const FormValidityState: {
-    (props: ScopedProps<FormValidityStateProps>): import("react/jsx-runtime").JSX.Element;
+    (props: ScopedProps<FormValidityStateProps>): JSX.Element;
     displayName: string;
 } = (props: ScopedProps<FormValidityStateProps>) => {
   const { __scopeForm, name: nameProp, children } = props;
@@ -699,7 +702,7 @@ const Label: React.ForwardRefExoticComponent<FormLabelProps & React.RefAttribute
 const Control: React.ForwardRefExoticComponent<FormControlProps & React.RefAttributes<HTMLInputElement>> = FormControl;
 const Message: React.ForwardRefExoticComponent<FormMessageProps & React.RefAttributes<HTMLSpanElement>> = FormMessage;
 const ValidityState: {
-    (props: ScopedProps<FormValidityStateProps>): import("react/jsx-runtime").JSX.Element;
+    (props: ScopedProps<FormValidityStateProps>): JSX.Element;
     displayName: string;
 } = FormValidityState;
 const Submit: React.ForwardRefExoticComponent<FormSubmitProps & React.RefAttributes<HTMLButtonElement>> = FormSubmit;

@@ -1,9 +1,12 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 
 function createContext<ContextValueType extends object | null>(
   rootComponentName: string,
   defaultContext?: ContextValueType
-) {
+): readonly [React.FC<ContextValueType & {
+  children: React.ReactNode;
+}>, (consumerName: string) => ContextValueType] {
   const Context = React.createContext<ContextValueType | undefined>(defaultContext);
 
   const Provider: React.FC<ContextValueType & { children: React.ReactNode }> = (props) => {

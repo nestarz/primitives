@@ -1,6 +1,8 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Announce } from '@radix-ui/react-announce';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilit: JSX.Elementies/Announce' };

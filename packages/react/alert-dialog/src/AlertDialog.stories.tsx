@@ -1,6 +1,8 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/: JSX.ElementAlertDialog' };

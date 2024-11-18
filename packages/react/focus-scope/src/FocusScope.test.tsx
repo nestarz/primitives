@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import userEvent from '@testing-library/user-event';
 import { render, waitFor } from '@testing-library/react';

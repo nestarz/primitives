@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
 

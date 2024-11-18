@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Form from '@radix-ui/react-form';

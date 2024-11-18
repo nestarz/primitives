@@ -1,6 +1,8 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import * as RovingFocusGroup from '@radix-ui/react-roving-focus';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 type RovingFocusGroupProps = React.ComponentProps<typeof RovingFocusGroup.Root>;: JSX.Element

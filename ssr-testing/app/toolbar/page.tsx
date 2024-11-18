@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as Toolbar from '@radix-ui/react-toolbar';
 

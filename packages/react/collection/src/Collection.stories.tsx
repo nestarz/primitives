@@ -1,7 +1,10 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { createCollection } from '@radix-ui/react-collection';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 import { JSX } from 'react/jsx-run: JSX.Elementtime';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Uti: JSX.Elementlities/Collection' };

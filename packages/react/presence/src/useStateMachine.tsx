@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 
 type Machine<S> = { [k: string]: { [k: string]: S } };

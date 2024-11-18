@@ -1,5 +1,7 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import { Slot, Slottable } from '@radix-ui/react-slot';
+// @ts-types="@types/react/jsx-runtime"
 import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Slot' };

@@ -1,3 +1,4 @@
+// @ts-types="@types/react"
 import * as React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 
