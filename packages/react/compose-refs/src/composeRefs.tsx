@@ -19,14 +19,14 @@ function setRef<T>(ref: PossibleRef<T>, value: T) {
  * Accepts callback refs and RefObject(s)
  */
 function composeRefs<T>(...refs: PossibleRef<T>[]) {
-  return (node: T) => refs.forEach((ref) => setRef(ref, node));
+  return (node: T): void => refs.forEach((ref) => setRef(ref, node));
 }
 
 /**
  * A custom hook that composes multiple refs
  * Accepts callback refs and RefObject(s)
  */
-function useComposedRefs<T>(...refs: PossibleRef<T>[]) {
+function useComposedRefs<T>(...refs: PossibleRef<T>[]): (node: T) => void {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   return React.useCallback(composeRefs(...refs), refs);
 }

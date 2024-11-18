@@ -2,17 +2,25 @@ import * as React from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Toast from '@radix-ui/react-toast';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-: JSX.Elementruntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'reac: JSX.Elementt/jsx-runtime';
 
 export default { title: 'Components/Toast' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Toast.Provider>
     <ToastUpgradeAvailable />
     <Toast.Viewport className={viewportClass()} />
   </Toast.Provider>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [hasUpgrade, setHasUpgrade] = React.useState(false);
   const [isSubscribed, setIsSubscribed] = React.useState(false);
   const [savedCount, setSavedCount] = React.useState(0);
@@ -48,7 +56,7 @@ export const Controlled = () => {
 
       {[...Array(savedCount)].map((_, index) => (
         <Toast.Root key={index} className={rootClass()}>
-          <Toast.Description>Successfully saved</Toast.Description>
+        : JSX.Element  <Toast.Description>Successfully saved</Toast.Description>
         </Toast.Root>
       ))}
 
@@ -57,7 +65,7 @@ export const Controlled = () => {
   );
 };
 
-export const FromDialog = () => {
+export const FromDialog = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Toast.Provider>
@@ -79,7 +87,7 @@ export const FromDialog = () => {
           altText="Resubmit the form to try again."
           onClick={() => console.log('try again')}
         >
-          Try again
+          : JSX.ElementTry again
         </Toast.Action>
       </Toast.Root>
 
@@ -88,7 +96,7 @@ export const FromDialog = () => {
   );
 };
 
-export const Promise = () => {
+export const Promise = (): JSX.Element => {
   const [saving, setSaving] = React.useState(false);
   const [open, setOpen] = React.useState(false);
 
@@ -121,14 +129,14 @@ export const Promise = () => {
             <Toast.Description>Saved!</Toast.Description>
           )}
         </Toast.Root>
-      </form>
+   : JSX.Element   </form>
 
       <Toast.Viewport className={viewportClass()} />
     </Toast.Provider>
   );
 };
 
-export const KeyChange = () => {
+export const KeyChange = (): JSX.Element => {
   const [toastOneCount, setToastOneCount] = React.useState(0);
   const [toastTwoCount, setToastTwoCount] = React.useState(0);
 
@@ -149,12 +157,12 @@ export const KeyChange = () => {
         </Toast.Root>
       )}
 
-      <Toast.Viewport className={viewportClass()} />
+      <Toast.Viewport className={vie: JSX.ElementwportClass()} />
     </Toast.Provider>
   );
 };
 
-export const PauseResumeProps = () => {
+export const PauseResumeProps = (): JSX.Element => {
   const [toastCount, setToastCount] = React.useState(0);
 
   return (
@@ -170,9 +178,9 @@ export const PauseResumeProps = () => {
   );
 };
 
-type Direction = React.ComponentProps<typeof Toast.Provider>['swipeDirection'];
+type Direction = React.ComponentProps<typeof Toast.Provider>['swip: JSX.ElementeDirection'];
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const [swipeDirection, setSwipeDirection] = React.useState<Direction>('right');
   const timerRef = React.useRef(0);
@@ -211,7 +219,7 @@ export const Animated = () => {
   );
 };
 
-export const Cypress = () => {
+export const Cypress = (): JSX.Element => {
   const [count, setCount] = React.useState(0);
 
   return (

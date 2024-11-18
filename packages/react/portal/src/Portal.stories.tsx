@@ -1,9 +1,11 @@
 import * as React from 'react';
 import { Portal } from '@radix-ui/react-portal';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Utilities/Portal' };
+export default { title: 'Uti: JSX.Elementlities/Portal' };
 
-export const Base = () => (
+export const Base = (): JSX.Element => (
   <div
     style={{
       maxWidth: 300,
@@ -29,7 +31,7 @@ export const Base = () => (
   </div>
 );
 
-export const CustomContainer = () => {
+export const CustomContainer = (): JSX.Element => {
   const [portalContainer, setPortalContainer] = React.useState<HTMLDivElement | null>(null);
 
   return (

@@ -2,10 +2,14 @@ import * as React from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime': JSX.Element;
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/NavigationMenu' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   return (
     <StoryFrame>
       <NavigationMenu.Root>
@@ -50,12 +54,12 @@ export const Basic = () => {
             </NavigationMenu.Link>
           </NavigationMenu.Item>
         </NavigationMenu.List>
-      </NavigationMenu.Root>
+      <: JSX.Element/NavigationMenu.Root>
     </StoryFrame>
   );
 };
 
-export const CustomDurations = () => {
+export const CustomDurations = (): JSX.Element => {
   return (
     <div
       style={{
@@ -86,7 +90,7 @@ export const CustomDurations = () => {
 
       <h2>Custom (2000ms to move from one trigger to another)</h2>
       <DurationNavigation delayDuration={500} skipDelayDuration={2000} />
-    </div>
+    <: JSX.Element/div>
   );
 };
 
@@ -183,7 +187,7 @@ export const Viewport = () => {
   );
 };
 
-export const Submenus = () => {
+export const Submenus = (): JSX.Element => {
   return (
     <StoryFrame>
       <NavigationMenu.Root>

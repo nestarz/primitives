@@ -3,7 +3,7 @@ import * as React from 'react';
 /** Number of components which have requested interest to have focus guards */
 let count = 0;
 
-function FocusGuards(props: any) {
+function FocusGuards(props: any): any {
   useFocusGuards();
   return props.children;
 }
@@ -12,7 +12,7 @@ function FocusGuards(props: any) {
  * Injects a pair of focus guards at the edges of the whole DOM tree
  * to ensure `focusin` & `focusout` events can be caught consistently.
  */
-function useFocusGuards() {
+function useFocusGuards(): void {
   React.useEffect(() => {
     const edgeGuards = document.querySelectorAll('[data-radix-focus-guard]');
     document.body.insertAdjacentElement('afterbegin', edgeGuards[0] ?? createFocusGuard());

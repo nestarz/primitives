@@ -1,12 +1,14 @@
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import { Toggle } from '@radix-ui/react-toggle';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Components/Toggle' };
+export default { title: 'Compon: JSX.Elementents/Toggle' };
 
-export const Styled = () => <Toggle className={rootClass()}>Toggle</Toggle>;
+export const Styled = (): JSX.Element => <Toggle className={rootClass()}>Toggle</Toggle>;
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [pressed, setPressed] = React.useState(true);
 
   return (

@@ -1,12 +1,25 @@
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-r: JSX.Elementuntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Dialog' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Dialog.Root>
-    <Dialog.Trigger className={triggerClass()}>open</Dialog.Trigger>
+    <Dialog.Trigger className={triggerClass()}>open<: JSX.Element/Dialog.Trigger>
     <Dialog.Portal>
       <Dialog.Overlay className={overlayClass()} />
       <Dialog.Content className={contentDefaultClass()}>
@@ -18,7 +31,7 @@ export const Styled = () => (
   </Dialog.Root>
 );
 
-export const NonModal = () => (
+export const NonModal = (): JSX.Element => (
   <>
     <Dialog.Root modal={false}>
       <Dialog.Trigger className={triggerClass()}>open (non-modal)</Dialog.Trigger>
@@ -35,7 +48,7 @@ export const NonModal = () => (
       </Dialog.Portal>
     </Dialog.Root>
 
-    {Array.from({ length: 5 }, (_, i) => (
+    {Array.from({ length: 5 }, (_, i) => (: JSX.Element
       <div key={i} style={{ marginTop: 20 }}>
         <textarea
           style={{ width: 800, height: 400 }}
@@ -46,13 +59,13 @@ export const NonModal = () => (
   </>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Dialog.Root open={open} onOpenChange={setOpen}>
       <Dialog.Trigger>{open ? 'close' : 'open'}</Dialog.Trigger>
       <Dialog.Portal>
-        <Dialog.Overlay className={overlayClass()} />
+ : JSX.Element       <Dialog.Overlay className={overlayClass()} />
         <Dialog.Content className={contentDefaultClass()}>
           <Dialog.Title>Title</Dialog.Title>
           <Dialog.Description>Description</Dialog.Description>
@@ -63,7 +76,7 @@ export const Controlled = () => {
   );
 };
 
-export const FocusTrap = () => (
+export const FocusTrap = (): JSX.Element => (
   <>
     <Dialog.Root>
       <Dialog.Trigger>open</Dialog.Trigger>
@@ -80,7 +93,7 @@ export const FocusTrap = () => (
             <label htmlFor="lastName">Last Name</label>
             <input type="text" id="lastName" placeholder="Doe" />
 
-            <button type="submit">Send</button>
+            <button type=: JSX.Element"submit">Send</button>
           </div>
         </Dialog.Content>
       </Dialog.Portal>
@@ -92,7 +105,7 @@ export const FocusTrap = () => (
   </>
 );
 
-export const CustomFocus = () => {
+export const CustomFocus = (): JSX.Element => {
   const firstNameRef = React.useRef<HTMLInputElement>(null);
   const searchFieldRef = React.useRef<HTMLInputElement>(null);
   return (
@@ -127,7 +140,7 @@ export const CustomFocus = () => {
 
               <button type="submit">Send</button>
             </div>
-          </Dialog.Content>
+          </Dialo: JSX.Elementg.Content>
         </Dialog.Portal>
       </Dialog.Root>
 
@@ -139,7 +152,7 @@ export const CustomFocus = () => {
   );
 };
 
-export const NoEscapeDismiss = () => (
+export const NoEscapeDismiss = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger>open</Dialog.Trigger>
     <Dialog.Portal>
@@ -150,7 +163,7 @@ export const NoEscapeDismiss = () => (
       >
         <Dialog.Title>Title</Dialog.Title>
         <Dialog.Description>
-          The first name input will receive the focus after opening the dialog.
+          The firs: JSX.Elementt name input will receive the focus after opening the dialog.
         </Dialog.Description>
         <Dialog.Close>close</Dialog.Close>
       </Dialog.Content>
@@ -158,7 +171,7 @@ export const NoEscapeDismiss = () => (
   </Dialog.Root>
 );
 
-export const NoPointerDownOutsideDismiss = () => (
+export const NoPointerDownOutsideDismiss = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger>open</Dialog.Trigger>
     <Dialog.Portal>
@@ -168,14 +181,14 @@ export const NoPointerDownOutsideDismiss = () => (
         onPointerDownOutside={(event) => event.preventDefault()}
       >
         <Dialog.Title>Title</Dialog.Title>
-        <Dialog.Description>Description</Dialog.Description>
+  : JSX.Element      <Dialog.Description>Description</Dialog.Description>
         <Dialog.Close>close</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>
 );
 
-export const WithPortalContainer = () => {
+export const WithPortalContainer = (): JSX.Element => {
   const [portalContainer, setPortalContainer] = React.useState<HTMLDivElement | null>(null);
   return (
     <>
@@ -187,7 +200,7 @@ export const WithPortalContainer = () => {
             <Dialog.Title>Title</Dialog.Title>
             <Dialog.Description>Description</Dialog.Description>
             <Dialog.Close>close</Dialog.Close>
-          </Dialog.Content>
+          </Dialo: JSX.Elementg.Content>
         </Dialog.Portal>
       </Dialog.Root>
       <div data-portal-container="" ref={setPortalContainer} />
@@ -195,7 +208,7 @@ export const WithPortalContainer = () => {
   );
 };
 
-export const Animated = () => (
+export const Animated = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger>open</Dialog.Trigger>
     <Dialog.Portal>
@@ -203,13 +216,13 @@ export const Animated = () => (
       <Dialog.Content className={animatedContentClass()}>
         <Dialog.Title>Title</Dialog.Title>
         <Dialog.Description>Description</Dialog.Description>
-        <Dialog.Close>close</Dialog.Close>
+        <Dialog: JSX.Element.Close>close</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
   </Dialog.Root>
 );
 
-export const ForcedMount = () => (
+export const ForcedMount = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger>open</Dialog.Trigger>
     <Dialog.Portal forceMount>
@@ -218,12 +231,12 @@ export const ForcedMount = () => (
         <Dialog.Title>Title</Dialog.Title>
         <Dialog.Description>Description</Dialog.Description>
         <Dialog.Close>close</Dialog.Close>
-      </Dialog.Content>
+      </Dialog.Co: JSX.Elementntent>
     </Dialog.Portal>
   </Dialog.Root>
 );
 
-export const InnerScrollable = () => (
+export const InnerScrollable = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger className={triggerClass()}>open</Dialog.Trigger>
     <Dialog.Portal>
@@ -235,10 +248,10 @@ export const InnerScrollable = () => (
         <Dialog.Close className={closeClass()}>close</Dialog.Close>
       </Dialog.Content>
     </Dialog.Portal>
-  </Dialog.Root>
+  </Dialog.Ro: JSX.Elementot>
 );
 
-export const OuterScrollable = () => (
+export const OuterScrollable = (): JSX.Element => (
   <Dialog.Root>
     <Dialog.Trigger className={triggerClass()}>open</Dialog.Trigger>
     <div style={{ backgroundColor: '#eee', width: 300, height: 1000 }} />
@@ -454,7 +467,7 @@ export const Chromatic = () => (
 );
 Chromatic.parameters = { chromatic: { disable: false } };
 
-export const Cypress = () => {
+export const Cypress = (): JSX.Element => {
   const [modal, setModal] = React.useState(true);
   const [animated, setAnimated] = React.useState(false);
   const [count, setCount] = React.useState(0);

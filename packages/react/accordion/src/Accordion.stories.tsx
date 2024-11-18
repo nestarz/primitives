@@ -2,10 +2,17 @@
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Accordion from '@radix-ui/react-accordion';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runt: JSX.Elementime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Accordion' };
 
-export const Single = () => {
+export const Single = (): JSX.Element => {
   const [valueOne, setValueOne] = React.useState('one');
 
   return (
@@ -135,7 +142,7 @@ export const Single = () => {
           </Accordion.Header>
           <Accordion.Content className={contentClass()}>
             Odio placerat <a href="#">quisque</a> sapien sagittis non sociis ligula penatibus
-            dignissim vitae, enim vulputate nullam semper potenti etiam volutpat libero.
+            dignissim vitae, enim vulputat: JSX.Elemente nullam semper potenti etiam volutpat libero.
             <button>Cool</button>
           </Accordion.Content>
         </Accordion.Item>
@@ -144,7 +151,7 @@ export const Single = () => {
   );
 };
 
-export const Multiple = () => {
+export const Multiple = (): JSX.Element => {
   const [value, setValue] = React.useState(['one', 'two']);
 
   return (
@@ -232,7 +239,7 @@ export const Multiple = () => {
           </Accordion.Header>
           <Accordion.Content className={contentClass()}>
             Odio placerat <a href="#">quisque</a> sapien sagittis non sociis ligula penatibus
-            dignissim vitae, enim vulputate nullam semper potenti etiam volutpat libero.
+            dignissim vitae, enim vulputate nullam semper potenti etiam volutpat li: JSX.Elementbero.
             <button>Cool</button>
           </Accordion.Content>
         </Accordion.Item>
@@ -241,7 +248,7 @@ export const Multiple = () => {
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   const values = ['One', 'Two', 'Three', 'Four'];
   const [count, setCount] = React.useState(1);
   const [hasDynamicContent, setHasDynamicContent] = React.useState(false);
@@ -313,7 +320,7 @@ export const Animated = () => {
                   quam suscipit habitant sed.
                 </div>
               ))}
-            </Accordion.Content>
+            </Accor: JSX.Elementdion.Content>
           </Accordion.Item>
         ))}
       </Accordion.Root>
@@ -321,7 +328,7 @@ export const Animated = () => {
   );
 };
 
-export const Animated2D = () => {
+export const Animated2D = (): JSX.Element => {
   const values = ['One', 'Two', 'Three', 'Four'];
 
   return (
@@ -342,13 +349,13 @@ export const Animated2D = () => {
               </div>
             </Accordion.Content>
           </Accordion.Item>
-        ))}
+       : JSX.Element ))}
       </Accordion.Root>
     </>
   );
 };
 
-export const AnimatedControlled = () => {
+export const AnimatedControlled = (): JSX.Element => {
   const [value, setValue] = React.useState(['one', 'two', 'three', 'four']);
   return (
     <Accordion.Root type="multiple" value={value} onValueChange={setValue} className={rootClass()}>
@@ -391,10 +398,10 @@ export const AnimatedControlled = () => {
         </Accordion.Content>
       </Accordion.Item>
     </Accordion.Root>
-  );
+ : JSX.Element );
 };
 
-export const OutsideViewport = () => (
+export const OutsideViewport = (): JSX.Element => (
   <>
     <p>Scroll down to see tabs</p>
     <div style={{ height: '150vh' }} />
@@ -446,7 +453,7 @@ export const OutsideViewport = () => (
   </>
 );
 
-export const Horizontal = () => (
+export const Horizontal = (): JSX.Element => (
   <>
     <h1>Horizontal Orientation</h1>
     <Accordion.Root type="single" className={rootClass()} orientation="horizontal">

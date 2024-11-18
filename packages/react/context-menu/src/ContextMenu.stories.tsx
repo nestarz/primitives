@@ -3,12 +3,21 @@ import { css, keyframes } from '../../../../stitches.config';
 import * as ContextMenu from '@radix-ui/react-context-menu';
 import { foodGroups } from '../../../../test-data/foods';
 import { classes, TickIcon } from '../../menu/src/Menu.stories';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+impor: JSX.Elementt { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 const { contentClass, itemClass, labelClass, separatorClass, subTriggerClass } = classes;
 
 export default { title: 'Components/ContextMenu' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -35,7 +44,7 @@ export const Styled = () => (
           </ContextMenu.Item>
           <ContextMenu.Item className={itemClass()} onSelect={() => console.log('copy')}>
             Copy
-          </ContextMenu.Item>
+    : JSX.Element      </ContextMenu.Item>
           <ContextMenu.Item className={itemClass()} onSelect={() => console.log('paste')}>
             Paste
           </ContextMenu.Item>
@@ -45,7 +54,7 @@ export const Styled = () => (
   </div>
 );
 
-export const Modality = () => (
+export const Modality = (): JSX.Element => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '110vh' }}>
     <div style={{ display: 'grid', gap: 50 }}>
       <div style={{ display: 'inline-flex', alignItems: 'center', flexDirection: 'column' }}>
@@ -228,7 +237,7 @@ export const Modality = () => (
           </ContextMenu.Portal>
         </ContextMenu.Root>
         <textarea
-          style={{ width: 500, height: 100, marginTop: 10 }}
+          style={{ width: 500, height: 100, m: JSX.ElementarginTop: 10 }}
           defaultValue="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis at ipsa, nihil tempora debitis maxime dignissimos non amet."
         />
       </div>
@@ -236,7 +245,7 @@ export const Modality = () => (
   </div>
 );
 
-export const Submenus = () => {
+export const Submenus = (): JSX.Element => {
   const [rtl, setRtl] = React.useState(false);
 
   return (
@@ -408,7 +417,7 @@ export const Submenus = () => {
                 Cast…
               </ContextMenu.Item>
               <ContextMenu.Item className={itemClass()} onSelect={() => console.log('find')}>
-                Find…
+       : JSX.Element         Find…
               </ContextMenu.Item>
             </ContextMenu.Content>
           </ContextMenu.Portal>
@@ -418,7 +427,7 @@ export const Submenus = () => {
   );
 };
 
-export const WithLabels = () => (
+export const WithLabels = (): JSX.Element => (
   <div style={{ textAlign: 'center', padding: 50 }}>
     <ContextMenu.Root>
       <ContextMenu.Trigger className={triggerClass()}>Right click here</ContextMenu.Trigger>
@@ -444,7 +453,7 @@ export const WithLabels = () => (
               {index < foodGroups.length - 1 && (
                 <ContextMenu.Separator className={separatorClass()} />
               )}
-            </ContextMenu.Group>
+          : JSX.Element  </ContextMenu.Group>
           ))}
         </ContextMenu.Content>
       </ContextMenu.Portal>
@@ -452,7 +461,7 @@ export const WithLabels = () => (
   </div>
 );
 
-export const CheckboxItems = () => {
+export const CheckboxItems = (): JSX.Element => {
   const checkboxItems = ['Bold', 'Italic', 'Underline'];
   const [selection, setSelection] = React.useState<string[]>([]);
 
@@ -498,14 +507,14 @@ export const CheckboxItems = () => {
                 <TickIcon />
               </ContextMenu.ItemIndicator>
             </ContextMenu.CheckboxItem>
-          </ContextMenu.Content>
+          </Co: JSX.ElementntextMenu.Content>
         </ContextMenu.Portal>
       </ContextMenu.Root>
     </div>
   );
 };
 
-export const RadioItems = () => {
+export const RadioItems = (): JSX.Element => {
   const files = ['README.md', 'index.js', 'page.css'];
   const [file, setFile] = React.useState(files[1]);
 
@@ -538,12 +547,12 @@ export const RadioItems = () => {
           </ContextMenu.Content>
         </ContextMenu.Portal>
       </ContextMenu.Root>
-      <p>Selected file: {file}</p>
+     : JSX.Element <p>Selected file: {file}</p>
     </div>
   );
 };
 
-export const PreventClosing = () => (
+export const PreventClosing = (): JSX.Element => (
   <div style={{ textAlign: 'center', padding: 50 }}>
     <ContextMenu.Root>
       <ContextMenu.Trigger className={triggerClass()}>Right click here</ContextMenu.Trigger>
@@ -563,11 +572,11 @@ export const PreventClosing = () => (
           </ContextMenu.Item>
         </ContextMenu.Content>
       </ContextMenu.Portal>
-    </ContextMenu.Root>
+    </ContextMenu.Root: JSX.Element>
   </div>
 );
 
-export const Multiple = () => {
+export const Multiple = (): JSX.Element => {
   const [customColors, setCustomColors] = React.useState<{ [index: number]: string }>({});
   const [fadedIndexes, setFadedIndexes] = React.useState<number[]>([]);
   return (
@@ -646,7 +655,7 @@ export const Multiple = () => {
   );
 };
 
-export const Nested = () => (
+export const Nested = (): JSX.Element => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <ContextMenu.Root>
       <ContextMenu.Trigger

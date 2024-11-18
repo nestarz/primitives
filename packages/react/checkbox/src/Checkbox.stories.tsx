@@ -3,10 +3,15 @@ import { css, keyframes } from '../../../../stitches.config';
 import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import * as Checkbox from '@radix-ui/react-checkbox';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-run: JSX.Elementtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Checkbox' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <>
     <p>This checkbox is nested inside a label. The state is uncontrolled.</p>
 
@@ -49,13 +54,13 @@ export const Styled = () => (
       <Checkbox.Indicator className={indicatorClass()} />
     </Checkbox.Root>
 
-    <h1>Native label + native checkbox</h1>
+    <h1>Native label + native checkbox</h: JSX.Element1>
     <label htmlFor="three">Label</label>
     <input type="checkbox" id="three" />
   </>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [checked, setChecked] = React.useState<boolean | 'indeterminate'>(true);
 
   return (
@@ -68,13 +73,13 @@ export const Controlled = () => {
         onCheckedChange={setChecked}
         id="randBox"
       >
-        <Checkbox.Indicator className={indicatorClass()} />
+        <Checkbox.Indicator className={indicatorC: JSX.Elementlass()} />
       </Checkbox.Root>
     </>
   );
 };
 
-export const Indeterminate = () => {
+export const Indeterminate = (): JSX.Element => {
   const [checked, setChecked] = React.useState<boolean | 'indeterminate'>('indeterminate');
 
   return (
@@ -95,11 +100,11 @@ export const Indeterminate = () => {
       >
         Toggle indeterminate
       </button>
-    </>
+    : JSX.Element</>
   );
 };
 
-export const WithinForm = () => {
+export const WithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({ optional: false, required: false, stopprop: false });
   const [checked, setChecked] = React.useState<boolean | 'indeterminate'>('indeterminate');
 
@@ -172,7 +177,7 @@ export const WithinForm = () => {
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   const [checked, setChecked] = React.useState<boolean | 'indeterminate'>('indeterminate');
 
   return (

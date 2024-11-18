@@ -1,36 +1,43 @@
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { Presence } from '@radix-ui/react-presence';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-r: JSX.Elementuntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Presence' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [open, setOpen] = React.useState(true);
 
   return (
     <>
-      <button onClick={() => setOpen((prevOpen) => !prevOpen)}>toggle</button>
+     : JSX.Element <button onClick={() => setOpen((prevOpen) => !prevOpen)}>toggle</button>
 
       <Presence present={open}>
-        <div>Content</div>
+        <div>Content</div: JSX.Element>
       </Presence>
     </>
   );
 };
 
-export const WithMountAnimation = () => <Animation className={mountAnimationClass()} />;
-export const WithUnmountAnimation = () => <Animation className={unmountAnimationClass()} />;
-export const WithMultipleMountAnimations = () => (
-  <Animation className={multipleMountAnimationsClass()} />
+export const WithMountAnimation = (): JSX.Element => <Animation className={mountAnimationClass()} />;
+export const Wi: JSX.ElementthUnmountAnimation = () => <Animation className={unmountAnimationClass()} />;
+export const WithMultipleMountAnimations = (): JSX.Element => (
+  <Animation className=: JSX.Element{multipleMountAnimationsClass()} />
 );
-export const WithOpenAndCloseAnimation = () => (
+export const WithOpenAndCloseAnimation = (): JSX.Element => (
   <Animation className={openAndCloseAnimationClass()} />
 );
-export const WithMultipleOpenAndCloseAnimations = () => (
+export cons: JSX.Elementt WithMultipleOpenAndCloseAnimations = () => (
   <Animation className={multipleOpenAndCloseAnimationsClass()} />
 );
 
-export const WithDeferredMountAnimation = () => {
+export const WithDeferredMountAnimation = (): JSX.Element => {
   const ref = React.useRef<HTMLDivElement>(null);
   const timerRef = React.useRef(0);
   const [open, setOpen] = React.useState(false);

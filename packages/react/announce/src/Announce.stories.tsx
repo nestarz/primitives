@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { Announce } from '@radix-ui/react-announce';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Utilities/Announce' };
+export default { title: 'Utilit: JSX.Elementies/Announce' };
 
-export function Basic() {
+export function Basic(): JSX.Element {
   const [count, setCount] = React.useState(1);
 
   return (
@@ -21,7 +23,7 @@ export function Basic() {
   );
 }
 
-export function StatusChange() {
+export function StatusChange(): JSX.Element {
   const [friendIsOnline, setFriendIsOnline] = React.useState(false);
   const interval = React.useRef<number | null>(null);
 

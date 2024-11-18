@@ -2,10 +2,15 @@ import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { Portal } from '@radix-ui/react-portal';
 import * as Popper from '@radix-ui/react-popper';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-: JSX.Elementruntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Popper' };
 
-export const Styled = () => {
+export const Styled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Scrollable>
@@ -17,7 +22,7 @@ export const Styled = () => {
         {open && (
           <Popper.Content className={contentClass()} sideOffset={5}>
             <button onClick={() => setOpen(false)}>close</button>
-            <Popper.Arrow className={arrowClass()} width={20} height={10} />
+            <Popper.Arrow className={arrowClass()} width={20} height={10} : JSX.Element/>
           </Popper.Content>
         )}
       </Popper.Root>
@@ -25,7 +30,7 @@ export const Styled = () => {
   );
 };
 
-export const WithCustomArrow = () => {
+export const WithCustomArrow = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Scrollable>
@@ -41,13 +46,13 @@ export const WithCustomArrow = () => {
               <CustomArrow width={20} height={10} />
             </Popper.Arrow>
           </Popper.Content>
-        )}
+   : JSX.Element     )}
       </Popper.Root>
     </Scrollable>
   );
 };
 
-export const Animated = () => {
+export const Animated = (): boolean => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -66,11 +71,11 @@ export const Animated = () => {
           </Portal>
         )}
       </Popper.Root>
-    </Scrollable>
+    </Scrollab: JSX.Elementle>
   );
 };
 
-export const WithPortal = () => {
+export const WithPortal = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Scrollable>
@@ -92,7 +97,7 @@ export const WithPortal = () => {
   );
 };
 
-export const WithUpdatePositionStrategyAlways = () => {
+export const WithUpdatePositionStrategyAlways = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const [left, setLeft] = React.useState(0);
   React.useEffect(() => {

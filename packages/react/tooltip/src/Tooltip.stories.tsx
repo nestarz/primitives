@@ -3,10 +3,25 @@ import { css, keyframes } from '../../../../stitches.config';
 import { SIDE_OPTIONS, ALIGN_OPTIONS } from '@radix-ui/react-popper';
 import * as Dialog from '@radix-ui/react-dialog';
 import * as Tooltip from '@radix-ui/react-tooltip';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-ru: JSX.Elementntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } fro: JSX.Elementm 'react/jsx-runtime';
 
 export default { title: 'Components/Tooltip' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Tooltip.Provider>
     <Tooltip.Root>
       <Tooltip.Trigger className={triggerClass()}>Hover or Focus me</Tooltip.Trigger>
@@ -20,11 +35,11 @@ export const Styled = () => (
   </Tooltip.Provider>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(true);
   return (
     <Tooltip.Provider>
-      <Tooltip.Root open={open} onOpenChange={setOpen}>
+      <Tooltip.Root open={open} o: JSX.ElementnOpenChange={setOpen}>
         <Tooltip.Trigger style={{ margin: 100 }}>
           I'm controlled, look I'm {open ? 'open' : 'closed'}
         </Tooltip.Trigger>
@@ -39,7 +54,7 @@ export const Controlled = () => {
   );
 };
 
-export const CustomDurations = () => (
+export const CustomDurations = (): JSX.Element => (
   <Tooltip.Provider>
     <h1>Delay duration</h1>
     <h2>Default (700ms)</h2>
@@ -227,7 +242,7 @@ export const CustomDurations = () => (
           </Tooltip.Portal>
         </Tooltip.Root>
         <Tooltip.Root>
-          <Tooltip.Trigger className={triggerClass()}>Hover me</Tooltip.Trigger>
+  : JSX.Element        <Tooltip.Trigger className={triggerClass()}>Hover me</Tooltip.Trigger>
           <Tooltip.Portal>
             <Tooltip.Content className={contentClass()} sideOffset={5}>
               Nicely done!
@@ -240,7 +255,7 @@ export const CustomDurations = () => (
   </Tooltip.Provider>
 );
 
-export const CustomContent = () => (
+export const CustomContent = (): JSX.Element => (
   <Tooltip.Provider>
     <div style={{ display: 'flex', gap: 20, padding: 100 }}>
       <Tooltip.Root>
@@ -365,7 +380,7 @@ export const CustomContent = () => (
                 <kbd
                   style={{
                     fontFamily: 'apple-system, BlinkMacSystemFont, helvetica, arial, sans-serif',
-                    fontWeight: 'bold',
+                    fontWeight: : JSX.Element'bold',
                     color: 'white',
                   }}
                   aria-label="c key"
@@ -382,7 +397,7 @@ export const CustomContent = () => (
   </Tooltip.Provider>
 );
 
-export const Positions = () => (
+export const Positions = (): JSX.Element => (
   <Tooltip.Provider>
     <div
       style={{
@@ -493,7 +508,7 @@ export const Positions = () => (
           >
             Left center
           </Tooltip.Trigger>
-        </SimpleTooltip>
+        </SimpleTo: JSX.Elementoltip>
         <SimpleTooltip label="Left start" side="left" align="start">
           <Tooltip.Trigger
             className={positionButtonClass()}
@@ -507,14 +522,14 @@ export const Positions = () => (
   </Tooltip.Provider>
 );
 
-export const AriaLabel = () => (
+export const AriaLabel = (): JSX.Element => (
   <Tooltip.Provider>
     <p>The first button will display AND enunciate the label.</p>
     <p>The second button will display the label, but enunciate the aria label.</p>
     <div style={{ display: 'flex' }}>
       <SimpleTooltip label="Notifications">
         <Tooltip.Trigger style={{ margin: 5 }}>
-          <span aria-hidden>🔔(3)</span>
+          <span aria-hidden>🔔(3)</span: JSX.Element>
         </Tooltip.Trigger>
       </SimpleTooltip>
 
@@ -527,7 +542,7 @@ export const AriaLabel = () => (
   </Tooltip.Provider>
 );
 
-export const WithText = () => (
+export const WithText = (): JSX.Element => (
   <Tooltip.Provider>
     <p>
       Hello this is a test with{' '}
@@ -543,7 +558,7 @@ export const WithText = () => (
         </Tooltip.Trigger>
       </SimpleTooltip>{' '}
       some more text{' '}
-      <SimpleTooltip label="This is a tooltip" side="right" align="center">
+  : JSX.Element    <SimpleTooltip label="This is a tooltip" side="right" align="center">
         <Tooltip.Trigger asChild>
           <a href="https://workos.com">Tooltip.Root</a>
         </Tooltip.Trigger>
@@ -552,7 +567,7 @@ export const WithText = () => (
   </Tooltip.Provider>
 );
 
-export const WithExternalRef = () => {
+export const WithExternalRef = (): JSX.Element => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   React.useEffect(() => {
@@ -563,7 +578,7 @@ export const WithExternalRef = () => {
 
   return (
     <Tooltip.Provider>
-      <SimpleTooltip label="Save document" side="bottom" align="end">
+      <SimpleTooltip label=: JSX.Element"Save document" side="bottom" align="end">
         <Tooltip.Trigger ref={buttonRef} type="button" style={{ margin: 100 }}>
           Save
         </Tooltip.Trigger>
@@ -572,7 +587,7 @@ export const WithExternalRef = () => {
   );
 };
 
-export const Unmount = () => {
+export const Unmount = (): JSX.Element => {
   const [isMounted, setIsMounted] = React.useState(true);
   return (
     <Tooltip.Provider>
@@ -592,7 +607,7 @@ export const Unmount = () => {
         <SimpleTooltip label="tooltip 2">
           <Tooltip.Trigger
             style={{ alignSelf: 'flex-start', margin: '0vmin' }}
-            onKeyDown={(event) => event.key === 'Escape' && setIsMounted(false)}
+            onKeyDown={(event: JSX.Element) => event.key === 'Escape' && setIsMounted(false)}
           >
             Tool 2
           </Tooltip.Trigger>
@@ -602,7 +617,7 @@ export const Unmount = () => {
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   return (
     <Tooltip.Provider>
       <div style={{ padding: 100 }}>
@@ -610,7 +625,7 @@ export const Animated = () => {
           <Tooltip.Trigger style={{ marginRight: 10 }}>Hello 1</Tooltip.Trigger>
         </SimpleTooltip>
 
-        <SimpleTooltip className={animatedContentClass()} label="Hello world 2" side="top">
+        <SimpleTooltip className={animatedContentClass()} label="Hello world 2" side=": JSX.Elementtop">
           <Tooltip.Trigger>Hello 2</Tooltip.Trigger>
         </SimpleTooltip>
       </div>
@@ -618,7 +633,7 @@ export const Animated = () => {
   );
 };
 
-export const SlottableContent = () => (
+export const SlottableContent = (): JSX.Element => (
   <Tooltip.Provider>
     <Tooltip.Root>
       <Tooltip.Trigger className={triggerClass()}>Hover or Focus me</Tooltip.Trigger>
@@ -628,13 +643,13 @@ export const SlottableContent = () => (
             Nicely done!
             <Tooltip.Arrow className={arrowClass()} offset={10} />
           </div>
-        </Tooltip.Content>
+    : JSX.Element    </Tooltip.Content>
       </Tooltip.Portal>
     </Tooltip.Root>
   </Tooltip.Provider>
 );
 
-export const WithinDialog = () => (
+export const WithinDialog = (): JSX.Element => (
   <Tooltip.Provider>
     <Dialog.Root>
       <Dialog.Trigger>Open dialog</Dialog.Trigger>
@@ -652,11 +667,11 @@ export const WithinDialog = () => (
           </Tooltip.Portal>
         </Tooltip.Root>
       </Dialog.Content>
-    </Dialog.Root>
+ : JSX.Element   </Dialog.Root>
   </Tooltip.Provider>
 );
 
-export const KeepOpenOnActivation = () => {
+export const KeepOpenOnActivation = (): JSX.Element => {
   const triggerRef = React.useRef(null);
 
   return (
@@ -683,10 +698,10 @@ export const KeepOpenOnActivation = () => {
         </Tooltip.Portal>
       </Tooltip.Root>
     </Tooltip.Provider>
-  );
+  : JSX.Element);
 };
 
-export const WithinScrollable = () => (
+export const WithinScrollable = (): JSX.Element => (
   <Tooltip.Provider>
     <div
       style={{
@@ -727,7 +742,7 @@ export const WithinScrollable = () => (
   </Tooltip.Provider>
 );
 
-export const DisableHoverableContent = () => (
+export const DisableHoverableContent = (): JSX.Element => (
   <>
     <h1>Hoverable content (Default)</h1>
     <p>Content remains open while moving pointer to it</p>

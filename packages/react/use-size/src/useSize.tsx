@@ -3,7 +3,10 @@
 import * as React from 'react';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 
-function useSize(element: HTMLElement | null) {
+function useSize(element: HTMLElement | null): {
+    width: number;
+    height: number;
+} | undefined {
   const [size, setSize] = React.useState<{ width: number; height: number } | undefined>(undefined);
 
   useLayoutEffect(() => {

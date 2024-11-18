@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Form from '@radix-ui/react-form';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Components/Form' };
+export default { title: 'Com: JSX.Elementponents/Form' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [loading, setLoading] = React.useState(false);
   const [serverErrors, setServerErrors] = React.useState<{ email?: boolean; password?: boolean }>(
     {}
@@ -74,7 +76,7 @@ export const Basic = () => {
   );
 };
 
-export const Cypress = () => {
+export const Cypress = (): JSX.Element => {
   const [data, setData] = React.useState({});
   const [simulateServerErrors, setSimulateServerErrors] = React.useState(false);
   const [serverErrors, setServerErrors] = React.useState<{

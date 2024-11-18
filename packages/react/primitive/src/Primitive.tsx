@@ -91,7 +91,7 @@ const Primitive: Primitives = NODES.reduce((primitive, node) => {
  * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
  */
 
-function dispatchDiscreteCustomEvent<E extends CustomEvent>(target: E['target'], event: E) {
+function dispatchDiscreteCustomEvent<E extends CustomEvent>(target: E['target'], event: E): void {
   if (target) ReactDOM.flushSync(() => target.dispatchEvent(event));
 }
 

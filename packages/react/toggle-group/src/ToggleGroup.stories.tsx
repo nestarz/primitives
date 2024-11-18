@@ -2,12 +2,15 @@ import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css } from '../../../../stitches.config';
 import * as ToggleGroup from '@radix-ui/react-toggle-group';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';: JSX.Element
 
 export default {
   title: 'Components/ToggleGroup',
 };
 
-export const Single = () => {
+export const Single = (): JSX.Element => {
   const [value, setValue] = React.useState<string>();
   return (
     <>
@@ -42,11 +45,11 @@ export const Single = () => {
           Option 3
         </ToggleGroup.Item>
       </ToggleGroup.Root>
-    </>
+  : JSX.Element  </>
   );
 };
 
-export const Vertical = () => {
+export const Vertical = (): JSX.Element => {
   return (
     <ToggleGroup.Root
       type="single"
@@ -68,7 +71,7 @@ export const Vertical = () => {
   );
 };
 
-export const Multiple = () => {
+export const Multiple = (): JSX.Element => {
   const [value, setValue] = React.useState<string[]>([]);
   return (
     <>

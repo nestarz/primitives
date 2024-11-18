@@ -1,17 +1,20 @@
 import { Arrow } from '@radix-ui/react-arrow';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/Arrow' };
 
 const RECOMMENDED_CSS__ARROW__ROOT = {
-  // better default alignment
+  /: JSX.Element/ better default alignment
   verticalAlign: 'middle',
 };
 
-export const Styled = () => (
-  <Arrow style={{ ...RECOMMENDED_CSS__ARROW__ROOT, fill: 'crimson' }} width={20} height={10} />
+export const Styled = (): JSX.Element => (
+  <Arrow style={{ ...RECOMMENDED_CSS__ARROW__ROOT, fill: 'crimson' }} width={20} height=: JSX.Element{10} />
 );
 
-export const CustomSizes = () => (
+export const CustomSizes = (): JSX.Element => (
   <>
     <Arrow style={{ ...RECOMMENDED_CSS__ARROW__ROOT }} width={40} height={10} />
     <Arrow style={{ ...RECOMMENDED_CSS__ARROW__ROOT }} width={50} height={30} />
@@ -19,7 +22,7 @@ export const CustomSizes = () => (
   </>
 );
 
-export const CustomArrow = () => (
+export const CustomArrow = (): JSX.Element => (
   <Arrow asChild>
     <div
       style={{

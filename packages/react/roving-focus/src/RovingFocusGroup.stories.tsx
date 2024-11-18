@@ -1,12 +1,15 @@
 import * as React from 'react';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import * as RovingFocusGroup from '@radix-ui/react-roving-focus';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-type RovingFocusGroupProps = React.ComponentProps<typeof RovingFocusGroup.Root>;
+type RovingFocusGroupProps = React.ComponentProps<typeof RovingFocusGroup.Root>;: JSX.Element
 
 export default { title: 'Utilities/RovingFocusGroup' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [dir, setDir] = React.useState<RovingFocusGroupProps['dir']>('ltr');
 
   return (
@@ -80,11 +83,11 @@ export const Basic = () => {
         </Button>
         <Button value="four">Four</Button>
       </ButtonGroup>
-    </div>
+   : JSX.Element </div>
   );
 };
 
-export const Nested = () => (
+export const Nested = (): JSX.Element => (
   <ButtonGroup orientation="vertical" loop>
     <Button value="1">1</Button>
 
@@ -110,7 +113,7 @@ export const Nested = () => (
   </ButtonGroup>
 );
 
-export const EdgeCases = () => {
+export const EdgeCases = (): JSX.Element => {
   const [extra, setExtra] = React.useState(false);
   const [disabled, setDisabled] = React.useState(false);
   const [hidden, setHidden] = React.useState(false);

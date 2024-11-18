@@ -1,3 +1,5 @@
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { AspectRatio } from '@radix-ui/react-aspect-ratio';
 
@@ -7,11 +9,11 @@ const image = (
   <img
     src="https://images.unsplash.com/photo-1605030753481-bb38b08c384a?&auto=format&fit=crop&w=400&q=80"
     alt="A house in a forest"
-    style={{ objectFit: 'cover', width: '100%', height: '100%' }}
+    style={{ objectFit: 'cover', width: '100%', height: '1: JSX.Element00%' }}
   />
 );
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <div style={{ width: 500 }}>
     <AspectRatio className={rootClass()}>
       <h1>Default ratio (1/1)</h1>
@@ -19,7 +21,7 @@ export const Styled = () => (
   </div>
 );
 
-export const CustomRatios = () => {
+export const CustomRatios = (): JSX.Element => {
   return (
     <div style={{ display: 'flex', gap: 20 }}>
       <div style={{ width: 200 }}>

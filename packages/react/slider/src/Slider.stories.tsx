@@ -3,10 +3,21 @@ import { DirectionProvider } from '@radix-ui/react-direction';
 import { css } from '../../../../stitches.config';
 import serialize from 'form-serialize';
 import * as Slider from '@radix-ui/react-slider';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-r: JSX.Elementuntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+i: JSX.Elementmport { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Slider' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Slider.Root className={rootClass()}>
     <Slider.Track className={trackClass()}>
       <Slider.Range className={rangeClass()} />
@@ -15,9 +26,9 @@ export const Styled = () => (
   </Slider.Root>
 );
 
-export const onValueCommit = () => (
+export const onValueCommit = (): JSX.Element => (
   <>
-    <Slider.Root className={rootClass()} defaultValue={[20]} onValueCommit={console.log}>
+    <Slider.Root className={rootClass()} de: JSX.ElementfaultValue={[20]} onValueCommit={console.log}>
       <Slider.Track className={trackClass()}>
         <Slider.Range className={rangeClass()} />
       </Slider.Track>
@@ -27,7 +38,7 @@ export const onValueCommit = () => (
   </>
 );
 
-export const RightToLeft = () => (
+expor: JSX.Elementt const RightToLeft = () => (
   <Slider.Root className={rootClass()} dir="rtl">
     <Slider.Track className={trackClass()}>
       <Slider.Range className={rangeClass()} />
@@ -36,7 +47,7 @@ export const RightToLeft = () => (
   </Slider.Root>
 );
 
-export const Horizontal = () => (
+export const Horizontal = (): JSX.Element => (
   <div style={{ display: 'flex', flexDirection: 'column', gap: 50 }}>
     <Slider.Root
       className={rootClass()}
@@ -51,7 +62,7 @@ export const Horizontal = () => (
       <Slider.Thumb className={thumbClass()} />
     </Slider.Root>
 
-    <Slider.Root className={rootClass()} defaultValue={[10]}>
+    <Slider.Root className={rootClass()}: JSX.Element defaultValue={[10]}>
       <Slider.Track className={trackClass()}>
         <Slider.Range className={rangeClass()} />
       </Slider.Track>
@@ -60,7 +71,7 @@ export const Horizontal = () => (
   </div>
 );
 
-export const Vertical = () => (
+export const Vertical = (): JSX.Element => (
   <div style={{ display: 'flex', gap: 50 }}>
     <Slider.Root className={rootClass()} defaultValue={[10, 30]} orientation="vertical">
       <Slider.Track className={trackClass()}>
@@ -71,7 +82,7 @@ export const Vertical = () => (
     </Slider.Root>
 
     <Slider.Root className={rootClass()} defaultValue={[10]} orientation="vertical">
-      <Slider.Track className={trackClass()}>
+      <Slider.Track c: JSX.ElementlassName={trackClass()}>
         <Slider.Range className={rangeClass()} />
       </Slider.Track>
       <Slider.Thumb className={thumbClass()} />
@@ -79,7 +90,7 @@ export const Vertical = () => (
   </div>
 );
 
-export const Inversions = () => (
+export const Inversions = (): JSX.Element => (
   <>
     <h1>Inversions</h1>
     <h2>Horizontal</h2>
@@ -185,7 +196,7 @@ export const Inversions = () => (
               <Slider.Track className={trackClass()}>
                 <Slider.Range className={rangeClass()} />
               </Slider.Track>
-              <Slider.Thumb className={thumbClass()} />
+              <Slider.Thumb clas: JSX.ElementsName={thumbClass()} />
             </Slider.Root>
           </div>
         </div>
@@ -194,17 +205,17 @@ export const Inversions = () => (
   </>
 );
 
-export const WithMinimumStepsBetweenThumbs = () => (
+export const WithMinimumStepsBetweenThumbs = (): JSX.Element => (
   <Slider.Root className={rootClass()} defaultValue={[10, 30]} minStepsBetweenThumbs={3}>
     <Slider.Track className={trackClass()}>
       <Slider.Range className={rangeClass()} />
     </Slider.Track>
-    <Slider.Thumb className={thumbClass()} />
+    <Slider.Thumb classNam: JSX.Elemente={thumbClass()} />
     <Slider.Thumb className={thumbClass()} />
   </Slider.Root>
 );
 
-export const WithMultipleRanges = () => {
+export const WithMultipleRanges = (): JSX.Element => {
   const [minStepsBetweenThumbs, setMinStepsBetweenThumbs] = React.useState(0);
 
   return (
@@ -233,13 +244,13 @@ export const WithMultipleRanges = () => {
         <Slider.Thumb className={thumbClass()} />
         <Slider.Thumb className={thumbClass()} />
         <Slider.Thumb className={thumbClass()} />
-        <Slider.Thumb className={thumbClass()} />
+        <Slider.Thumb className={t: JSX.ElementhumbClass()} />
       </Slider.Root>
     </>
   );
 };
 
-export const SmallSteps = () => {
+export const SmallSteps = (): JSX.Element => {
   const [value, setValue] = React.useState([0.1]);
   return (
     <>
@@ -257,11 +268,11 @@ export const SmallSteps = () => {
         <Slider.Thumb className={thumbClass()} />
       </Slider.Root>
       <div>{value}</div>
-    </>
+    : JSX.Element</>
   );
 };
 
-export const WithinForm = () => {
+export const WithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({
     single: [0],
     multiple: [10, 15, 20, 80],
@@ -326,7 +337,7 @@ export const WithinForm = () => {
   );
 };
 
-export const Strict = () => (
+export const Strict = (): JSX.Element => (
   <React.StrictMode>
     <Slider.Root className={rootClass()}>
       <Slider.Track className={trackClass()}>

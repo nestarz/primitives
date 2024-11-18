@@ -7,12 +7,24 @@ import { SIDE_OPTIONS, ALIGN_OPTIONS } from '@radix-ui/react-popper';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
 import { foodGroups } from '../../../../test-data/foods';
 import { classes, TickIcon } from '../../menu/src/Menu.stories';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import: JSX.Element { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 const { contentClass, itemClass, labelClass, separatorClass, subTriggerClass } = classes;
 
 export default { title: 'Components/DropdownMenu' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200vh' }}>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className={triggerClass()}>Open</DropdownMenu.Trigger>
@@ -28,7 +40,7 @@ export const Styled = () => (
           <DropdownMenu.Item className={itemClass()} disabled onSelect={() => console.log('cut')}>
             Cut
           </DropdownMenu.Item>
-          <DropdownMenu.Item className={itemClass()} onSelect={() => console.log('copy')}>
+          <DropdownMenu.Item: JSX.Element className={itemClass()} onSelect={() => console.log('copy')}>
             Copy
           </DropdownMenu.Item>
           <DropdownMenu.Item className={itemClass()} onSelect={() => console.log('paste')}>
@@ -41,7 +53,7 @@ export const Styled = () => (
   </div>
 );
 
-export const Modality = () => {
+export const Modality = (): JSX.Element => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '110vh' }}
@@ -176,7 +188,7 @@ export const Modality = () => {
                 </DropdownMenu.Item>
                 <DropdownMenu.Arrow />
               </DropdownMenu.Content>
-            </DropdownMenu.Portal>
+            </DropdownMen: JSX.Elementu.Portal>
           </DropdownMenu.Root>
           <textarea
             style={{ width: 500, height: 100, marginTop: 10 }}
@@ -188,7 +200,7 @@ export const Modality = () => {
   );
 };
 
-export const Submenus = () => {
+export const Submenus = (): JSX.Element => {
   const [rtl, setRtl] = React.useState(false);
   return (
     <div
@@ -355,7 +367,7 @@ export const Submenus = () => {
               <DropdownMenu.Item className={itemClass()} onSelect={() => console.log('cast')}>
                 Cast…
               </DropdownMenu.Item>
-              <DropdownMenu.Item className={itemClass()} onSelect={() => console.log('find')}>
+              <Dropd: JSX.ElementownMenu.Item className={itemClass()} onSelect={() => console.log('find')}>
                 Find…
               </DropdownMenu.Item>
               <DropdownMenu.Arrow />
@@ -367,7 +379,7 @@ export const Submenus = () => {
   );
 };
 
-export const WithLabels = () => (
+export const WithLabels = (): JSX.Element => (
   <div style={{ textAlign: 'center', padding: 50 }}>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className={triggerClass()}>Open</DropdownMenu.Trigger>
@@ -391,7 +403,7 @@ export const WithLabels = () => (
                 </DropdownMenu.Item>
               ))}
               {index < foodGroups.length - 1 && (
-                <DropdownMenu.Separator className={separatorClass()} />
+                <: JSX.ElementDropdownMenu.Separator className={separatorClass()} />
               )}
             </DropdownMenu.Group>
           ))}
@@ -402,7 +414,7 @@ export const WithLabels = () => (
   </div>
 );
 
-export const NestedComposition = () => {
+export const NestedComposition = (): JSX.Element => {
   return (
     <div
       style={{
@@ -456,7 +468,7 @@ export const NestedComposition = () => {
                 </Dialog.Content>
               </Dialog.Portal>
             </Dialog.Root>
-            <DropdownMenu.Item className={itemClass()}>Test</DropdownMenu.Item>
+            <DropdownMen: JSX.Elementu.Item className={itemClass()}>Test</DropdownMenu.Item>
             <DropdownMenu.Arrow />
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
@@ -465,7 +477,7 @@ export const NestedComposition = () => {
   );
 };
 
-export const SingleItemAsDialogTrigger = () => {
+export const SingleItemAsDialogTrigger = (): JSX.Element => {
   const dropdownTriggerRef = React.useRef<React.ElementRef<typeof DropdownMenu.Trigger>>(null);
   const dropdownTriggerRef2 = React.useRef<React.ElementRef<typeof DropdownMenu.Trigger>>(null);
   const isDialogOpenRef = React.useRef(false);
@@ -545,7 +557,7 @@ export const SingleItemAsDialogTrigger = () => {
         </DropdownMenu.Root>
 
         <Dialog.Content className={dialogClass()} onCloseAutoFocus={handleNonModalDialogClose}>
-          <Dialog.Title>Are you sure?</Dialog.Title>
+        : JSX.Element  <Dialog.Title>Are you sure?</Dialog.Title>
           <Dialog.Close>Close</Dialog.Close>`
         </Dialog.Content>
       </Dialog.Root>
@@ -553,7 +565,7 @@ export const SingleItemAsDialogTrigger = () => {
   );
 };
 
-export const MultipleItemsAsDialogTriggers = () => {
+export const MultipleItemsAsDialogTriggers = (): JSX.Element => {
   const [deleteOpen, setDeleteOpen] = React.useState(false);
   const [switchAccountsOpen, setSwitchAccountsOpen] = React.useState(false);
   const [deleteOpen2, setDeleteOpen2] = React.useState(false);
@@ -660,7 +672,7 @@ export const MultipleItemsAsDialogTriggers = () => {
           }}
         >
           {switchAccountsOpen2 && <Dialog.Title>Switch accounts</Dialog.Title>}
-          {deleteOpen2 && <Dialog.Title>Are you sure?</Dialog.Title>}
+          {deleteOpen2 && <Dialog.Title>Are you s: JSX.Elementure?</Dialog.Title>}
           <Dialog.Close>Close</Dialog.Close>
         </Dialog.Content>
       </Dialog.Root>
@@ -668,7 +680,7 @@ export const MultipleItemsAsDialogTriggers = () => {
   );
 };
 
-export const CheckboxItems = () => {
+export const CheckboxItems = (): JSX.Element => {
   const options = ['Crows', 'Ravens', 'Magpies', 'Jackdaws'];
 
   const [selection, setSelection] = React.useState<string[]>([]);
@@ -724,14 +736,14 @@ export const CheckboxItems = () => {
               ))}
             </DropdownMenu.Group>
             <DropdownMenu.Arrow />
-          </DropdownMenu.Content>
+          </Dropd: JSX.ElementownMenu.Content>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
     </div>
   );
 };
 
-export const RadioItems = () => {
+export const RadioItems = (): JSX.Element => {
   const files = ['README.md', 'index.js', 'page.css'];
   const [file, setFile] = React.useState(files[1]);
 
@@ -765,12 +777,12 @@ export const RadioItems = () => {
           </DropdownMenu.Content>
         </DropdownMenu.Portal>
       </DropdownMenu.Root>
-      <p>Selected file: {file}</p>
+     : JSX.Element <p>Selected file: {file}</p>
     </div>
   );
 };
 
-export const PreventClosing = () => (
+export const PreventClosing = (): JSX.Element => (
   <div style={{ textAlign: 'center', padding: 50 }}>
     <DropdownMenu.Root>
       <DropdownMenu.Trigger className={triggerClass()}>Open</DropdownMenu.Trigger>
@@ -792,10 +804,10 @@ export const PreventClosing = () => (
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
-  </div>
+ : JSX.Element </div>
 );
 
-export const WithTooltip = () => (
+export const WithTooltip = (): JSX.Element => (
   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200vh' }}>
     <DropdownMenu.Root>
       <Tooltip.Provider>
@@ -831,7 +843,7 @@ export const WithTooltip = () => (
   </div>
 );
 
-export const InPopupWindow = () => {
+export const InPopupWindow = (): JSX.Element => {
   const handlePopupClick = React.useCallback(() => {
     const popupWindow = window.open(undefined, undefined, 'width=300,height=300,top=100,left=100');
     if (!popupWindow) {

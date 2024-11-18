@@ -2,10 +2,14 @@ import * as React from 'react';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as ScrollArea from '@radix-ui/react-scroll-area';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runt: JSX.Elementime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/ScrollArea' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [props, setProps] = React.useState({} as any);
   return (
     <>
@@ -49,14 +53,14 @@ export const Basic = () => {
         style={{ width: 800, height: 800, margin: '30px auto' }}
       >
         {Array.from({ length: 30 }).map((_, index) => (
-          <Copy key={index} />
+          <Copy key={index} />: JSX.Element
         ))}
       </ScrollAreaStory>
     </>
   );
 };
 
-export const Resizable = () => (
+export const Resizable = (): JSX.Element => (
   <div
     style={{
       width: 800,
@@ -72,7 +76,7 @@ export const Resizable = () => (
         <Copy key={index} />
       ))}
     </ScrollAreaStory>
-  </div>
+  <: JSX.Element/div>
 );
 
 export const ContentChange = () => {
@@ -93,7 +97,7 @@ export const ContentChange = () => {
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   return (
     <ScrollAreaStory animated style={{ width: 800, height: 800 }}>
       {Array.from({ length: 30 }).map((_, index) => (

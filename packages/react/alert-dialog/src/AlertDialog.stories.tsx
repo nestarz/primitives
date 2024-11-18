@@ -1,10 +1,12 @@
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Components/AlertDialog' };
+export default { title: 'Components/: JSX.ElementAlertDialog' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <AlertDialog.Root>
     <AlertDialog.Trigger className={triggerClass()}>delete everything</AlertDialog.Trigger>
     <AlertDialog.Portal>
@@ -21,7 +23,7 @@ export const Styled = () => (
   </AlertDialog.Root>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const [housePurchased, setHousePurchased] = React.useState(false);
 

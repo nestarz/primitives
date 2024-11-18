@@ -3,14 +3,26 @@ import { css, keyframes } from '../../../../stitches.config';
 import * as Dialog from '@radix-ui/react-dialog';
 import { SIDE_OPTIONS, ALIGN_OPTIONS } from '@radix-ui/react-popper';
 import * as HoverCard from '@radix-ui/react-hover-card';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-run: JSX.Elementtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/HoverCard' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   return (
     <div style={{ padding: 50, display: 'flex', justifyContent: 'center' }}>
       <HoverCard.Root>
-        <HoverCard.Trigger href="/" className={triggerClass()}>
+        <HoverCard.Trigger href="/" className={triggerClass(: JSX.Element)}>
           trigger
         </HoverCard.Trigger>
         <HoverCard.Portal>
@@ -24,7 +36,7 @@ export const Basic = () => {
   );
 };
 
-export const ContainTextSelection = () => {
+export const ContainTextSelection = (): JSX.Element => {
   return (
     <div
       style={{
@@ -134,7 +146,7 @@ export const ContainTextSelection = () => {
           pellentesque non metus id, tempus sagittis massa.
         </p>
         <p>
-          Sed at elementum sem, non venenatis leo. Ut vulputate consectetur finibus. Sed nunc
+          Sed at elementum sem, non venenatis leo. Ut vulputate con: JSX.Elementsectetur finibus. Sed nunc
           lectus, accumsan in nisl et, vehicula pretium nisi. Vivamus vestibulum ante quis urna
           consequat, ultrices condimentum sem commodo. Pellentesque eget orci laoreet, feugiat purus
           sed, maximus nisi. Suspendisse commodo venenatis facilisis.
@@ -144,7 +156,7 @@ export const ContainTextSelection = () => {
   );
 };
 
-export const AsyncUpdate = () => {
+export const AsyncUpdate = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const [contentLoaded, setContentLoaded] = React.useState(false);
   const timerRef = React.useRef(0);
@@ -176,7 +188,7 @@ export const AsyncUpdate = () => {
           trigger
         </HoverCard.Trigger>
         <HoverCard.Portal>
-          <HoverCard.Content className={contentClass()} sideOffset={5}>
+          <HoverCard.Content cla: JSX.ElementssName={contentClass()} sideOffset={5}>
             <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
             {contentLoaded ? <CardContentPlaceholder /> : 'Loading...'}
           </HoverCard.Content>
@@ -186,7 +198,7 @@ export const AsyncUpdate = () => {
   );
 };
 
-export const CustomDurations = () => (
+export const CustomDurations = (): JSX.Element => (
   <div>
     <h1>Delay duration</h1>
     <h2>Default (700ms open, 300ms close)</h2>
@@ -217,7 +229,7 @@ export const CustomDurations = () => (
     <h2>Custom (300ms open, 100ms close)</h2>
 
     <HoverCard.Root openDelay={300} closeDelay={100}>
-      <HoverCard.Trigger href="/" className={triggerClass()}>
+      <HoverCard.Trigger href="/" className={triggerC: JSX.Elementlass()}>
         trigger
       </HoverCard.Trigger>
       <HoverCard.Portal>
@@ -229,7 +241,7 @@ export const CustomDurations = () => (
   </div>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
 
   return (
@@ -240,7 +252,7 @@ export const Controlled = () => {
         </HoverCard.Trigger>
         <HoverCard.Portal>
           <HoverCard.Content className={contentClass()}>
-            <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
+   : JSX.Element         <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
             <CardContentPlaceholder />
           </HoverCard.Content>
         </HoverCard.Portal>
@@ -249,7 +261,7 @@ export const Controlled = () => {
   );
 };
 
-export const Layerable = () => (
+export const Layerable = (): JSX.Element => (
   <div style={{ padding: 50, display: 'flex', justifyContent: 'center' }}>
     <Dialog.Root>
       <Dialog.Trigger>Open</Dialog.Trigger>
@@ -275,7 +287,7 @@ export const Layerable = () => (
             <HoverCard.Content className={contentClass()} sideOffset={5}>
               <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
               <CardContentPlaceholder />
-            </HoverCard.Content>
+            </: JSX.ElementHoverCard.Content>
           </HoverCard.Portal>
         </HoverCard.Root>{' '}
         <Dialog.Close>Close</Dialog.Close>
@@ -284,7 +296,7 @@ export const Layerable = () => (
   </div>
 );
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   return (
     <div style={{ padding: 50, display: 'flex', justifyContent: 'center' }}>
       <HoverCard.Root>
@@ -294,7 +306,7 @@ export const Animated = () => {
         <HoverCard.Portal>
           <HoverCard.Content className={animatedContentClass()} sideOffset={10}>
             <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
-            <CardContentPlaceholder />
+       : JSX.Element     <CardContentPlaceholder />
           </HoverCard.Content>
         </HoverCard.Portal>
       </HoverCard.Root>
@@ -302,7 +314,7 @@ export const Animated = () => {
   );
 };
 
-export const ForcedMount = () => {
+export const ForcedMount = (): JSX.Element => {
   return (
     <div style={{ padding: 50, display: 'flex', justifyContent: 'center' }}>
       <HoverCard.Root>
@@ -313,14 +325,14 @@ export const ForcedMount = () => {
           <HoverCard.Content className={contentClass()} sideOffset={10}>
             <HoverCard.Arrow className={arrowClass()} width={20} height={10} />
             <CardContentPlaceholder />
-          </HoverCard.Content>
+    : JSX.Element      </HoverCard.Content>
         </HoverCard.Portal>
       </HoverCard.Root>
     </div>
   );
 };
 
-export const Nested = () => {
+export const Nested = (): JSX.Element => {
   return (
     <HoverCard.Root>
       <HoverCard.Trigger href="/" className={triggerClass()}>
@@ -387,12 +399,12 @@ export const Nested = () => {
             style={{ fill: 'crimson' }}
           />
         </HoverCard.Content>
-      </HoverCard.Portal>
+  : JSX.Element    </HoverCard.Portal>
     </HoverCard.Root>
   );
 };
 
-export const NonPortal = () => {
+export const NonPortal = (): JSX.Element => {
   return (
     <div>
       <button>button</button>
@@ -408,10 +420,10 @@ export const NonPortal = () => {
       </HoverCard.Root>
       <button>button</button>
     </div>
-  );
+  );: JSX.Element
 };
 
-export const WithSlottedTrigger = () => {
+export const WithSlottedTrigger = (): JSX.Element => {
   return (
     <HoverCard.Root>
       <HoverCard.Trigger asChild>
@@ -429,7 +441,7 @@ export const WithSlottedTrigger = () => {
   );
 };
 
-export const WithSlottedContent = () => (
+export const WithSlottedContent = (): JSX.Element => (
   <HoverCard.Root>
     <HoverCard.Trigger href="/" className={triggerClass()}>
       trigger

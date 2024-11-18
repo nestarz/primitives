@@ -1,3 +1,4 @@
+import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import * as Avatar from '@radix-ui/react-avatar';
 
@@ -6,7 +7,7 @@ export default { title: 'Components/Avatar' };
 const src = 'https://picsum.photos/id/1005/400/400';
 const srcBroken = 'https://broken.link.com/broken-pic.jpg';
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <>
     <h1>Without image & with fallback</h1>
     <Avatar.Root className={rootClass()}>

@@ -1,8 +1,9 @@
 import { AccessibleIcon } from '@radix-ui/react-accessible-icon';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/AccessibleIcon' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <button type="button">
     <AccessibleIcon label="Close">
       <CrossIcon />

@@ -1,9 +1,16 @@
 import * as React from 'react';
 import { createCollection } from '@radix-ui/react-collection';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-run: JSX.Elementtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Utilities/Collection' };
+export default { title: 'Uti: JSX.Elementlities/Collection' };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <List>
     <Item>Red</Item>
     <Item disabled>Green</Item>
@@ -12,14 +19,14 @@ export const Basic = () => (
   </List>
 );
 
-export const WithElementInBetween = () => (
+export const WithElementInBetween = (): JSX.Element => (
   <List>
     <div style={{ fontVariant: 'small-caps' }}>Colors</div>
     <Item>Red</Item>
     <Item disabled>Green</Item>
     <Item>Blue</Item>
     <div style={{ fontVariant: 'small-caps' }}>Words</div>
-    <Item>Hello</Item>
+    <Item>Hello</: JSX.ElementItem>
     <Item>World</Item>
     <LogItems />
   </List>
@@ -27,17 +34,17 @@ export const WithElementInBetween = () => (
 
 const Tomato = () => <Item style={{ color: 'tomato' }}>Tomato</Item>;
 
-export const WithWrappedItem = () => (
+export const WithWrappedItem = (): JSX.Element => (
   <List>
     <Item>Red</Item>
-    <Item disabled>Green</Item>
+    <It: JSX.Elementem disabled>Green</Item>
     <Item>Blue</Item>
     <Tomato />
     <LogItems />
   </List>
 );
 
-export const WithFragment = () => {
+export const WithFragment = (): JSX.Element => {
   const countries = (
     <>
       <Item>France</Item>
@@ -47,13 +54,13 @@ export const WithFragment = () => {
   );
   return (
     <List>
-      {countries}
+      {cou: JSX.Elementntries}
       <LogItems />
     </List>
   );
 };
 
-export const DynamicInsertion = () => {
+export const DynamicInsertion = (): JSX.Element => {
   const [hasTomato, setHasTomato] = React.useState(false);
   const [, forceUpdate] = React.useState<any>();
   return (
@@ -81,10 +88,10 @@ function WrappedItems({ hasTomato }: any) {
       <MemoItem disabled>Green</MemoItem>
       <MemoItem>Blue</MemoItem>
     </>
-  );
+ : JSX.Element );
 }
 
-export const WithChangingItem = () => {
+export const WithChangingItem = (): JSX.Element => {
   const [isDisabled, setIsDisabled] = React.useState(false);
   return (
     <>
@@ -102,7 +109,7 @@ export const WithChangingItem = () => {
   );
 };
 
-export const Nested = () => (
+export const Nested = (): JSX.Element => (
   <List>
     <Item>1</Item>
     <Item>

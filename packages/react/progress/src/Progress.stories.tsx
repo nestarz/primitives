@@ -1,12 +1,13 @@
 import * as React from 'react';
 import { css } from '../../../../stitches.config';
 import * as Progress from '@radix-ui/react-progress';
+import { JSX } from 'react/jsx-runtime';
 
 export default {
   title: 'Components/Progress',
 };
 
-export const Styled = () => {
+export const Styled = (): JSX.Element => {
   const max = 150;
   const [value, percentage, setValue] = useProgressValueState(0, max);
   const toggleIndeterminate = useIndeterminateToggle(value, setValue);

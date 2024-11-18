@@ -1,9 +1,10 @@
+import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { Separator } from '@radix-ui/react-separator';
 
 export default { title: 'Components/Separator' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <>
     <h1>Horizontal</h1>
     <p>The following separator is horizontal and has semantic meaning.</p>

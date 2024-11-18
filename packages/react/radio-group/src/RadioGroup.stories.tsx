@@ -4,10 +4,15 @@ import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import { DirectionProvider } from '@radix-ui/react-direction';
 import * as RadioGroup from '@radix-ui/react-radio-group';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runti: JSX.Elementme';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/RadioGroup' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Label>
     Favourite pet
     <RadioGroup.Root className={rootClass()} defaultValue="1">
@@ -26,14 +31,14 @@ export const Styled = () => (
       <Label>
         <RadioGroup.Item className={itemClass()} value="3">
           <RadioGroup.Indicator className={indicatorClass()} />
-        </RadioGroup.Item>
+: JSX.Element        </RadioGroup.Item>
         Rabbit
       </Label>
     </RadioGroup.Root>
   </Label>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [value, setValue] = React.useState('2');
 
   return (
@@ -45,13 +50,13 @@ export const Controlled = () => {
         <RadioGroup.Indicator className={indicatorClass()} />
       </RadioGroup.Item>
       <RadioGroup.Item className={itemClass()} value="3">
-        <RadioGroup.Indicator className={indicatorClass()} />
+        <RadioGroup.Indicator className={indicatorClass()} /: JSX.Element>
       </RadioGroup.Item>
     </RadioGroup.Root>
   );
 };
 
-export const Unset = () => (
+export const Unset = (): JSX.Element => (
   <Label>
     Favourite pet
     <RadioGroup.Root className={rootClass()}>
@@ -74,10 +79,10 @@ export const Unset = () => (
         Rabbit
       </Label>
     </RadioGroup.Root>
-  </Label>
+  : JSX.Element</Label>
 );
 
-export const WithinForm = () => {
+export const WithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({ optional: '', required: '', stopprop: '' });
 
   return (
@@ -159,7 +164,7 @@ export const WithinForm = () => {
   );
 };
 
-export const Animated = () => (
+export const Animated = (): JSX.Element => (
   <Label>
     Favourite pet
     <RadioGroup.Root className={rootClass()} defaultValue="1">

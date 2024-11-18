@@ -1,9 +1,12 @@
 import React from 'react';
 import { FocusScope } from '@radix-ui/react-focus-scope';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-run: JSX.Elementtime';
 
 export default { title: 'Utilities/FocusScope' };
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [trapped, setTrapped] = React.useState(false);
   const [hasDestroyButton, setHasDestroyButton] = React.useState(true);
 
@@ -47,11 +50,11 @@ export const Basic = () => {
       <div>
         <input /> <input />
       </div>
-    </>
+  : JSX.Element  </>
   );
 };
 
-export const Multiple = () => {
+export const Multiple = (): JSX.Element => {
   const [trapped1, setTrapped1] = React.useState(false);
   const [trapped2, setTrapped2] = React.useState(false);
 
@@ -122,7 +125,7 @@ export const Multiple = () => {
 // true => default focus, false => no focus, ref => focus element
 type FocusParam = boolean | React.RefObject<HTMLElement>;
 
-export const WithOptions = () => {
+export const WithOptions = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const [isEmptyForm, setIsEmptyForm] = React.useState(false);
 

@@ -28,7 +28,7 @@ function observeElementRect(
     callback(elementToObserve.getBoundingClientRect());
   }
 
-  return () => {
+  return (): void => {
     const observedData = observedElements.get(elementToObserve);
     if (observedData === undefined) return;
 

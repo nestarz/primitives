@@ -3,12 +3,14 @@ import * as Menubar from '@radix-ui/react-menubar';
 import { css } from '../../../../stitches.config';
 import { classes, TickIcon } from '../../menu/src/Menu.stories';
 import { foodGroups } from '../../../../test-data/foods';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 const { contentClass, itemClass, separatorClass, labelClass, subTriggerClass } = classes;
 
-export default { title: 'Components/Menubar' };
+export default { title: 'Compone: JSX.Elementnts/Menubar' };
 
-export const Styled = () => {
+export const Styled = (): JSX.Element => {
   const [loop, setLoop] = React.useState(false);
   const [rtl, setRtl] = React.useState(false);
   const dir = rtl ? 'rtl' : 'ltr';
@@ -195,7 +197,7 @@ export const Styled = () => {
   );
 };
 
-export const Cypress = () => {
+export const Cypress = (): JSX.Element => {
   const [loop, setLoop] = React.useState(false);
   const [rtl, setRtl] = React.useState(false);
   const [portalled, setPortalled] = React.useState(false);

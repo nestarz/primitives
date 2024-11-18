@@ -3,13 +3,21 @@ import { css, keyframes } from '../../../../stitches.config';
 import * as Menu from '@radix-ui/react-menu';
 import { foodGroups } from '../../../../test-data/foods';
 import { DirectionProvider } from '@radix-ui/react-direction';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-run: JSX.Elementtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default {
   title: 'Utilities/Menu',
   excludeStories: ['TickIcon', 'classes'],
 };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <MenuWithAnchor>
     <Menu.Item className={itemClass()} onSelect={() => window.alert('undo')}>
       Undo
@@ -21,7 +29,7 @@ export const Styled = () => (
     <Menu.Item className={itemClass()} disabled onSelect={() => window.alert('cut')}>
       Cut
     </Menu.Item>
-    <Menu.Item className={itemClass()} onSelect={() => window.alert('copy')}>
+    <Menu.Item cla: JSX.ElementssName={itemClass()} onSelect={() => window.alert('copy')}>
       Copy
     </Menu.Item>
     <Menu.Item className={itemClass()} onSelect={() => window.alert('paste')}>
@@ -30,7 +38,7 @@ export const Styled = () => (
   </MenuWithAnchor>
 );
 
-export const Submenus = () => {
+export const Submenus = (): JSX.Element => {
   const [open1, setOpen1] = React.useState(false);
   const [open2, setOpen2] = React.useState(false);
   const [open3, setOpen3] = React.useState(false);
@@ -133,7 +141,7 @@ export const Submenus = () => {
         <Menu.Item className={itemClass()} onSelect={() => window.alert('copy')}>
           Copy
         </Menu.Item>
-        <Menu.Item className={itemClass()} onSelect={() => window.alert('paste')}>
+ : JSX.Element       <Menu.Item className={itemClass()} onSelect={() => window.alert('paste')}>
           Paste
         </Menu.Item>
       </MenuWithAnchor>
@@ -141,7 +149,7 @@ export const Submenus = () => {
   );
 };
 
-export const WithLabels = () => (
+export const WithLabels = (): JSX.Element => (
   <MenuWithAnchor>
     {foodGroups.map((foodGroup, index) => (
       <Menu.Group key={index}>
@@ -167,13 +175,13 @@ export const WithLabels = () => (
 );
 
 const suits = [
-  { emoji: '♥️', label: 'Hearts' },
+  { emoji: ': JSX.Element♥️', label: 'Hearts' },
   { emoji: '♠️', label: 'Spades' },
   { emoji: '♦️', label: 'Diamonds' },
   { emoji: '♣️', label: 'Clubs' },
 ];
 
-export const Typeahead = () => (
+export const Typeahead = (): JSX.Element => (
   <>
     <h1>Testing ground for typeahead behaviour</h1>
 
@@ -226,7 +234,7 @@ export const Typeahead = () => (
                 {suit.emoji}
               </span>
               {suit.label}
-            </Menu.Item>
+       : JSX.Element     </Menu.Item>
           ))}
         </MenuWithAnchor>
       </div>
@@ -234,7 +242,7 @@ export const Typeahead = () => (
   </>
 );
 
-export const CheckboxItems = () => {
+export const CheckboxItems = (): JSX.Element => {
   const options = ['Crows', 'Ravens', 'Magpies', 'Jackdaws'];
 
   const [selection, setSelection] = React.useState<string[]>([]);
@@ -275,13 +283,13 @@ export const CheckboxItems = () => {
           <Menu.ItemIndicator>
             <TickIcon />
           </Menu.ItemIndicator>
-        </Menu.CheckboxItem>
+        </Menu.C: JSX.ElementheckboxItem>
       ))}
     </MenuWithAnchor>
   );
 };
 
-export const RadioItems = () => {
+export const RadioItems = (): boolean => {
   const files = ['README.md', 'index.js', 'page.css'];
   const [file, setFile] = React.useState(files[1]);
 
@@ -307,11 +315,11 @@ export const RadioItems = () => {
           </Menu.RadioItem>
         ))}
       </Menu.RadioGroup>
-    </MenuWithAnchor>
+    </MenuWithAn: JSX.Elementchor>
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   const files = ['README.md', 'index.js', 'page.css'];
   const [file, setFile] = React.useState(files[1]);
   const [open, setOpen] = React.useState(true);
@@ -504,7 +512,7 @@ const animatedItemIndicatorClass = css({
   },
 });
 
-export const TickIcon = () => (
+export const TickIcon = (): JSX.Element => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 32 32"

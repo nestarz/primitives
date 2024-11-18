@@ -1,10 +1,12 @@
 import { DirectionProvider } from '@radix-ui/react-direction';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Tabs from '@radix-ui/react-tabs';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-export default { title: 'Components/Tabs' };
+export default { title: 'Comp: JSX.Elementonents/Tabs' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <>
     <h1>Horizontal (automatic activation)</h1>
     <Tabs.Root defaultValue="tab1" className={rootClass()}>
@@ -67,7 +69,7 @@ export const Styled = () => (
   </>
 );
 
-export const Animated = () => (
+export const Animated = (): JSX.Element => (
   <>
     <h1>Horizontal (automatic activation)</h1>
     <Tabs.Root defaultValue="tab1" className={rootClass()}>

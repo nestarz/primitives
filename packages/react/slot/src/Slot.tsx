@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { composeRefs } from '@radix-ui/react-compose-refs';
+import { JSX } from 'react/jsx-runtime';
 
 /* -------------------------------------------------------------------------------------------------
  * Slot
@@ -78,7 +79,7 @@ SlotClone.displayName = 'SlotClone';
  * Slottable
  * -----------------------------------------------------------------------------------------------*/
 
-const Slottable = ({ children }: { children: React.ReactNode }) => {
+const Slottable = ({ children }: { children: React.ReactNode }): JSX.Element => {
   return <>{children}</>;
 };
 

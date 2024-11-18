@@ -7,7 +7,7 @@ import type { Measurable } from '@radix-ui/rect';
  * Use this custom hook to get access to an element's rect (getBoundingClientRect)
  * and observe it along time.
  */
-function useRect(measurable: Measurable | null) {
+function useRect(measurable: Measurable | null): DOMRect | undefined {
   const [rect, setRect] = React.useState<DOMRect>();
   React.useEffect(() => {
     if (measurable) {

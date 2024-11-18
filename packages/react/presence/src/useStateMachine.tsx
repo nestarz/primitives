@@ -12,7 +12,10 @@ type UnionToIntersection<T> = (T extends any ? (x: T) => any : never) extends (x
 export function useStateMachine<M>(
   initialState: MachineState<M>,
   machine: M & Machine<MachineState<M>>
-) {
+): [
+    keyof M,
+    React.Dispatch<keyof UnionToIntersection<M[keyof M]>>
+] {
   return React.useReducer((state: MachineState<M>, event: MachineEvent<M>): MachineState<M> => {
     const nextState = (machine[state] as any)[event];
     return nextState ?? state;

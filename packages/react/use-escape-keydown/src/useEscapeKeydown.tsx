@@ -7,7 +7,7 @@ import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 function useEscapeKeydown(
   onEscapeKeyDownProp?: (event: KeyboardEvent) => void,
   ownerDocument: Document = globalThis?.document
-) {
+): void {
   const onEscapeKeyDown = useCallbackRef(onEscapeKeyDownProp);
 
   React.useEffect(() => {

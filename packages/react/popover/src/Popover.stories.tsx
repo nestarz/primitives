@@ -2,10 +2,19 @@ import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import { SIDE_OPTIONS, ALIGN_OPTIONS } from '@radix-ui/react-popper';
 import * as Popover from '@radix-ui/react-popover';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-ru: JSX.Elementntime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Popover' };
 
-export const Styled = () => {
+export const Styled = (): JSX.Element => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200vh' }}
@@ -15,7 +24,7 @@ export const Styled = () => {
         <Popover.Portal>
           <Popover.Content className={contentClass()} sideOffset={5}>
             <Popover.Close className={closeClass()}>close</Popover.Close>
-            <Popover.Arrow className={arrowClass()} width={20} height={10} />
+: JSX.Element            <Popover.Arrow className={arrowClass()} width={20} height={10} />
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
@@ -25,7 +34,7 @@ export const Styled = () => {
 };
 
 // Original issue: https://github.com/radix-ui/primitives/issues/2128
-export const Boundary = () => {
+export const Boundary = (): JSX.Element => {
   const [boundary, setBoundary] = React.useState<HTMLDivElement | null>(null);
 
   return (
@@ -55,7 +64,7 @@ export const Boundary = () => {
             sideOffset={5}
             collisionBoundary={boundary}
           >
-            out of bound out of bound out of bound out of bound out of bound out of bound out of
+            out of: JSX.Element bound out of bound out of bound out of bound out of bound out of bound out of
             bound out of bound out of bound
           </Popover.Content>
         </Popover.Portal>
@@ -64,7 +73,7 @@ export const Boundary = () => {
   );
 };
 
-export const Modality = () => {
+export const Modality = (): JSX.Element => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '110vh' }}
@@ -99,7 +108,7 @@ export const Modality = () => {
           </Popover.Root>
           <textarea
             style={{ width: 500, height: 100, marginTop: 10 }}
-            defaultValue="Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat nobis at ipsa, nihil tempora debitis maxime dignissimos non amet."
+            defaultValue="Lorem ipsum dolo: JSX.Elementr sit amet consectetur adipisicing elit. Quaerat nobis at ipsa, nihil tempora debitis maxime dignissimos non amet."
           />
         </div>
       </div>
@@ -107,7 +116,7 @@ export const Modality = () => {
   );
 };
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <div
@@ -118,7 +127,7 @@ export const Controlled = () => {
         <Popover.Portal>
           <Popover.Content className={contentClass()}>
             <Popover.Close className={closeClass()}>close</Popover.Close>
-            <Popover.Arrow className={arrowClass()} width={20} height={10} />
+            <Popover.Arrow className=: JSX.Element{arrowClass()} width={20} height={10} />
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
@@ -126,7 +135,7 @@ export const Controlled = () => {
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200vh' }}
@@ -137,14 +146,14 @@ export const Animated = () => {
           <Popover.Content className={animatedContentClass()} sideOffset={10}>
             <Popover.Close className={closeClass()}>close</Popover.Close>
             <Popover.Arrow className={arrowClass()} width={20} height={10} />
-          </Popover.Content>
+   : JSX.Element       </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
     </div>
   );
 };
 
-export const ForcedMount = () => {
+export const ForcedMount = (): JSX.Element => {
   return (
     <div
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '200vh' }}
@@ -156,13 +165,13 @@ export const ForcedMount = () => {
             <Popover.Close className={closeClass()}>close</Popover.Close>
             <Popover.Arrow className={arrowClass()} width={20} height={10} />
           </Popover.Content>
-        </Popover.Portal>
+        </: JSX.ElementPopover.Portal>
       </Popover.Root>
     </div>
   );
 };
 
-export const Nested = () => {
+export const Nested = (): boolean => {
   const buttonRef = React.useRef<HTMLButtonElement>(null);
 
   return (
@@ -229,11 +238,11 @@ export const Nested = () => {
           </Popover.Content>
         </Popover.Portal>
       </Popover.Root>
-    </div>
+    </div: JSX.Element>
   );
 };
 
-export const CustomAnchor = () => (
+export const CustomAnchor = (): JSX.Element => (
   <Popover.Root>
     <Popover.Anchor
       style={{
@@ -262,7 +271,7 @@ export const CustomAnchor = () => (
   </Popover.Root>
 );
 
-export const WithSlottedTrigger = () => {
+export const WithSlottedTrigger = (): JSX.Element => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>

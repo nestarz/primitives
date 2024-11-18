@@ -3,10 +3,13 @@ import { css } from '../../../../stitches.config';
 import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { RECOMMENDED_CSS__LABEL__ROOT } from '../../label/src/Label.stories';
 import * as Switch from '@radix-ui/react-switch';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-r: JSX.Elementuntime';
 
 export default { title: 'Components/Switch' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <>
     <p>This switch is nested inside a label. The state is uncontrolled.</p>
     <Label>
@@ -14,11 +17,11 @@ export const Styled = () => (
       <Switch.Root className={rootClass()}>
         <Switch.Thumb className={thumbClass()} />
       </Switch.Root>
-    </Label>
+    </Labe: JSX.Elementl>
   </>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [checked, setChecked] = React.useState(true);
 
   return (
@@ -37,7 +40,7 @@ export const Controlled = () => {
   );
 };
 
-export const WithinForm = () => {
+export const WithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({ optional: false, required: false, stopprop: false });
   const [checked, setChecked] = React.useState(false);
 

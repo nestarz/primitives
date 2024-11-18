@@ -1,8 +1,9 @@
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Utilities/VisuallyHidden' };
 
-export const Basic = () => (
+export const Basic = (): JSX.Element => (
   <button>
     <VisuallyHidden>Save the file</VisuallyHidden>
     <span aria-hidden>💾</span>

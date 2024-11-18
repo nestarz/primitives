@@ -9,8 +9,18 @@ import { FocusGuards } from '@radix-ui/react-focus-guards';
 import { RemoveScroll } from 'react-remove-scroll';
 import { DismissableLayer } from '@radix-ui/react-dismissable-layer';
 import { Slot } from '@radix-ui/react-slot';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
-type DismissableLayerProps = React.ComponentProps<typeof DismissableLayer>;
+type DismissableLaye: JSX.ElementrProps = React.ComponentProps<typeof DismissableLayer>;
 type FocusScopeProps = React.ComponentProps<typeof FocusScope>;
 
 export default { title: 'Utilities/DismissableLayer' };
@@ -18,7 +28,7 @@ export default { title: 'Utilities/DismissableLayer' };
 const SYSTEM_FONT =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"';
 
-export const Basic = () => {
+export const Basic = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const openButtonRef = React.useRef(null);
 
@@ -108,21 +118,21 @@ export const Basic = () => {
             marginBottom: 20,
           }}
         >
-          <input type="text" />
+          <input type="t: JSX.Elementext" />
         </DismissableLayer>
       ) : null}
 
       <div style={{ marginBottom: 20 }}>
         <input type="text" defaultValue="hello" style={{ marginRight: 20 }} />
         <button type="button" onMouseDown={() => alert('hey!')}>
-          hey!
+      : JSX.Element    hey!
         </button>
       </div>
     </div>
   );
 };
 
-export const Nested = () => {
+export const Nested = (): JSX.Element => {
   return (
     <div style={{ fontFamily: 'sans-serif', textAlign: 'center' }}>
       <h1>DismissableLayer (nested)</h1>
@@ -131,7 +141,7 @@ export const Nested = () => {
   );
 };
 
-export const WithFocusScope = () => {
+export const WithFocusScope = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   const openButtonRef = React.useRef(null);
 
@@ -213,7 +223,7 @@ function DismissableBox(props: DismissableBoxProps) {
         <DismissableBox
           onPointerDownOutside={(event) => {
             if (event.target === openButtonRef.current) {
-              event.preventDefault();
+             : JSX.Element event.preventDefault();
             }
           }}
           onFocusOutside={(event) => event.preventDefault()}
@@ -224,7 +234,7 @@ function DismissableBox(props: DismissableBoxProps) {
   );
 }
 
-export const DialogExample = () => (
+export const DialogExample = (): JSX.Element => (
   <div style={{ height: '300vh', fontFamily: SYSTEM_FONT }}>
     <h1>Dialog (fully modal example)</h1>
     <ul style={{ listStyle: 'none', padding: 0, marginBottom: 30 }}>
@@ -244,7 +254,7 @@ export const DialogExample = () => (
 
     <div style={{ display: 'flex', gap: 10 }}>
       <DummyDialog openLabel="Open Dialog" closeLabel="Close Dialog" />
-      <input type="text" defaultValue="some input" />
+      <inpu: JSX.Elementt type="text" defaultValue="some input" />
       <button type="button" onClick={() => window.alert('clicked!')}>
         Alert me
       </button>
@@ -252,7 +262,7 @@ export const DialogExample = () => (
   </div>
 );
 
-export const PopoverFullyModal = () => (
+export const PopoverFullyModal = (): JSX.Element => (
   <div style={{ height: '300vh', fontFamily: SYSTEM_FONT }}>
     <h1>Popover (fully modal example)</h1>
     <ul style={{ listStyle: 'none', padding: 0, marginBottom: 30 }}>
@@ -277,7 +287,7 @@ export const PopoverFullyModal = () => (
         disableOutsidePointerEvents
         preventScroll
       />
-      <input type="text" defaultValue="some input" />
+      <input type="text" defaultValue="some input" : JSX.Element/>
       <button type="button" onClick={() => window.alert('clicked!')}>
         Alert me
       </button>
@@ -285,7 +295,7 @@ export const PopoverFullyModal = () => (
   </div>
 );
 
-export const PopoverSemiModal = () => {
+export const PopoverSemiModal = (): JSX.Element => {
   const [color, setColor] = React.useState('royalblue');
   const changeColorButtonRef = React.useRef(null);
   return (
@@ -332,7 +342,7 @@ export const PopoverSemiModal = () => {
           type="button"
           onClick={() =>
             setColor((prevColor) => (prevColor === 'royalblue' ? 'tomato' : 'royalblue'))
-          }
+      : JSX.Element    }
         >
           Change color
         </button>
@@ -341,7 +351,7 @@ export const PopoverSemiModal = () => {
   );
 };
 
-export const PopoverNonModal = () => (
+export const PopoverNonModal = (): JSX.Element => (
   <div style={{ height: '300vh', fontFamily: SYSTEM_FONT }}>
     <h1>Popover (non modal example)</h1>
     <ul style={{ listStyle: 'none', padding: 0, marginBottom: 30 }}>
@@ -384,13 +394,13 @@ export const PopoverNonModal = () => (
       <DummyPopover openLabel="Open Popover" closeLabel="Close Popover" trapped={false} />
       <input type="text" defaultValue="some input" />
       <button type="button" onClick={() => window.alert('clicked!')}>
-        Alert me
+        : JSX.ElementAlert me
       </button>
     </div>
   </div>
 );
 
-export const PopoverInDialog = () => (
+export const PopoverInDialog = (): JSX.Element => (
   <div style={{ height: '300vh', fontFamily: SYSTEM_FONT }}>
     <h1>Popover (semi-modal) in Dialog (fully modal)</h1>
     <ul style={{ listStyle: 'none', padding: 0, marginBottom: 30 }}>
@@ -410,7 +420,7 @@ export const PopoverInDialog = () => (
         Alert me
       </button>
     </div>
-  </div>
+  <: JSX.Element/div>
 );
 
 export const PopoverNested = () => (
@@ -645,7 +655,7 @@ function DummyPopover({
   );
 }
 
-export const InPopupWindow = () => {
+export const InPopupWindow = (): JSX.Element => {
   const handlePopupClick = React.useCallback(() => {
     const popupWindow = window.open(undefined, undefined, 'width=300,height=300,top=100,left=100');
     if (!popupWindow) {

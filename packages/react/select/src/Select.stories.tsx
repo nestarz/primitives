@@ -4,12 +4,26 @@ import * as Select from '@radix-ui/react-select';
 import { Label } from '@radix-ui/react-label';
 import * as Dialog from '@radix-ui/react-dialog';
 import { foodGroups } from '../../../../test-data/foods';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import: JSX.Element { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Select' };
 
 const POSITIONS = ['item-aligned', 'popper'] as const;
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <div style={{ display: 'flex', gap: 20, padding: 50 }}>
     {POSITIONS.map((position) => (
       <Label key={position}>
@@ -39,7 +53,7 @@ export const Styled = () => (
                   </Select.ItemIndicator>
                 </Select.Item>
                 <Select.Item className={itemClass()} value="three">
-                  <Select.ItemText>
+                  <: JSX.ElementSelect.ItemText>
                     Three<span aria-hidden> 🤘</span>
                   </Select.ItemText>
                   <Select.ItemIndicator className={indicatorClass()}>
@@ -56,7 +70,7 @@ export const Styled = () => (
   </div>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [value, setValue] = React.useState('uk');
   return (
     <div style={{ display: 'flex', gap: 20, padding: 50 }}>
@@ -101,7 +115,7 @@ export const Controlled = () => {
                   </Select.Item>
                   <Select.Item className={itemClass()} value="es">
                     <Select.ItemText>
-                      Spain<span aria-hidden> 🇪🇸</span>
+                      Spain<span aria-hidden> 🇪🇸</span>: JSX.Element
                     </Select.ItemText>
                     <Select.ItemIndicator className={indicatorClass()}>
                       <TickIcon />
@@ -118,7 +132,7 @@ export const Controlled = () => {
   );
 };
 
-export const Position = () => (
+export const Position = (): JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -154,7 +168,7 @@ export const Position = () => (
                       <Select.ItemIndicator className={indicatorClass()}>
                         <TickIcon />
                       </Select.ItemIndicator>
-                    </Select.Item>
+             : JSX.Element       </Select.Item>
                   );
                 })}
               </Select.Viewport>
@@ -170,7 +184,7 @@ export const Position = () => (
   </div>
 );
 
-export const NoDefaultValue = () => (
+export const NoDefaultValue = (): JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -205,7 +219,7 @@ export const NoDefaultValue = () => (
                 </Select.Item>
                 <Select.Item className={itemClass()} value="three">
                   <Select.ItemText>Three</Select.ItemText>
-                  <Select.ItemIndicator className={indicatorClass()}>
+              : JSX.Element    <Select.ItemIndicator className={indicatorClass()}>
                     <TickIcon />
                   </Select.ItemIndicator>
                 </Select.Item>
@@ -219,7 +233,7 @@ export const NoDefaultValue = () => (
   </div>
 );
 
-export const Typeahead = () => (
+export const Typeahead = (): JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -251,7 +265,7 @@ export const Typeahead = () => (
                     </Select.Item>
                   ))
                 )}
-              </Select.Viewport>
+              <: JSX.Element/Select.Viewport>
               <Select.ScrollDownButton className={scrollDownButtonClass()}>
                 ▼
               </Select.ScrollDownButton>
@@ -264,7 +278,7 @@ export const Typeahead = () => (
   </div>
 );
 
-export const WithGroups = () => (
+export const WithGroups = (): JSX.Element => (
   <div
     style={{
       display: 'flex',
@@ -316,7 +330,7 @@ export const WithGroups = () => (
                   );
                 })}
               </Select.Viewport>
-              <Select.ScrollDownButton className={scrollDownButtonClass()}>
+              <Select.: JSX.ElementScrollDownButton className={scrollDownButtonClass()}>
                 ▼
               </Select.ScrollDownButton>
               <Select.Arrow />
@@ -328,7 +342,7 @@ export const WithGroups = () => (
   </div>
 );
 
-export const Labelling = () => {
+export const Labelling = (): JSX.Element => {
   const content = (
     <Select.Portal>
       <Select.Content className={contentClass()}>
@@ -391,7 +405,7 @@ export const Labelling = () => {
 
       <h1>`aria-label`</h1>
       <Select.Root defaultValue="18-40">
-        <Select.Trigger className={triggerClass()} aria-label="What is your age?">
+    : JSX.Element    <Select.Trigger className={triggerClass()} aria-label="What is your age?">
           <Select.Value />
           <Select.Icon />
         </Select.Trigger>
@@ -401,7 +415,7 @@ export const Labelling = () => {
   );
 };
 
-export const RightToLeft = () => (
+export const RightToLeft = (): JSX.Element => (
   <div style={{ display: 'flex', gap: 20, padding: 50 }} dir="rtl">
     {POSITIONS.map((position) => (
       <Label key={position}>
@@ -438,7 +452,7 @@ export const RightToLeft = () => (
                     <TickIcon />
                   </Select.ItemIndicator>
                 </Select.Item>
-              </Select.Viewport>
+   : JSX.Element           </Select.Viewport>
               <Select.Arrow />
             </Select.Content>
           </Select.Portal>
@@ -448,7 +462,7 @@ export const RightToLeft = () => (
   </div>
 );
 
-export const WithinForm = () => {
+export const WithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({});
 
   function handleChange(event: React.FormEvent<HTMLFormElement>) {
@@ -503,7 +517,7 @@ export const WithinForm = () => {
           </Select.Portal>
         </Select.Root>
       </Label>
-      <br />
+      <br />: JSX.Element
       <button type="submit">Submit</button>
       <br />
       <pre>{JSON.stringify(data, null, 2)}</pre>
@@ -511,7 +525,7 @@ export const WithinForm = () => {
   );
 };
 
-export const DisabledWithinForm = () => {
+export const DisabledWithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({});
 
   function handleChange(event: React.FormEvent<HTMLFormElement>) {
@@ -567,14 +581,14 @@ export const DisabledWithinForm = () => {
         </Select.Root>
       </Label>
       <br />
-      <button type="submit">Submit</button>
+      <button type="submit">Submit</butt: JSX.Elementon>
       <br />
       <pre>{JSON.stringify(data, null, 2)}</pre>
     </form>
   );
 };
 
-export const RequiredWithinForm = () => {
+export const RequiredWithinForm = (): JSX.Element => {
   const [data, setData] = React.useState({});
 
   function handleChange(event: React.FormEvent<HTMLFormElement>) {
@@ -632,12 +646,12 @@ export const RequiredWithinForm = () => {
       <br />
       <button type="submit">Submit</button>
       <br />
-      <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre>{JSON.s: JSX.Elementtringify(data, null, 2)}</pre>
     </form>
   );
 };
 
-export const WithinDialog = () => (
+export const WithinDialog = (): JSX.Element => (
   <div style={{ height: '120vh' }}>
     <Dialog.Root>
       <Dialog.Trigger>Open Dialog</Dialog.Trigger>
@@ -679,7 +693,7 @@ export const WithinDialog = () => (
   </div>
 );
 
-export const WithVeryLongSelectItems = () => (
+: JSX.Elementexport const WithVeryLongSelectItems = () => (
   <div style={{ paddingLeft: 300 }}>
     <Label>
       What is the meaning of life?
@@ -815,7 +829,7 @@ export const ChromaticNoDefaultValue = () => (
 );
 ChromaticNoDefaultValue.parameters = { chromatic: { disable: false } };
 
-export const Cypress = () => {
+export const Cypress = (): JSX.Element => {
   const [data, setData] = React.useState<{ size?: 'S' | 'M' | 'L' }>({});
   const [model, setModel] = React.useState<string | undefined>('');
 

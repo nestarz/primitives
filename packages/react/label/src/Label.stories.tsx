@@ -1,11 +1,14 @@
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
 import { css } from '../../../../stitches.config';
 import { Label } from '@radix-ui/react-label';
 
-export default { title: 'Components/Label', excludeStories: ['RECOMMENDED_CSS__LABEL__ROOT'] };
+export default { title: 'Components/Lab: JSX.Elementel', excludeStories: ['RECOMMENDED_CSS__LABEL__ROOT'] };
 
-export const Styled = () => <Label className={rootClass()}>Label</Label>;
+export const Styled = (): JSX.Element => <Label className={rootClass()}>Labe: JSX.Elementl</Label>;
 
-export const WithControl = () => {
+export const WithControl = (): JSX.Element => {
   return (
     <>
       <h1>Wrapping control</h1>
@@ -20,7 +23,7 @@ export const WithControl = () => {
   );
 };
 
-export const WithInputNumber = (props: any) => {
+export const WithInputNumber = (props: any): JSX.Element => {
   return (
     <Label>
       <span>Name:</span>

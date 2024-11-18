@@ -1,17 +1,21 @@
 import * as React from 'react';
 import { css, keyframes } from '../../../../stitches.config';
 import * as Collapsible from '@radix-ui/react-collapsible';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtime';
+import { JSX } from 'react/jsx-runtim: JSX.Elemente';
+import { JSX } from 'react/jsx-runtime';
 
 export default { title: 'Components/Collapsible' };
 
-export const Styled = () => (
+export const Styled = (): JSX.Element => (
   <Collapsible.Root className={rootClass()}>
     <Collapsible.Trigger className={triggerClass()}>Trigger</Collapsible.Trigger>
-    <Collapsible.Content className={contentClass()}>Content 1</Collapsible.Content>
+    <Collapsible.Content className={contentClass()}>Cont: JSX.Elementent 1</Collapsible.Content>
   </Collapsible.Root>
 );
 
-export const Controlled = () => {
+export const Controlled = (): JSX.Element => {
   const [open, setOpen] = React.useState(false);
   return (
     <Collapsible.Root open={open} onOpenChange={setOpen} className={rootClass()}>
@@ -21,11 +25,11 @@ export const Controlled = () => {
       <Collapsible.Content className={contentClass()} asChild>
         <article>Content 1</article>
       </Collapsible.Content>
-    </Collapsible.Root>
+    </Collapsible.: JSX.ElementRoot>
   );
 };
 
-export const Animated = () => {
+export const Animated = (): JSX.Element => {
   return (
     <>
       <h1>Closed by default</h1>
@@ -47,7 +51,7 @@ export const Animated = () => {
   );
 };
 
-export const AnimatedHorizontal = () => {
+export const AnimatedHorizontal = (): JSX.Element => {
   return (
     <Collapsible.Root className={rootClass()}>
       <Collapsible.Trigger className={triggerClass()}>Trigger</Collapsible.Trigger>
