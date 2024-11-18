@@ -10,7 +10,7 @@ import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useDirection } from '@radix-ui/react-direction';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 const ENTRY_FOCUS = 'rovingFocusGroup.onEntryFocus';
 const EVENT_OPTIONS = { bubbles: false, cancelable: true };
@@ -28,10 +28,15 @@ const [Collection, useCollection, createCollectionScope] = createCollection<
 >(GROUP_NAME);
 
 type ScopedProps<P> = P & { __scopeRovingFocusGroup?: Scope };
-const [createRovingFocusGroupContext, createRovingFocusGroupScope] = createContextScope(
-  GROUP_NAME,
-  [createCollectionScope]
+const dest = createContextScope(
+    GROUP_NAME,
+    [createCollectionScope]
 );
+const createRovingFocusGroupContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createRovingFocusGroupScope: CreateScope = dest[1];
 
 type Orientation = React.AriaAttributes['aria-orientation'];
 type Direction = 'ltr' | 'rtl';

@@ -8,7 +8,7 @@ import { Toggle } from '@radix-ui/react-toggle';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useDirection } from '@radix-ui/react-direction';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * ToggleGroup
@@ -17,9 +17,14 @@ import type { Scope } from '@radix-ui/react-context';
 const TOGGLE_GROUP_NAME = 'ToggleGroup';
 
 type ScopedProps<P> = P & { __scopeToggleGroup?: Scope };
-const [createToggleGroupContext, createToggleGroupScope] = createContextScope(TOGGLE_GROUP_NAME, [
-  createRovingFocusGroupScope,
+const dest = createContextScope(TOGGLE_GROUP_NAME, [
+    createRovingFocusGroupScope,
 ]);
+const createToggleGroupContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createToggleGroupScope: CreateScope = dest[1];
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 
 type ToggleGroupElement = ToggleGroupImplSingleElement | ToggleGroupImplMultipleElement;

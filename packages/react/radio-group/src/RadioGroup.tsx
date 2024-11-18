@@ -10,7 +10,7 @@ import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useDirection } from '@radix-ui/react-direction';
 import { Radio, RadioIndicator, createRadioScope } from './Radio.tsx';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 const ARROW_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
 
@@ -20,10 +20,15 @@ const ARROW_KEYS = ['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'];
 const RADIO_GROUP_NAME = 'RadioGroup';
 
 type ScopedProps<P> = P & { __scopeRadioGroup?: Scope };
-const [createRadioGroupContext, createRadioGroupScope] = createContextScope(RADIO_GROUP_NAME, [
-  createRovingFocusGroupScope,
-  createRadioScope,
+const dest = createContextScope(RADIO_GROUP_NAME, [
+    createRovingFocusGroupScope,
+    createRadioScope,
 ]);
+const createRadioGroupContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createRadioGroupScope: CreateScope = dest[1];
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 const useRadioScope = createRadioScope();
 

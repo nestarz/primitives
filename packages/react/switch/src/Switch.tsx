@@ -8,7 +8,7 @@ import { usePrevious } from '@radix-ui/react-use-previous';
 import { useSize } from '@radix-ui/react-use-size';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Switch
@@ -17,7 +17,12 @@ import type { Scope } from '@radix-ui/react-context';
 const SWITCH_NAME = 'Switch';
 
 type ScopedProps<P> = P & { __scopeSwitch?: Scope };
-const [createSwitchContext, createSwitchScope] = createContextScope(SWITCH_NAME);
+const dest = createContextScope(SWITCH_NAME);
+const createSwitchContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createSwitchScope: CreateScope = dest[1];
 
 type SwitchContextValue = { checked: boolean; disabled?: boolean };
 const [SwitchProvider, useSwitchContext] = createSwitchContext<SwitchContextValue>(SWITCH_NAME);

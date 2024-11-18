@@ -17,7 +17,7 @@ import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { hideOthers } from 'aria-hidden';
 import { RemoveScroll } from 'react-remove-scroll';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Popover
@@ -26,9 +26,14 @@ import type { Scope } from '@radix-ui/react-context';
 const POPOVER_NAME = 'Popover';
 
 type ScopedProps<P> = P & { __scopePopover?: Scope };
-const [createPopoverContext, createPopoverScope] = createContextScope(POPOVER_NAME, [
-  createPopperScope,
+const dest = createContextScope(POPOVER_NAME, [
+    createPopperScope,
 ]);
+const createPopoverContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createPopoverScope: CreateScope = dest[1];
 const usePopperScope = createPopperScope();
 
 type PopoverContextValue = {

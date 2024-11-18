@@ -11,7 +11,7 @@ import { Presence } from '@radix-ui/react-presence';
 import { Primitive } from '@radix-ui/react-primitive';
 import { DismissableLayer } from '@radix-ui/react-dismissable-layer';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * HoverCard
@@ -22,9 +22,14 @@ let originalBodyUserSelect: string;
 const HOVERCARD_NAME = 'HoverCard';
 
 type ScopedProps<P> = P & { __scopeHoverCard?: Scope };
-const [createHoverCardContext, createHoverCardScope] = createContextScope(HOVERCARD_NAME, [
-  createPopperScope,
+const dest = createContextScope(HOVERCARD_NAME, [
+    createPopperScope,
 ]);
+const createHoverCardContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createHoverCardScope: CreateScope = dest[1];
 const usePopperScope = createPopperScope();
 
 type HoverCardContextValue = {

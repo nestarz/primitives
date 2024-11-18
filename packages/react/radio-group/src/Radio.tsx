@@ -8,7 +8,7 @@ import { usePrevious } from '@radix-ui/react-use-previous';
 import { Presence } from '@radix-ui/react-presence';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Radio
@@ -17,7 +17,12 @@ import type { Scope } from '@radix-ui/react-context';
 const RADIO_NAME = 'Radio';
 
 type ScopedProps<P> = P & { __scopeRadio?: Scope };
-const [createRadioContext, createRadioScope] = createContextScope(RADIO_NAME);
+const dest = createContextScope(RADIO_NAME);
+const createRadioContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createRadioScope: CreateScope = dest[1];
 
 type RadioContextValue = { checked: boolean; disabled?: boolean };
 const [RadioProvider, useRadioContext] = createRadioContext<RadioContextValue>(RADIO_NAME);

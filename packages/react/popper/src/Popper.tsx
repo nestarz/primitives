@@ -20,7 +20,7 @@ import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { useSize } from '@radix-ui/react-use-size';
 
 import type { Placement, Middleware } from '@floating-ui/react-dom';
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 import type { Measurable } from '@radix-ui/rect';
 
 const SIDE_OPTIONS = ['top', 'right', 'bottom', 'left'] as const;
@@ -36,7 +36,12 @@ type Align = (typeof ALIGN_OPTIONS)[number];
 const POPPER_NAME = 'Popper';
 
 type ScopedProps<P> = P & { __scopePopper?: Scope };
-const [createPopperContext, createPopperScope] = createContextScope(POPPER_NAME);
+const dest = createContextScope(POPPER_NAME);
+const createPopperContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createPopperScope: CreateScope = dest[1];
 
 type PopperContextValue = {
   anchor: Measurable | null;

@@ -13,7 +13,7 @@ import { clamp } from '@radix-ui/number';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { useStateMachine } from './useStateMachine.ts';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 type Sizes = {
@@ -33,7 +33,12 @@ type Sizes = {
 const SCROLL_AREA_NAME = 'ScrollArea';
 
 type ScopedProps<P> = P & { __scopeScrollArea?: Scope };
-const [createScrollAreaContext, createScrollAreaScope] = createContextScope(SCROLL_AREA_NAME);
+const dest = createContextScope(SCROLL_AREA_NAME);
+const createScrollAreaContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createScrollAreaScope: CreateScope = dest[1];
 
 type ScrollAreaContextValue = {
   type: 'auto' | 'always' | 'scroll' | 'hover';

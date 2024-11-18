@@ -10,7 +10,7 @@ import { useDirection } from '@radix-ui/react-direction';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useId } from '@radix-ui/react-id';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Tabs
@@ -19,9 +19,14 @@ import type { Scope } from '@radix-ui/react-context';
 const TABS_NAME = 'Tabs';
 
 type ScopedProps<P> = P & { __scopeTabs?: Scope };
-const [createTabsContext, createTabsScope] = createContextScope(TABS_NAME, [
-  createRovingFocusGroupScope,
+const dest = createContextScope(TABS_NAME, [
+    createRovingFocusGroupScope,
 ]);
+const createTabsContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createTabsScope: CreateScope = dest[1];
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 
 type TabsContextValue = {

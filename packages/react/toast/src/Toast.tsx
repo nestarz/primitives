@@ -15,7 +15,7 @@ import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * ToastProvider
@@ -41,7 +41,12 @@ type ToastProviderContextValue = {
 };
 
 type ScopedProps<P> = P & { __scopeToast?: Scope };
-const [createToastContext, createToastScope] = createContextScope('Toast', [createCollectionScope]);
+const dest = createContextScope('Toast', [createCollectionScope]);
+const createToastContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createToastScope: CreateScope = dest[1];
 const [ToastProviderProvider, useToastProviderContext] =
   createToastContext<ToastProviderContextValue>(PROVIDER_NAME);
 

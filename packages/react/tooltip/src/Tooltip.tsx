@@ -14,12 +14,17 @@ import { Slottable } from '@radix-ui/react-slot';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type ScopedProps<P = {}> = P & { __scopeTooltip?: Scope };
-const [createTooltipContext, createTooltipScope] = createContextScope('Tooltip', [
-  createPopperScope,
+const dest = createContextScope('Tooltip', [
+    createPopperScope,
 ]);
+const createTooltipContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createTooltipScope: CreateScope = dest[1];
 const usePopperScope = createPopperScope();
 
 /* -------------------------------------------------------------------------------------------------

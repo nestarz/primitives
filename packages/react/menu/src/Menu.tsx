@@ -21,7 +21,7 @@ import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 import { hideOthers } from 'aria-hidden';
 import { RemoveScroll } from 'react-remove-scroll';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -51,11 +51,16 @@ const [Collection, useCollection, createCollectionScope] = createCollection<
 >(MENU_NAME);
 
 type ScopedProps<P> = P & { __scopeMenu?: Scope };
-const [createMenuContext, createMenuScope] = createContextScope(MENU_NAME, [
-  createCollectionScope,
-  createPopperScope,
-  createRovingFocusGroupScope,
+const dest = createContextScope(MENU_NAME, [
+    createCollectionScope,
+    createPopperScope,
+    createRovingFocusGroupScope,
 ]);
+const createMenuContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createMenuScope: CreateScope = dest[1];
 const usePopperScope = createPopperScope();
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 

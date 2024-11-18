@@ -19,7 +19,7 @@ import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 import * as VisuallyHiddenPrimitive from '@radix-ui/react-visually-hidden';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Orientation = 'vertical' | 'horizontal';
 type Direction = 'ltr' | 'rtl';
@@ -39,10 +39,15 @@ const [FocusGroupCollection, useFocusGroupCollection, createFocusGroupCollection
   createCollection<FocusGroupItemElement, {}>(NAVIGATION_MENU_NAME);
 
 type ScopedProps<P> = P & { __scopeNavigationMenu?: Scope };
-const [createNavigationMenuContext, createNavigationMenuScope] = createContextScope(
-  NAVIGATION_MENU_NAME,
-  [createCollectionScope, createFocusGroupCollectionScope]
+const dest = createContextScope(
+    NAVIGATION_MENU_NAME,
+    [createCollectionScope, createFocusGroupCollectionScope]
 );
+const createNavigationMenuContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createNavigationMenuScope: CreateScope = dest[1];
 
 type ContentData = {
   ref?: React.Ref<ViewportContentMounterElement>;

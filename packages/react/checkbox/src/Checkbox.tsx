@@ -9,7 +9,7 @@ import { useSize } from '@radix-ui/react-use-size';
 import { Presence } from '@radix-ui/react-presence';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Checkbox
@@ -18,7 +18,12 @@ import type { Scope } from '@radix-ui/react-context';
 const CHECKBOX_NAME = 'Checkbox';
 
 type ScopedProps<P> = P & { __scopeCheckbox?: Scope };
-const [createCheckboxContext, createCheckboxScope] = createContextScope(CHECKBOX_NAME);
+const dest = createContextScope(CHECKBOX_NAME);
+const createCheckboxContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createCheckboxScope: CreateScope = dest[1];
 
 type CheckedState = boolean | 'indeterminate';
 

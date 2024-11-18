@@ -9,7 +9,7 @@ import * as MenuPrimitive from '@radix-ui/react-menu';
 import { createMenuScope } from '@radix-ui/react-menu';
 import { useId } from '@radix-ui/react-id';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -20,10 +20,15 @@ type Direction = 'ltr' | 'rtl';
 const DROPDOWN_MENU_NAME = 'DropdownMenu';
 
 type ScopedProps<P> = P & { __scopeDropdownMenu?: Scope };
-const [createDropdownMenuContext, createDropdownMenuScope] = createContextScope(
-  DROPDOWN_MENU_NAME,
-  [createMenuScope]
+const dest = createContextScope(
+    DROPDOWN_MENU_NAME,
+    [createMenuScope]
 );
+const createDropdownMenuContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createDropdownMenuScope: CreateScope = dest[1];
 const useMenuScope = createMenuScope();
 
 type DropdownMenuContextValue = {

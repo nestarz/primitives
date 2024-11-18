@@ -10,7 +10,7 @@ import * as CollapsiblePrimitive from '@radix-ui/react-collapsible';
 import { createCollapsibleScope } from '@radix-ui/react-collapsible';
 import { useId } from '@radix-ui/react-id';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 import { useDirection } from '@radix-ui/react-direction';
 
 type Direction = 'ltr' | 'rtl';
@@ -26,10 +26,15 @@ const [Collection, useCollection, createCollectionScope] =
   createCollection<AccordionTriggerElement>(ACCORDION_NAME);
 
 type ScopedProps<P> = P & { __scopeAccordion?: Scope };
-const [createAccordionContext, createAccordionScope] = createContextScope(ACCORDION_NAME, [
-  createCollectionScope,
-  createCollapsibleScope,
+const dest = createContextScope(ACCORDION_NAME, [
+    createCollectionScope,
+    createCollapsibleScope,
 ]);
+const createAccordionContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createAccordionScope: CreateScope = dest[1];
 const useCollapsibleScope = createCollapsibleScope();
 
 type AccordionElement = AccordionImplMultipleElement | AccordionImplSingleElement;

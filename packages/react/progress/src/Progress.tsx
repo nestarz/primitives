@@ -3,7 +3,7 @@ import * as React from 'react';
 import { createContextScope } from '@radix-ui/react-context';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Progress
@@ -13,7 +13,12 @@ const PROGRESS_NAME = 'Progress';
 const DEFAULT_MAX = 100;
 
 type ScopedProps<P> = P & { __scopeProgress?: Scope };
-const [createProgressContext, createProgressScope] = createContextScope(PROGRESS_NAME);
+const dest = createContextScope(PROGRESS_NAME);
+const createProgressContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createProgressScope: CreateScope = dest[1];
 
 type ProgressState = 'indeterminate' | 'complete' | 'loading';
 type ProgressContextValue = { value: number | null; max: number };

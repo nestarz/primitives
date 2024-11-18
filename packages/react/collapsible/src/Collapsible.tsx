@@ -9,7 +9,7 @@ import { Primitive } from '@radix-ui/react-primitive';
 import { Presence } from '@radix-ui/react-presence';
 import { useId } from '@radix-ui/react-id';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Collapsible
@@ -18,7 +18,12 @@ import type { Scope } from '@radix-ui/react-context';
 const COLLAPSIBLE_NAME = 'Collapsible';
 
 type ScopedProps<P> = P & { __scopeCollapsible?: Scope };
-const [createCollapsibleContext, createCollapsibleScope] = createContextScope(COLLAPSIBLE_NAME);
+const dest = createContextScope(COLLAPSIBLE_NAME);
+const createCollapsibleContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createCollapsibleScope: CreateScope = dest[1];
 
 type CollapsibleContextValue = {
   contentId: string;

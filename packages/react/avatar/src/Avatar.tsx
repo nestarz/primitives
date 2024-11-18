@@ -5,7 +5,7 @@ import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 import { useLayoutEffect } from '@radix-ui/react-use-layout-effect';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Avatar
@@ -14,7 +14,12 @@ import type { Scope } from '@radix-ui/react-context';
 const AVATAR_NAME = 'Avatar';
 
 type ScopedProps<P> = P & { __scopeAvatar?: Scope };
-const [createAvatarContext, createAvatarScope] = createContextScope(AVATAR_NAME);
+const dest = createContextScope(AVATAR_NAME);
+const createAvatarContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createAvatarScope: CreateScope = dest[1];
 
 type ImageLoadingStatus = 'idle' | 'loading' | 'loaded' | 'error';
 

@@ -7,7 +7,7 @@ import { createDialogScope } from '@radix-ui/react-dialog';
 import { composeEventHandlers } from '@radix-ui/primitive';
 import { Slottable } from '@radix-ui/react-slot';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * AlertDialog
@@ -16,9 +16,14 @@ import type { Scope } from '@radix-ui/react-context';
 const ROOT_NAME = 'AlertDialog';
 
 type ScopedProps<P> = P & { __scopeAlertDialog?: Scope };
-const [createAlertDialogContext, createAlertDialogScope] = createContextScope(ROOT_NAME, [
-  createDialogScope,
+const dest = createContextScope(ROOT_NAME, [
+    createDialogScope,
 ]);
+const createAlertDialogContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createAlertDialogScope: CreateScope = dest[1];
 const useDialogScope = createDialogScope();
 
 type DialogProps = React.ComponentPropsWithoutRef<typeof DialogPrimitive.Root>;

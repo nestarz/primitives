@@ -10,7 +10,7 @@ import * as ToggleGroupPrimitive from '@radix-ui/react-toggle-group';
 import { createToggleGroupScope } from '@radix-ui/react-toggle-group';
 import { useDirection } from '@radix-ui/react-direction';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Toolbar
@@ -19,10 +19,15 @@ import type { Scope } from '@radix-ui/react-context';
 const TOOLBAR_NAME = 'Toolbar';
 
 type ScopedProps<P> = P & { __scopeToolbar?: Scope };
-const [createToolbarContext, createToolbarScope] = createContextScope(TOOLBAR_NAME, [
-  createRovingFocusGroupScope,
-  createToggleGroupScope,
+const dest = createContextScope(TOOLBAR_NAME, [
+    createRovingFocusGroupScope,
+    createToggleGroupScope,
 ]);
+const createToolbarContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createToolbarScope: CreateScope = dest[1];
 const useRovingFocusGroupScope = createRovingFocusGroupScope();
 const useToggleGroupScope = createToggleGroupScope();
 

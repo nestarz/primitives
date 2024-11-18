@@ -11,7 +11,7 @@ import { useSize } from '@radix-ui/react-use-size';
 import { Primitive } from '@radix-ui/react-primitive';
 import { createCollection } from '@radix-ui/react-collection';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -36,9 +36,14 @@ const [Collection, useCollection, createCollectionScope] =
   createCollection<SliderThumbElement>(SLIDER_NAME);
 
 type ScopedProps<P> = P & { __scopeSlider?: Scope };
-const [createSliderContext, createSliderScope] = createContextScope(SLIDER_NAME, [
-  createCollectionScope,
+const dest = createContextScope(SLIDER_NAME, [
+    createCollectionScope,
 ]);
+const createSliderContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createSliderScope: CreateScope = dest[1];
 
 type SliderContextValue = {
   name: string | undefined;

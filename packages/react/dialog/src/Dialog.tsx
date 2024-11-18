@@ -15,7 +15,7 @@ import { RemoveScroll } from 'react-remove-scroll';
 import { hideOthers } from 'aria-hidden';
 import { Slot } from '@radix-ui/react-slot';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 /* -------------------------------------------------------------------------------------------------
  * Dialog
@@ -24,7 +24,12 @@ import type { Scope } from '@radix-ui/react-context';
 const DIALOG_NAME = 'Dialog';
 
 type ScopedProps<P> = P & { __scopeDialog?: Scope };
-const [createDialogContext, createDialogScope] = createContextScope(DIALOG_NAME);
+const dest0 = createContextScope(DIALOG_NAME);
+const createDialogContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest0[0];
+const createDialogScope: CreateScope = dest0[1];
 
 type DialogContextValue = {
   triggerRef: React.RefObject<HTMLButtonElement>;
@@ -495,11 +500,23 @@ function getState(open: boolean) {
 
 const TITLE_WARNING_NAME = 'DialogTitleWarning';
 
-const [WarningProvider, useWarningContext] = createContext(TITLE_WARNING_NAME, {
-  contentName: CONTENT_NAME,
-  titleName: TITLE_NAME,
-  docsSlug: 'dialog',
+const dest = createContext(TITLE_WARNING_NAME, {
+    contentName: CONTENT_NAME,
+    titleName: TITLE_NAME,
+    docsSlug: 'dialog',
 });
+const WarningProvider: React.FC<{
+    contentName: string;
+    titleName: string;
+    docsSlug: string;
+} & {
+    children: React.ReactNode;
+}> = dest[0];
+const useWarningContext: (consumerName: string) => {
+    contentName: string;
+    titleName: string;
+    docsSlug: string;
+} = dest[1];
 
 type TitleWarningProps = { titleId?: string };
 

@@ -8,7 +8,7 @@ import { createMenuScope } from '@radix-ui/react-menu';
 import { useCallbackRef } from '@radix-ui/react-use-callback-ref';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 type Point = { x: number; y: number };
@@ -20,9 +20,14 @@ type Point = { x: number; y: number };
 const CONTEXT_MENU_NAME = 'ContextMenu';
 
 type ScopedProps<P> = P & { __scopeContextMenu?: Scope };
-const [createContextMenuContext, createContextMenuScope] = createContextScope(CONTEXT_MENU_NAME, [
-  createMenuScope,
+const dest = createContextScope(CONTEXT_MENU_NAME, [
+    createMenuScope,
 ]);
+const createContextMenuContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createContextMenuScope: CreateScope = dest[1];
 const useMenuScope = createMenuScope();
 
 type ContextMenuContextValue = {

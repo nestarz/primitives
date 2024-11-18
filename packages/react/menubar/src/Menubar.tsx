@@ -15,7 +15,7 @@ import { createRovingFocusGroupScope } from '@radix-ui/react-roving-focus';
 import { Primitive } from '@radix-ui/react-primitive';
 import { useControllableState } from '@radix-ui/react-use-controllable-state';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -32,10 +32,15 @@ const [Collection, useCollection, createCollectionScope] = createCollection<
 >(MENUBAR_NAME);
 
 type ScopedProps<P> = P & { __scopeMenubar?: Scope };
-const [createMenubarContext, createMenubarScope] = createContextScope(MENUBAR_NAME, [
-  createCollectionScope,
-  createRovingFocusGroupScope,
+const dest = createContextScope(MENUBAR_NAME, [
+    createCollectionScope,
+    createRovingFocusGroupScope,
 ]);
+const createMenubarContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createMenubarScope: CreateScope = dest[1];
 
 const useMenuScope = createMenuScope();
 const useRovingFocusGroupScope = createRovingFocusGroupScope();

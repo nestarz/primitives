@@ -25,7 +25,7 @@ import { VisuallyHidden } from '@radix-ui/react-visually-hidden';
 import { hideOthers } from 'aria-hidden';
 import { RemoveScroll } from 'react-remove-scroll';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type Direction = 'ltr' | 'rtl';
 
@@ -45,10 +45,15 @@ const [Collection, useCollection, createCollectionScope] = createCollection<
 >(SELECT_NAME);
 
 type ScopedProps<P> = P & { __scopeSelect?: Scope };
-const [createSelectContext, createSelectScope] = createContextScope(SELECT_NAME, [
-  createCollectionScope,
-  createPopperScope,
+const dest = createContextScope(SELECT_NAME, [
+    createCollectionScope,
+    createPopperScope,
 ]);
+const createSelectContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createSelectScope: CreateScope = dest[1];
 const usePopperScope = createPopperScope();
 
 type SelectContextValue = {

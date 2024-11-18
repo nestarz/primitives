@@ -9,10 +9,15 @@ import { useId } from '@radix-ui/react-id';
 import { Label as LabelPrimitive } from '@radix-ui/react-label';
 import { Primitive } from '@radix-ui/react-primitive';
 
-import type { Scope } from '@radix-ui/react-context';
+import type { CreateScope, Scope } from '@radix-ui/react-context';
 
 type ScopedProps<P> = P & { __scopeForm?: Scope };
-const [createFormContext, createFormScope] = createContextScope('Form');
+const dest = createContextScope('Form');
+const createFormContext: <ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+    scope: Scope<ContextValueType>;
+    children: React.ReactNode;
+}>, (consumerName: string, scope: Scope<ContextValueType | undefined>) => ContextValueType] = dest[0];
+const createFormScope: CreateScope = dest[1];
 
 /* -------------------------------------------------------------------------------------------------
  * Form
