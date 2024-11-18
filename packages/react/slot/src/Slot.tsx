@@ -9,7 +9,7 @@ interface SlotProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;
 }
 
-const Slot = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
+const Slot: React.ForwardRefExoticComponent<SlotProps & React.RefAttributes<HTMLElement>> = React.forwardRef<HTMLElement, SlotProps>((props, forwardedRef) => {
   const { children, ...slotProps } = props;
   const childrenArray = React.Children.toArray(children);
   const slottable = childrenArray.find(isSlottable);
@@ -147,7 +147,7 @@ function getElementRef(element: React.ReactElement) {
   return element.props.ref || (element as any).ref;
 }
 
-const Root = Slot;
+const Root: React.ForwardRefExoticComponent<SlotProps & React.RefAttributes<HTMLElement>> = Slot;
 
 export {
   Slot,

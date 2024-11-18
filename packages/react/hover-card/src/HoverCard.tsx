@@ -120,7 +120,7 @@ type HoverCardTriggerElement = React.ElementRef<typeof Primitive.a>;
 type PrimitiveLinkProps = React.ComponentPropsWithoutRef<typeof Primitive.a>;
 interface HoverCardTriggerProps extends PrimitiveLinkProps {}
 
-const HoverCardTrigger = React.forwardRef<HoverCardTriggerElement, HoverCardTriggerProps>(
+const HoverCardTrigger: React.ForwardRefExoticComponent<HoverCardTriggerProps & React.RefAttributes<HTMLAnchorElement>> = React.forwardRef<HoverCardTriggerElement, HoverCardTriggerProps>(
   (props: ScopedProps<HoverCardTriggerProps>, forwardedRef) => {
     const { __scopeHoverCard, ...triggerProps } = props;
     const context = useHoverCardContext(TRIGGER_NAME, __scopeHoverCard);
@@ -203,7 +203,7 @@ interface HoverCardContentProps extends HoverCardContentImplProps {
   forceMount?: true;
 }
 
-const HoverCardContent = React.forwardRef<HoverCardContentElement, HoverCardContentProps>(
+const HoverCardContent: React.ForwardRefExoticComponent<HoverCardContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<HoverCardContentElement, HoverCardContentProps>(
   (props: ScopedProps<HoverCardContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeHoverCard);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
@@ -369,7 +369,7 @@ type HoverCardArrowElement = React.ElementRef<typeof PopperPrimitive.Arrow>;
 type PopperArrowProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Arrow>;
 interface HoverCardArrowProps extends PopperArrowProps {}
 
-const HoverCardArrow = React.forwardRef<HoverCardArrowElement, HoverCardArrowProps>(
+const HoverCardArrow: React.ForwardRefExoticComponent<HoverCardArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<HoverCardArrowElement, HoverCardArrowProps>(
   (props: ScopedProps<HoverCardArrowProps>, forwardedRef) => {
     const { __scopeHoverCard, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopeHoverCard);
@@ -404,11 +404,11 @@ function getTabbableNodes(container: HTMLElement) {
   return nodes;
 }
 
-const Root = HoverCard;
-const Trigger = HoverCardTrigger;
-const Portal = HoverCardPortal;
-const Content = HoverCardContent;
-const Arrow = HoverCardArrow;
+const Root: React.FC<HoverCardProps> = HoverCard;
+const Trigger: React.ForwardRefExoticComponent<HoverCardTriggerProps & React.RefAttributes<HTMLAnchorElement>> = HoverCardTrigger;
+const Portal: React.FC<HoverCardPortalProps> = HoverCardPortal;
+const Content: React.ForwardRefExoticComponent<HoverCardContentProps & React.RefAttributes<HTMLDivElement>> = HoverCardContent;
+const Arrow: React.ForwardRefExoticComponent<HoverCardArrowProps & React.RefAttributes<SVGSVGElement>> = HoverCardArrow;
 
 export {
   createHoverCardScope,

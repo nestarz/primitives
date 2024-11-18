@@ -45,7 +45,7 @@ interface FocusScopeProps extends PrimitiveDivProps {
   onUnmountAutoFocus?: (event: Event) => void;
 }
 
-const FocusScope = React.forwardRef<FocusScopeElement, FocusScopeProps>((props, forwardedRef) => {
+const FocusScope: React.ForwardRefExoticComponent<FocusScopeProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<FocusScopeElement, FocusScopeProps>((props, forwardedRef) => {
   const {
     loop = false,
     trapped = false,
@@ -342,7 +342,7 @@ function removeLinks(items: HTMLElement[]) {
   return items.filter((item) => item.tagName !== 'A');
 }
 
-const Root = FocusScope;
+const Root: React.ForwardRefExoticComponent<FocusScopeProps & React.RefAttributes<HTMLDivElement>> = FocusScope;
 
 export {
   FocusScope,

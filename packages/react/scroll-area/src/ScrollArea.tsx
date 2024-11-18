@@ -66,7 +66,7 @@ interface ScrollAreaProps extends PrimitiveDivProps {
   scrollHideDelay?: number;
 }
 
-const ScrollArea = React.forwardRef<ScrollAreaElement, ScrollAreaProps>(
+const ScrollArea: React.ForwardRefExoticComponent<ScrollAreaProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ScrollAreaElement, ScrollAreaProps>(
   (props: ScopedProps<ScrollAreaProps>, forwardedRef) => {
     const {
       __scopeScrollArea,
@@ -139,7 +139,7 @@ interface ScrollAreaViewportProps extends PrimitiveDivProps {
   nonce?: string;
 }
 
-const ScrollAreaViewport = React.forwardRef<ScrollAreaViewportElement, ScrollAreaViewportProps>(
+const ScrollAreaViewport: React.ForwardRefExoticComponent<ScrollAreaViewportProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ScrollAreaViewportElement, ScrollAreaViewportProps>(
   (props: ScopedProps<ScrollAreaViewportProps>, forwardedRef) => {
     const { __scopeScrollArea, children, nonce, ...viewportProps } = props;
     const context = useScrollAreaContext(VIEWPORT_NAME, __scopeScrollArea);
@@ -204,7 +204,7 @@ interface ScrollAreaScrollbarProps extends ScrollAreaScrollbarVisibleProps {
   forceMount?: true;
 }
 
-const ScrollAreaScrollbar = React.forwardRef<ScrollAreaScrollbarElement, ScrollAreaScrollbarProps>(
+const ScrollAreaScrollbar: React.ForwardRefExoticComponent<ScrollAreaScrollbarProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ScrollAreaScrollbarElement, ScrollAreaScrollbarProps>(
   (props: ScopedProps<ScrollAreaScrollbarProps>, forwardedRef) => {
     const { forceMount, ...scrollbarProps } = props;
     const context = useScrollAreaContext(SCROLLBAR_NAME, props.__scopeScrollArea);
@@ -751,7 +751,7 @@ interface ScrollAreaThumbProps extends ScrollAreaThumbImplProps {
   forceMount?: true;
 }
 
-const ScrollAreaThumb = React.forwardRef<ScrollAreaThumbElement, ScrollAreaThumbProps>(
+const ScrollAreaThumb: React.ForwardRefExoticComponent<ScrollAreaThumbProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ScrollAreaThumbElement, ScrollAreaThumbProps>(
   (props: ScopedProps<ScrollAreaThumbProps>, forwardedRef) => {
     const { forceMount, ...thumbProps } = props;
     const scrollbarContext = useScrollbarContext(THUMB_NAME, props.__scopeScrollArea);
@@ -841,7 +841,7 @@ const CORNER_NAME = 'ScrollAreaCorner';
 type ScrollAreaCornerElement = ScrollAreaCornerImplElement;
 interface ScrollAreaCornerProps extends ScrollAreaCornerImplProps {}
 
-const ScrollAreaCorner = React.forwardRef<ScrollAreaCornerElement, ScrollAreaCornerProps>(
+const ScrollAreaCorner: React.ForwardRefExoticComponent<ScrollAreaCornerProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ScrollAreaCornerElement, ScrollAreaCornerProps>(
   (props: ScopedProps<ScrollAreaCornerProps>, forwardedRef) => {
     const context = useScrollAreaContext(CORNER_NAME, props.__scopeScrollArea);
     const hasBothScrollbarsVisible = Boolean(context.scrollbarX && context.scrollbarY);
@@ -1011,11 +1011,11 @@ function useResizeObserver(element: HTMLElement | null, onResize: () => void) {
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = ScrollArea;
-const Viewport = ScrollAreaViewport;
-const Scrollbar = ScrollAreaScrollbar;
-const Thumb = ScrollAreaThumb;
-const Corner = ScrollAreaCorner;
+const Root: React.ForwardRefExoticComponent<ScrollAreaProps & React.RefAttributes<HTMLDivElement>> = ScrollArea;
+const Viewport: React.ForwardRefExoticComponent<ScrollAreaViewportProps & React.RefAttributes<HTMLDivElement>> = ScrollAreaViewport;
+const Scrollbar: React.ForwardRefExoticComponent<ScrollAreaScrollbarProps & React.RefAttributes<HTMLDivElement>> = ScrollAreaScrollbar;
+const Thumb: React.ForwardRefExoticComponent<ScrollAreaThumbProps & React.RefAttributes<HTMLDivElement>> = ScrollAreaThumb;
+const Corner: React.ForwardRefExoticComponent<ScrollAreaCornerProps & React.RefAttributes<HTMLDivElement>> = ScrollAreaCorner;
 
 export {
   createScrollAreaScope,

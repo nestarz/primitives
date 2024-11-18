@@ -30,7 +30,7 @@ interface SwitchProps extends PrimitiveButtonProps {
   onCheckedChange?(checked: boolean): void;
 }
 
-const Switch = React.forwardRef<SwitchElement, SwitchProps>(
+const Switch: React.ForwardRefExoticComponent<SwitchProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<SwitchElement, SwitchProps>(
   (props: ScopedProps<SwitchProps>, forwardedRef) => {
     const {
       __scopeSwitch,
@@ -112,7 +112,7 @@ type SwitchThumbElement = React.ElementRef<typeof Primitive.span>;
 type PrimitiveSpanProps = React.ComponentPropsWithoutRef<typeof Primitive.span>;
 interface SwitchThumbProps extends PrimitiveSpanProps {}
 
-const SwitchThumb = React.forwardRef<SwitchThumbElement, SwitchThumbProps>(
+const SwitchThumb: React.ForwardRefExoticComponent<SwitchThumbProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SwitchThumbElement, SwitchThumbProps>(
   (props: ScopedProps<SwitchThumbProps>, forwardedRef) => {
     const { __scopeSwitch, ...thumbProps } = props;
     const context = useSwitchContext(THUMB_NAME, __scopeSwitch);
@@ -181,8 +181,8 @@ function getState(checked: boolean) {
   return checked ? 'checked' : 'unchecked';
 }
 
-const Root = Switch;
-const Thumb = SwitchThumb;
+const Root: React.ForwardRefExoticComponent<SwitchProps & React.RefAttributes<HTMLButtonElement>> = Switch;
+const Thumb: React.ForwardRefExoticComponent<SwitchThumbProps & React.RefAttributes<HTMLSpanElement>> = SwitchThumb;
 
 export {
   createSwitchScope,

@@ -11,7 +11,7 @@ type LabelElement = React.ElementRef<typeof Primitive.label>;
 type PrimitiveLabelProps = React.ComponentPropsWithoutRef<typeof Primitive.label>;
 interface LabelProps extends PrimitiveLabelProps {}
 
-const Label = React.forwardRef<LabelElement, LabelProps>((props, forwardedRef) => {
+const Label: React.ForwardRefExoticComponent<LabelProps & React.RefAttributes<HTMLLabelElement>> = React.forwardRef<LabelElement, LabelProps>((props, forwardedRef) => {
   return (
     <Primitive.label
       {...props}
@@ -33,7 +33,7 @@ Label.displayName = NAME;
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = Label;
+const Root: React.ForwardRefExoticComponent<LabelProps & React.RefAttributes<HTMLLabelElement>> = Label;
 
 export {
   Label,

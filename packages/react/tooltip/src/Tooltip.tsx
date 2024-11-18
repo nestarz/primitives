@@ -263,7 +263,7 @@ type TooltipTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface TooltipTriggerProps extends PrimitiveButtonProps {}
 
-const TooltipTrigger = React.forwardRef<TooltipTriggerElement, TooltipTriggerProps>(
+const TooltipTrigger: React.ForwardRefExoticComponent<TooltipTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<TooltipTriggerElement, TooltipTriggerProps>(
   (props: ScopedProps<TooltipTriggerProps>, forwardedRef) => {
     const { __scopeTooltip, ...triggerProps } = props;
     const context = useTooltipContext(TRIGGER_NAME, __scopeTooltip);
@@ -375,7 +375,7 @@ interface TooltipContentProps extends TooltipContentImplProps {
   forceMount?: true;
 }
 
-const TooltipContent = React.forwardRef<TooltipContentElement, TooltipContentProps>(
+const TooltipContent: React.ForwardRefExoticComponent<TooltipContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<TooltipContentElement, TooltipContentProps>(
   (props: ScopedProps<TooltipContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeTooltip);
     const { forceMount = portalContext.forceMount, side = 'top', ...contentProps } = props;
@@ -580,7 +580,7 @@ type TooltipArrowElement = React.ElementRef<typeof PopperPrimitive.Arrow>;
 type PopperArrowProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Arrow>;
 interface TooltipArrowProps extends PopperArrowProps {}
 
-const TooltipArrow = React.forwardRef<TooltipArrowElement, TooltipArrowProps>(
+const TooltipArrow: React.ForwardRefExoticComponent<TooltipArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<TooltipArrowElement, TooltipArrowProps>(
   (props: ScopedProps<TooltipArrowProps>, forwardedRef) => {
     const { __scopeTooltip, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopeTooltip);
@@ -738,12 +738,12 @@ function getHullPresorted<P extends Point>(points: Readonly<Array<P>>): Array<P>
   }
 }
 
-const Provider = TooltipProvider;
-const Root = Tooltip;
-const Trigger = TooltipTrigger;
-const Portal = TooltipPortal;
-const Content = TooltipContent;
-const Arrow = TooltipArrow;
+const Provider: React.FC<TooltipProviderProps> = TooltipProvider;
+const Root: React.FC<TooltipProps> = Tooltip;
+const Trigger: React.ForwardRefExoticComponent<TooltipTriggerProps & React.RefAttributes<HTMLButtonElement>> = TooltipTrigger;
+const Portal: React.FC<TooltipPortalProps> = TooltipPortal;
+const Content: React.ForwardRefExoticComponent<TooltipContentProps & React.RefAttributes<HTMLDivElement>> = TooltipContent;
+const Arrow: React.ForwardRefExoticComponent<TooltipArrowProps & React.RefAttributes<SVGSVGElement>> = TooltipArrow;
 
 export {
   createTooltipScope,

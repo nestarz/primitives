@@ -28,7 +28,7 @@ interface ToggleProps extends PrimitiveButtonProps {
   onPressedChange?(pressed: boolean): void;
 }
 
-const Toggle = React.forwardRef<ToggleElement, ToggleProps>((props, forwardedRef) => {
+const Toggle: React.ForwardRefExoticComponent<ToggleProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToggleElement, ToggleProps>((props, forwardedRef) => {
   const { pressed: pressedProp, defaultPressed = false, onPressedChange, ...buttonProps } = props;
 
   const [pressed = false, setPressed] = useControllableState({
@@ -58,7 +58,7 @@ Toggle.displayName = NAME;
 
 /* ---------------------------------------------------------------------------------------------- */
 
-const Root = Toggle;
+const Root: React.ForwardRefExoticComponent<ToggleProps & React.RefAttributes<HTMLButtonElement>> = Toggle;
 
 export {
   Toggle,

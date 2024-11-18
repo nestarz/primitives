@@ -39,7 +39,7 @@ interface AccordionMultipleProps extends AccordionImplMultipleProps {
   type: 'multiple';
 }
 
-const Accordion = React.forwardRef<AccordionElement, AccordionSingleProps | AccordionMultipleProps>(
+const Accordion: React.ForwardRefExoticComponent<(AccordionSingleProps | AccordionMultipleProps) & React.RefAttributes<HTMLDivElement>> = React.forwardRef<AccordionElement, AccordionSingleProps | AccordionMultipleProps>(
   (props: ScopedProps<AccordionSingleProps | AccordionMultipleProps>, forwardedRef) => {
     const { type, ...accordionProps } = props;
     const singleProps = accordionProps as AccordionImplSingleProps;
@@ -348,7 +348,7 @@ interface AccordionItemProps
 /**
  * `AccordionItem` contains all of the parts of a collapsible section inside of an `Accordion`.
  */
-const AccordionItem = React.forwardRef<AccordionItemElement, AccordionItemProps>(
+const AccordionItem: React.ForwardRefExoticComponent<AccordionItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<AccordionItemElement, AccordionItemProps>(
   (props: ScopedProps<AccordionItemProps>, forwardedRef) => {
     const { __scopeAccordion, value, ...accordionItemProps } = props;
     const accordionContext = useAccordionContext(ITEM_NAME, __scopeAccordion);
@@ -402,7 +402,7 @@ interface AccordionHeaderProps extends PrimitiveHeading3Props {}
  * `AccordionHeader` contains the content for the parts of an `AccordionItem` that will be visible
  * whether or not its content is collapsed.
  */
-const AccordionHeader = React.forwardRef<AccordionHeaderElement, AccordionHeaderProps>(
+const AccordionHeader: React.ForwardRefExoticComponent<AccordionHeaderProps & React.RefAttributes<HTMLHeadingElement>> = React.forwardRef<AccordionHeaderElement, AccordionHeaderProps>(
   (props: ScopedProps<AccordionHeaderProps>, forwardedRef) => {
     const { __scopeAccordion, ...headerProps } = props;
     const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
@@ -435,7 +435,7 @@ interface AccordionTriggerProps extends CollapsibleTriggerProps {}
  * `AccordionTrigger` is the trigger that toggles the collapsed state of an `AccordionItem`. It
  * should always be nested inside of an `AccordionHeader`.
  */
-const AccordionTrigger = React.forwardRef<AccordionTriggerElement, AccordionTriggerProps>(
+const AccordionTrigger: React.ForwardRefExoticComponent<AccordionTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<AccordionTriggerElement, AccordionTriggerProps>(
   (props: ScopedProps<AccordionTriggerProps>, forwardedRef) => {
     const { __scopeAccordion, ...triggerProps } = props;
     const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
@@ -472,7 +472,7 @@ interface AccordionContentProps extends CollapsibleContentProps {}
 /**
  * `AccordionContent` contains the collapsible content for an `AccordionItem`.
  */
-const AccordionContent = React.forwardRef<AccordionContentElement, AccordionContentProps>(
+const AccordionContent: React.ForwardRefExoticComponent<AccordionContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<AccordionContentElement, AccordionContentProps>(
   (props: ScopedProps<AccordionContentProps>, forwardedRef) => {
     const { __scopeAccordion, ...contentProps } = props;
     const accordionContext = useAccordionContext(ACCORDION_NAME, __scopeAccordion);
@@ -504,11 +504,11 @@ function getState(open?: boolean) {
   return open ? 'open' : 'closed';
 }
 
-const Root = Accordion;
-const Item = AccordionItem;
-const Header = AccordionHeader;
-const Trigger = AccordionTrigger;
-const Content = AccordionContent;
+const Root: React.ForwardRefExoticComponent<(AccordionSingleProps | AccordionMultipleProps) & React.RefAttributes<HTMLDivElement>> = Accordion;
+const Item: React.ForwardRefExoticComponent<AccordionItemProps & React.RefAttributes<HTMLDivElement>> = AccordionItem;
+const Header: React.ForwardRefExoticComponent<AccordionHeaderProps & React.RefAttributes<HTMLHeadingElement>> = AccordionHeader;
+const Trigger: React.ForwardRefExoticComponent<AccordionTriggerProps & React.RefAttributes<HTMLButtonElement>> = AccordionTrigger;
+const Content: React.ForwardRefExoticComponent<AccordionContentProps & React.RefAttributes<HTMLDivElement>> = AccordionContent;
 
 export {
   createAccordionScope,

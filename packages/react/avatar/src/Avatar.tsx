@@ -28,7 +28,7 @@ type AvatarElement = React.ElementRef<typeof Primitive.span>;
 type PrimitiveSpanProps = React.ComponentPropsWithoutRef<typeof Primitive.span>;
 interface AvatarProps extends PrimitiveSpanProps {}
 
-const Avatar = React.forwardRef<AvatarElement, AvatarProps>(
+const Avatar: React.ForwardRefExoticComponent<AvatarProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<AvatarElement, AvatarProps>(
   (props: ScopedProps<AvatarProps>, forwardedRef) => {
     const { __scopeAvatar, ...avatarProps } = props;
     const [imageLoadingStatus, setImageLoadingStatus] = React.useState<ImageLoadingStatus>('idle');
@@ -58,7 +58,7 @@ interface AvatarImageProps extends PrimitiveImageProps {
   onLoadingStatusChange?: (status: ImageLoadingStatus) => void;
 }
 
-const AvatarImage = React.forwardRef<AvatarImageElement, AvatarImageProps>(
+const AvatarImage: React.ForwardRefExoticComponent<AvatarImageProps & React.RefAttributes<HTMLImageElement>> = React.forwardRef<AvatarImageElement, AvatarImageProps>(
   (props: ScopedProps<AvatarImageProps>, forwardedRef) => {
     const { __scopeAvatar, src, onLoadingStatusChange = () => {}, ...imageProps } = props;
     const context = useAvatarContext(IMAGE_NAME, __scopeAvatar);
@@ -93,7 +93,7 @@ interface AvatarFallbackProps extends PrimitiveSpanProps {
   delayMs?: number;
 }
 
-const AvatarFallback = React.forwardRef<AvatarFallbackElement, AvatarFallbackProps>(
+const AvatarFallback: React.ForwardRefExoticComponent<AvatarFallbackProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<AvatarFallbackElement, AvatarFallbackProps>(
   (props: ScopedProps<AvatarFallbackProps>, forwardedRef) => {
     const { __scopeAvatar, delayMs, ...fallbackProps } = props;
     const context = useAvatarContext(FALLBACK_NAME, __scopeAvatar);
@@ -148,9 +148,9 @@ function useImageLoadingStatus(src?: string, referrerPolicy?: React.HTMLAttribut
 
   return loadingStatus;
 }
-const Root = Avatar;
-const Image = AvatarImage;
-const Fallback = AvatarFallback;
+const Root: React.ForwardRefExoticComponent<AvatarProps & React.RefAttributes<HTMLSpanElement>> = Avatar;
+const Image: React.ForwardRefExoticComponent<AvatarImageProps & React.RefAttributes<HTMLImageElement>> = AvatarImage;
+const Fallback: React.ForwardRefExoticComponent<AvatarFallbackProps & React.RefAttributes<HTMLSpanElement>> = AvatarFallback;
 
 export {
   createAvatarScope,

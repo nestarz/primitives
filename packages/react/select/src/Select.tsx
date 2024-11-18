@@ -214,7 +214,7 @@ type SelectTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface SelectTriggerProps extends PrimitiveButtonProps {}
 
-const SelectTrigger = React.forwardRef<SelectTriggerElement, SelectTriggerProps>(
+const SelectTrigger: React.ForwardRefExoticComponent<SelectTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<SelectTriggerElement, SelectTriggerProps>(
   (props: ScopedProps<SelectTriggerProps>, forwardedRef) => {
     const { __scopeSelect, disabled = false, ...triggerProps } = props;
     const popperScope = usePopperScope(__scopeSelect);
@@ -327,7 +327,7 @@ interface SelectValueProps extends Omit<PrimitiveSpanProps, 'placeholder'> {
   placeholder?: React.ReactNode;
 }
 
-const SelectValue = React.forwardRef<SelectValueElement, SelectValueProps>(
+const SelectValue: React.ForwardRefExoticComponent<SelectValueProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SelectValueElement, SelectValueProps>(
   (props: ScopedProps<SelectValueProps>, forwardedRef) => {
     // We ignore `className` and `style` as this part shouldn't be styled.
     const { __scopeSelect, className, style, children, placeholder = '', ...valueProps } = props;
@@ -365,7 +365,7 @@ const ICON_NAME = 'SelectIcon';
 type SelectIconElement = React.ElementRef<typeof Primitive.span>;
 interface SelectIconProps extends PrimitiveSpanProps {}
 
-const SelectIcon = React.forwardRef<SelectIconElement, SelectIconProps>(
+const SelectIcon: React.ForwardRefExoticComponent<SelectIconProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SelectIconElement, SelectIconProps>(
   (props: ScopedProps<SelectIconProps>, forwardedRef) => {
     const { __scopeSelect, children, ...iconProps } = props;
     return (
@@ -408,7 +408,7 @@ const CONTENT_NAME = 'SelectContent';
 type SelectContentElement = SelectContentImplElement;
 interface SelectContentProps extends SelectContentImplProps {}
 
-const SelectContent = React.forwardRef<SelectContentElement, SelectContentProps>(
+const SelectContent: React.ForwardRefExoticComponent<SelectContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectContentElement, SelectContentProps>(
   (props: ScopedProps<SelectContentProps>, forwardedRef) => {
     const context = useSelectContext(CONTENT_NAME, props.__scopeSelect);
     const [fragment, setFragment] = React.useState<DocumentFragment>();
@@ -1066,7 +1066,7 @@ interface SelectViewportProps extends PrimitiveDivProps {
   nonce?: string;
 }
 
-const SelectViewport = React.forwardRef<SelectViewportElement, SelectViewportProps>(
+const SelectViewport: React.ForwardRefExoticComponent<SelectViewportProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectViewportElement, SelectViewportProps>(
   (props: ScopedProps<SelectViewportProps>, forwardedRef) => {
     const { __scopeSelect, nonce, ...viewportProps } = props;
     const contentContext = useSelectContentContext(VIEWPORT_NAME, __scopeSelect);
@@ -1151,7 +1151,7 @@ const [SelectGroupContextProvider, useSelectGroupContext] =
 type SelectGroupElement = React.ElementRef<typeof Primitive.div>;
 interface SelectGroupProps extends PrimitiveDivProps {}
 
-const SelectGroup = React.forwardRef<SelectGroupElement, SelectGroupProps>(
+const SelectGroup: React.ForwardRefExoticComponent<SelectGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectGroupElement, SelectGroupProps>(
   (props: ScopedProps<SelectGroupProps>, forwardedRef) => {
     const { __scopeSelect, ...groupProps } = props;
     const groupId = useId();
@@ -1174,7 +1174,7 @@ const LABEL_NAME = 'SelectLabel';
 type SelectLabelElement = React.ElementRef<typeof Primitive.div>;
 interface SelectLabelProps extends PrimitiveDivProps {}
 
-const SelectLabel = React.forwardRef<SelectLabelElement, SelectLabelProps>(
+const SelectLabel: React.ForwardRefExoticComponent<SelectLabelProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectLabelElement, SelectLabelProps>(
   (props: ScopedProps<SelectLabelProps>, forwardedRef) => {
     const { __scopeSelect, ...labelProps } = props;
     const groupContext = useSelectGroupContext(LABEL_NAME, __scopeSelect);
@@ -1208,7 +1208,7 @@ interface SelectItemProps extends PrimitiveDivProps {
   textValue?: string;
 }
 
-const SelectItem = React.forwardRef<SelectItemElement, SelectItemProps>(
+const SelectItem: React.ForwardRefExoticComponent<SelectItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectItemElement, SelectItemProps>(
   (props: ScopedProps<SelectItemProps>, forwardedRef) => {
     const {
       __scopeSelect,
@@ -1325,7 +1325,7 @@ const ITEM_TEXT_NAME = 'SelectItemText';
 type SelectItemTextElement = React.ElementRef<typeof Primitive.span>;
 interface SelectItemTextProps extends PrimitiveSpanProps {}
 
-const SelectItemText = React.forwardRef<SelectItemTextElement, SelectItemTextProps>(
+const SelectItemText: React.ForwardRefExoticComponent<SelectItemTextProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SelectItemTextElement, SelectItemTextProps>(
   (props: ScopedProps<SelectItemTextProps>, forwardedRef) => {
     // We ignore `className` and `style` as this part shouldn't be styled.
     const { __scopeSelect, className, style, ...itemTextProps } = props;
@@ -1381,7 +1381,7 @@ const ITEM_INDICATOR_NAME = 'SelectItemIndicator';
 type SelectItemIndicatorElement = React.ElementRef<typeof Primitive.span>;
 interface SelectItemIndicatorProps extends PrimitiveSpanProps {}
 
-const SelectItemIndicator = React.forwardRef<SelectItemIndicatorElement, SelectItemIndicatorProps>(
+const SelectItemIndicator: React.ForwardRefExoticComponent<SelectItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SelectItemIndicatorElement, SelectItemIndicatorProps>(
   (props: ScopedProps<SelectItemIndicatorProps>, forwardedRef) => {
     const { __scopeSelect, ...itemIndicatorProps } = props;
     const itemContext = useSelectItemContext(ITEM_INDICATOR_NAME, __scopeSelect);
@@ -1402,7 +1402,7 @@ const SCROLL_UP_BUTTON_NAME = 'SelectScrollUpButton';
 type SelectScrollUpButtonElement = SelectScrollButtonImplElement;
 interface SelectScrollUpButtonProps extends Omit<SelectScrollButtonImplProps, 'onAutoScroll'> {}
 
-const SelectScrollUpButton = React.forwardRef<
+const SelectScrollUpButton: React.ForwardRefExoticComponent<SelectScrollUpButtonProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   SelectScrollUpButtonElement,
   SelectScrollUpButtonProps
 >((props: ScopedProps<SelectScrollUpButtonProps>, forwardedRef) => {
@@ -1449,7 +1449,7 @@ const SCROLL_DOWN_BUTTON_NAME = 'SelectScrollDownButton';
 type SelectScrollDownButtonElement = SelectScrollButtonImplElement;
 interface SelectScrollDownButtonProps extends Omit<SelectScrollButtonImplProps, 'onAutoScroll'> {}
 
-const SelectScrollDownButton = React.forwardRef<
+const SelectScrollDownButton: React.ForwardRefExoticComponent<SelectScrollDownButtonProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   SelectScrollDownButtonElement,
   SelectScrollDownButtonProps
 >((props: ScopedProps<SelectScrollDownButtonProps>, forwardedRef) => {
@@ -1557,7 +1557,7 @@ const SEPARATOR_NAME = 'SelectSeparator';
 type SelectSeparatorElement = React.ElementRef<typeof Primitive.div>;
 interface SelectSeparatorProps extends PrimitiveDivProps {}
 
-const SelectSeparator = React.forwardRef<SelectSeparatorElement, SelectSeparatorProps>(
+const SelectSeparator: React.ForwardRefExoticComponent<SelectSeparatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SelectSeparatorElement, SelectSeparatorProps>(
   (props: ScopedProps<SelectSeparatorProps>, forwardedRef) => {
     const { __scopeSelect, ...separatorProps } = props;
     return <Primitive.div aria-hidden {...separatorProps} ref={forwardedRef} />;
@@ -1576,7 +1576,7 @@ type SelectArrowElement = React.ElementRef<typeof PopperPrimitive.Arrow>;
 type PopperArrowProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Arrow>;
 interface SelectArrowProps extends PopperArrowProps {}
 
-const SelectArrow = React.forwardRef<SelectArrowElement, SelectArrowProps>(
+const SelectArrow: React.ForwardRefExoticComponent<SelectArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<SelectArrowElement, SelectArrowProps>(
   (props: ScopedProps<SelectArrowProps>, forwardedRef) => {
     const { __scopeSelect, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopeSelect);
@@ -1715,22 +1715,22 @@ function wrapArray<T>(array: T[], startIndex: number) {
   return array.map((_, index) => array[(startIndex + index) % array.length]);
 }
 
-const Root = Select;
-const Trigger = SelectTrigger;
-const Value = SelectValue;
-const Icon = SelectIcon;
-const Portal = SelectPortal;
-const Content = SelectContent;
-const Viewport = SelectViewport;
-const Group = SelectGroup;
-const Label = SelectLabel;
-const Item = SelectItem;
-const ItemText = SelectItemText;
-const ItemIndicator = SelectItemIndicator;
-const ScrollUpButton = SelectScrollUpButton;
-const ScrollDownButton = SelectScrollDownButton;
-const Separator = SelectSeparator;
-const Arrow = SelectArrow;
+const Root: React.FC<SelectProps> = Select;
+const Trigger: React.ForwardRefExoticComponent<SelectTriggerProps & React.RefAttributes<HTMLButtonElement>> = SelectTrigger;
+const Value: React.ForwardRefExoticComponent<SelectValueProps & React.RefAttributes<HTMLSpanElement>> = SelectValue;
+const Icon: React.ForwardRefExoticComponent<SelectIconProps & React.RefAttributes<HTMLSpanElement>> = SelectIcon;
+const Portal: React.FC<SelectPortalProps> = SelectPortal;
+const Content: React.ForwardRefExoticComponent<SelectContentProps & React.RefAttributes<HTMLDivElement>> = SelectContent;
+const Viewport: React.ForwardRefExoticComponent<SelectViewportProps & React.RefAttributes<HTMLDivElement>> = SelectViewport;
+const Group: React.ForwardRefExoticComponent<SelectGroupProps & React.RefAttributes<HTMLDivElement>> = SelectGroup;
+const Label: React.ForwardRefExoticComponent<SelectLabelProps & React.RefAttributes<HTMLDivElement>> = SelectLabel;
+const Item: React.ForwardRefExoticComponent<SelectItemProps & React.RefAttributes<HTMLDivElement>> = SelectItem;
+const ItemText: React.ForwardRefExoticComponent<SelectItemTextProps & React.RefAttributes<HTMLSpanElement>> = SelectItemText;
+const ItemIndicator: React.ForwardRefExoticComponent<SelectItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = SelectItemIndicator;
+const ScrollUpButton: React.ForwardRefExoticComponent<SelectScrollUpButtonProps & React.RefAttributes<HTMLDivElement>> = SelectScrollUpButton;
+const ScrollDownButton: React.ForwardRefExoticComponent<SelectScrollDownButtonProps & React.RefAttributes<HTMLDivElement>> = SelectScrollDownButton;
+const Separator: React.ForwardRefExoticComponent<SelectSeparatorProps & React.RefAttributes<HTMLDivElement>> = SelectSeparator;
+const Arrow: React.ForwardRefExoticComponent<SelectArrowProps & React.RefAttributes<SVGSVGElement>> = SelectArrow;
 
 export {
   createSelectScope,

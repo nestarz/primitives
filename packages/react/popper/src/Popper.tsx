@@ -70,7 +70,7 @@ interface PopperAnchorProps extends PrimitiveDivProps {
   virtualRef?: React.RefObject<Measurable>;
 }
 
-const PopperAnchor = React.forwardRef<PopperAnchorElement, PopperAnchorProps>(
+const PopperAnchor: React.ForwardRefExoticComponent<PopperAnchorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<PopperAnchorElement, PopperAnchorProps>(
   (props: ScopedProps<PopperAnchorProps>, forwardedRef) => {
     const { __scopePopper, virtualRef, ...anchorProps } = props;
     const context = usePopperContext(ANCHOR_NAME, __scopePopper);
@@ -125,7 +125,7 @@ interface PopperContentProps extends PrimitiveDivProps {
   onPlaced?: () => void;
 }
 
-const PopperContent = React.forwardRef<PopperContentElement, PopperContentProps>(
+const PopperContent: React.ForwardRefExoticComponent<PopperContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<PopperContentElement, PopperContentProps>(
   (props: ScopedProps<PopperContentProps>, forwardedRef) => {
     const {
       __scopePopper,
@@ -301,7 +301,7 @@ type PopperArrowElement = React.ElementRef<typeof ArrowPrimitive.Root>;
 type ArrowProps = React.ComponentPropsWithoutRef<typeof ArrowPrimitive.Root>;
 interface PopperArrowProps extends ArrowProps {}
 
-const PopperArrow = React.forwardRef<PopperArrowElement, PopperArrowProps>(function PopperArrow(
+const PopperArrow: React.ForwardRefExoticComponent<PopperArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<PopperArrowElement, PopperArrowProps>(function PopperArrow(
   props: ScopedProps<PopperArrowProps>,
   forwardedRef
 ) {
@@ -398,10 +398,10 @@ function getSideAndAlignFromPlacement(placement: Placement) {
   return [side as Side, align as Align] as const;
 }
 
-const Root = Popper;
-const Anchor = PopperAnchor;
-const Content = PopperContent;
-const Arrow = PopperArrow;
+const Root: React.FC<PopperProps> = Popper;
+const Anchor: React.ForwardRefExoticComponent<PopperAnchorProps & React.RefAttributes<HTMLDivElement>> = PopperAnchor;
+const Content: React.ForwardRefExoticComponent<PopperContentProps & React.RefAttributes<HTMLDivElement>> = PopperContent;
+const Arrow: React.ForwardRefExoticComponent<PopperArrowProps & React.RefAttributes<SVGSVGElement>> = PopperArrow;
 
 export {
   createPopperScope,

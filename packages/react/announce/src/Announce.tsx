@@ -82,7 +82,7 @@ interface AnnounceProps extends PrimitiveDivProps {
   type?: RegionType;
 }
 
-const Announce = React.forwardRef<AnnounceElement, AnnounceProps>((props, forwardedRef) => {
+const Announce: React.ForwardRefExoticComponent<AnnounceProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<AnnounceElement, AnnounceProps>((props, forwardedRef) => {
   const {
     'aria-relevant': ariaRelevant,
     children,
@@ -226,7 +226,7 @@ function getLiveRegionPartDataAttr(id?: string) {
   return 'data-radix-announce-region' + (id ? `-${id}` : '');
 }
 
-const Root = Announce;
+const Root: React.ForwardRefExoticComponent<AnnounceProps & React.RefAttributes<HTMLDivElement>> = Announce;
 
 export {
   Announce,

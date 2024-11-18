@@ -97,7 +97,7 @@ interface NavigationMenuProps
   skipDelayDuration?: number;
 }
 
-const NavigationMenu = React.forwardRef<NavigationMenuElement, NavigationMenuProps>(
+const NavigationMenu: React.ForwardRefExoticComponent<NavigationMenuProps & React.RefAttributes<HTMLElement>> = React.forwardRef<NavigationMenuElement, NavigationMenuProps>(
   (props: ScopedProps<NavigationMenuProps>, forwardedRef) => {
     const {
       __scopeNavigationMenu,
@@ -232,7 +232,7 @@ interface NavigationMenuSubProps
   orientation?: Orientation;
 }
 
-const NavigationMenuSub = React.forwardRef<NavigationMenuSubElement, NavigationMenuSubProps>(
+const NavigationMenuSub: React.ForwardRefExoticComponent<NavigationMenuSubProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<NavigationMenuSubElement, NavigationMenuSubProps>(
   (props: ScopedProps<NavigationMenuSubProps>, forwardedRef) => {
     const {
       __scopeNavigationMenu,
@@ -364,7 +364,7 @@ type NavigationMenuListElement = React.ElementRef<typeof Primitive.ul>;
 type PrimitiveUnorderedListProps = React.ComponentPropsWithoutRef<typeof Primitive.ul>;
 interface NavigationMenuListProps extends PrimitiveUnorderedListProps {}
 
-const NavigationMenuList = React.forwardRef<NavigationMenuListElement, NavigationMenuListProps>(
+const NavigationMenuList: React.ForwardRefExoticComponent<NavigationMenuListProps & React.RefAttributes<HTMLUListElement>> = React.forwardRef<NavigationMenuListElement, NavigationMenuListProps>(
   (props: ScopedProps<NavigationMenuListProps>, forwardedRef) => {
     const { __scopeNavigationMenu, ...listProps } = props;
     const context = useNavigationMenuContext(LIST_NAME, __scopeNavigationMenu);
@@ -414,7 +414,7 @@ interface NavigationMenuItemProps extends PrimitiveListItemProps {
   value?: string;
 }
 
-const NavigationMenuItem = React.forwardRef<NavigationMenuItemElement, NavigationMenuItemProps>(
+const NavigationMenuItem: React.ForwardRefExoticComponent<NavigationMenuItemProps & React.RefAttributes<HTMLLIElement>> = React.forwardRef<NavigationMenuItemElement, NavigationMenuItemProps>(
   (props: ScopedProps<NavigationMenuItemProps>, forwardedRef) => {
     const { __scopeNavigationMenu, value: valueProp, ...itemProps } = props;
     const autoValue = useId();
@@ -473,7 +473,7 @@ type NavigationMenuTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface NavigationMenuTriggerProps extends PrimitiveButtonProps {}
 
-const NavigationMenuTrigger = React.forwardRef<
+const NavigationMenuTrigger: React.ForwardRefExoticComponent<NavigationMenuTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<
   NavigationMenuTriggerElement,
   NavigationMenuTriggerProps
 >((props: ScopedProps<NavigationMenuTriggerProps>, forwardedRef) => {
@@ -589,7 +589,7 @@ interface NavigationMenuLinkProps extends Omit<PrimitiveLinkProps, 'onSelect'> {
   onSelect?: (event: Event) => void;
 }
 
-const NavigationMenuLink = React.forwardRef<NavigationMenuLinkElement, NavigationMenuLinkProps>(
+const NavigationMenuLink: React.ForwardRefExoticComponent<NavigationMenuLinkProps & React.RefAttributes<HTMLAnchorElement>> = React.forwardRef<NavigationMenuLinkElement, NavigationMenuLinkProps>(
   (props: ScopedProps<NavigationMenuLinkProps>, forwardedRef) => {
     const { __scopeNavigationMenu, active, onSelect, ...linkProps } = props;
 
@@ -644,7 +644,7 @@ interface NavigationMenuIndicatorProps extends NavigationMenuIndicatorImplProps 
   forceMount?: true;
 }
 
-const NavigationMenuIndicator = React.forwardRef<
+const NavigationMenuIndicator: React.ForwardRefExoticComponent<NavigationMenuIndicatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   NavigationMenuIndicatorElement,
   NavigationMenuIndicatorProps
 >((props: ScopedProps<NavigationMenuIndicatorProps>, forwardedRef) => {
@@ -745,7 +745,7 @@ interface NavigationMenuContentProps
   forceMount?: true;
 }
 
-const NavigationMenuContent = React.forwardRef<
+const NavigationMenuContent: React.ForwardRefExoticComponent<NavigationMenuContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   NavigationMenuContentElement,
   NavigationMenuContentProps
 >((props: ScopedProps<NavigationMenuContentProps>, forwardedRef) => {
@@ -990,7 +990,7 @@ interface NavigationMenuViewportProps
   forceMount?: true;
 }
 
-const NavigationMenuViewport = React.forwardRef<
+const NavigationMenuViewport: React.ForwardRefExoticComponent<NavigationMenuViewportProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   NavigationMenuViewportElement,
   NavigationMenuViewportProps
 >((props: ScopedProps<NavigationMenuViewportProps>, forwardedRef) => {
@@ -1240,15 +1240,15 @@ function whenMouse<E>(handler: React.PointerEventHandler<E>): React.PointerEvent
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = NavigationMenu;
-const Sub = NavigationMenuSub;
-const List = NavigationMenuList;
-const Item = NavigationMenuItem;
-const Trigger = NavigationMenuTrigger;
-const Link = NavigationMenuLink;
-const Indicator = NavigationMenuIndicator;
-const Content = NavigationMenuContent;
-const Viewport = NavigationMenuViewport;
+const Root: React.ForwardRefExoticComponent<NavigationMenuProps & React.RefAttributes<HTMLElement>> = NavigationMenu;
+const Sub: React.ForwardRefExoticComponent<NavigationMenuSubProps & React.RefAttributes<HTMLDivElement>> = NavigationMenuSub;
+const List: React.ForwardRefExoticComponent<NavigationMenuListProps & React.RefAttributes<HTMLUListElement>> = NavigationMenuList;
+const Item: React.ForwardRefExoticComponent<NavigationMenuItemProps & React.RefAttributes<HTMLLIElement>> = NavigationMenuItem;
+const Trigger: React.ForwardRefExoticComponent<NavigationMenuTriggerProps & React.RefAttributes<HTMLButtonElement>> = NavigationMenuTrigger;
+const Link: React.ForwardRefExoticComponent<NavigationMenuLinkProps & React.RefAttributes<HTMLAnchorElement>> = NavigationMenuLink;
+const Indicator: React.ForwardRefExoticComponent<NavigationMenuIndicatorProps & React.RefAttributes<HTMLDivElement>> = NavigationMenuIndicator;
+const Content: React.ForwardRefExoticComponent<NavigationMenuContentProps & React.RefAttributes<HTMLDivElement>> = NavigationMenuContent;
+const Viewport: React.ForwardRefExoticComponent<NavigationMenuViewportProps & React.RefAttributes<HTMLDivElement>> = NavigationMenuViewport;
 
 export {
   createNavigationMenuScope,

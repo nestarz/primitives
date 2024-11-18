@@ -29,7 +29,7 @@ interface RadioProps extends PrimitiveButtonProps {
   onCheck?(): void;
 }
 
-const Radio = React.forwardRef<RadioElement, RadioProps>(
+const Radio: React.ForwardRefExoticComponent<RadioProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<RadioElement, RadioProps>(
   (props: ScopedProps<RadioProps>, forwardedRef) => {
     const {
       __scopeRadio,
@@ -111,7 +111,7 @@ export interface RadioIndicatorProps extends PrimitiveSpanProps {
   forceMount?: true;
 }
 
-const RadioIndicator = React.forwardRef<RadioIndicatorElement, RadioIndicatorProps>(
+const RadioIndicator: React.ForwardRefExoticComponent<RadioIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<RadioIndicatorElement, RadioIndicatorProps>(
   (props: ScopedProps<RadioIndicatorProps>, forwardedRef) => {
     const { __scopeRadio, forceMount, ...indicatorProps } = props;
     const context = useRadioContext(INDICATOR_NAME, __scopeRadio);

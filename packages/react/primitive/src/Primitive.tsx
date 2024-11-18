@@ -33,7 +33,7 @@ interface PrimitiveForwardRefComponent<E extends React.ElementType>
  * Primitive
  * -----------------------------------------------------------------------------------------------*/
 
-const Primitive = NODES.reduce((primitive, node) => {
+const Primitive: Primitives = NODES.reduce((primitive, node) => {
   const Node = React.forwardRef((props: PrimitivePropsWithRef<typeof node>, forwardedRef: any) => {
     const { asChild, ...primitiveProps } = props;
     const Comp: any = asChild ? Slot : node;
@@ -97,7 +97,7 @@ function dispatchDiscreteCustomEvent<E extends CustomEvent>(target: E['target'],
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = Primitive;
+const Root: Primitives = Primitive;
 
 export {
   Primitive,

@@ -61,7 +61,7 @@ interface TabsProps extends PrimitiveDivProps {
   activationMode?: 'automatic' | 'manual';
 }
 
-const Tabs = React.forwardRef<TabsElement, TabsProps>(
+const Tabs: React.ForwardRefExoticComponent<TabsProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<TabsElement, TabsProps>(
   (props: ScopedProps<TabsProps>, forwardedRef) => {
     const {
       __scopeTabs,
@@ -114,7 +114,7 @@ interface TabsListProps extends PrimitiveDivProps {
   loop?: RovingFocusGroupProps['loop'];
 }
 
-const TabsList = React.forwardRef<TabsListElement, TabsListProps>(
+const TabsList: React.ForwardRefExoticComponent<TabsListProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<TabsListElement, TabsListProps>(
   (props: ScopedProps<TabsListProps>, forwardedRef) => {
     const { __scopeTabs, loop = true, ...listProps } = props;
     const context = useTabsContext(TAB_LIST_NAME, __scopeTabs);
@@ -152,7 +152,7 @@ interface TabsTriggerProps extends PrimitiveButtonProps {
   value: string;
 }
 
-const TabsTrigger = React.forwardRef<TabsTriggerElement, TabsTriggerProps>(
+const TabsTrigger: React.ForwardRefExoticComponent<TabsTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<TabsTriggerElement, TabsTriggerProps>(
   (props: ScopedProps<TabsTriggerProps>, forwardedRef) => {
     const { __scopeTabs, value, disabled = false, ...triggerProps } = props;
     const context = useTabsContext(TRIGGER_NAME, __scopeTabs);
@@ -224,7 +224,7 @@ interface TabsContentProps extends PrimitiveDivProps {
   forceMount?: true;
 }
 
-const TabsContent = React.forwardRef<TabsContentElement, TabsContentProps>(
+const TabsContent: React.ForwardRefExoticComponent<TabsContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<TabsContentElement, TabsContentProps>(
   (props: ScopedProps<TabsContentProps>, forwardedRef) => {
     const { __scopeTabs, value, forceMount, children, ...contentProps } = props;
     const context = useTabsContext(CONTENT_NAME, __scopeTabs);
@@ -276,10 +276,10 @@ function makeContentId(baseId: string, value: string) {
   return `${baseId}-content-${value}`;
 }
 
-const Root = Tabs;
-const List = TabsList;
-const Trigger = TabsTrigger;
-const Content = TabsContent;
+const Root: React.ForwardRefExoticComponent<TabsProps & React.RefAttributes<HTMLDivElement>> = Tabs;
+const List: React.ForwardRefExoticComponent<TabsListProps & React.RefAttributes<HTMLDivElement>> = TabsList;
+const Trigger: React.ForwardRefExoticComponent<TabsTriggerProps & React.RefAttributes<HTMLButtonElement>> = TabsTrigger;
+const Content: React.ForwardRefExoticComponent<TabsContentProps & React.RefAttributes<HTMLDivElement>> = TabsContent;
 
 export {
   createTabsScope,

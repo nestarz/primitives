@@ -103,7 +103,7 @@ type PopoverAnchorElement = React.ElementRef<typeof PopperPrimitive.Anchor>;
 type PopperAnchorProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Anchor>;
 interface PopoverAnchorProps extends PopperAnchorProps {}
 
-const PopoverAnchor = React.forwardRef<PopoverAnchorElement, PopoverAnchorProps>(
+const PopoverAnchor: React.ForwardRefExoticComponent<PopoverAnchorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<PopoverAnchorElement, PopoverAnchorProps>(
   (props: ScopedProps<PopoverAnchorProps>, forwardedRef) => {
     const { __scopePopover, ...anchorProps } = props;
     const context = usePopoverContext(ANCHOR_NAME, __scopePopover);
@@ -131,7 +131,7 @@ type PopoverTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface PopoverTriggerProps extends PrimitiveButtonProps {}
 
-const PopoverTrigger = React.forwardRef<PopoverTriggerElement, PopoverTriggerProps>(
+const PopoverTrigger: React.ForwardRefExoticComponent<PopoverTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<PopoverTriggerElement, PopoverTriggerProps>(
   (props: ScopedProps<PopoverTriggerProps>, forwardedRef) => {
     const { __scopePopover, ...triggerProps } = props;
     const context = usePopoverContext(TRIGGER_NAME, __scopePopover);
@@ -218,7 +218,7 @@ interface PopoverContentProps extends PopoverContentTypeProps {
   forceMount?: true;
 }
 
-const PopoverContent = React.forwardRef<PopoverContentTypeElement, PopoverContentProps>(
+const PopoverContent: React.ForwardRefExoticComponent<PopoverContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<PopoverContentTypeElement, PopoverContentProps>(
   (props: ScopedProps<PopoverContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopePopover);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
@@ -447,7 +447,7 @@ const CLOSE_NAME = 'PopoverClose';
 type PopoverCloseElement = React.ElementRef<typeof Primitive.button>;
 interface PopoverCloseProps extends PrimitiveButtonProps {}
 
-const PopoverClose = React.forwardRef<PopoverCloseElement, PopoverCloseProps>(
+const PopoverClose: React.ForwardRefExoticComponent<PopoverCloseProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<PopoverCloseElement, PopoverCloseProps>(
   (props: ScopedProps<PopoverCloseProps>, forwardedRef) => {
     const { __scopePopover, ...closeProps } = props;
     const context = usePopoverContext(CLOSE_NAME, __scopePopover);
@@ -474,7 +474,7 @@ type PopoverArrowElement = React.ElementRef<typeof PopperPrimitive.Arrow>;
 type PopperArrowProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Arrow>;
 interface PopoverArrowProps extends PopperArrowProps {}
 
-const PopoverArrow = React.forwardRef<PopoverArrowElement, PopoverArrowProps>(
+const PopoverArrow: React.ForwardRefExoticComponent<PopoverArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<PopoverArrowElement, PopoverArrowProps>(
   (props: ScopedProps<PopoverArrowProps>, forwardedRef) => {
     const { __scopePopover, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopePopover);
@@ -490,13 +490,13 @@ function getState(open: boolean) {
   return open ? 'open' : 'closed';
 }
 
-const Root = Popover;
-const Anchor = PopoverAnchor;
-const Trigger = PopoverTrigger;
-const Portal = PopoverPortal;
-const Content = PopoverContent;
-const Close = PopoverClose;
-const Arrow = PopoverArrow;
+const Root: React.FC<PopoverProps> = Popover;
+const Anchor: React.ForwardRefExoticComponent<PopoverAnchorProps & React.RefAttributes<HTMLDivElement>> = PopoverAnchor;
+const Trigger: React.ForwardRefExoticComponent<PopoverTriggerProps & React.RefAttributes<HTMLButtonElement>> = PopoverTrigger;
+const Portal: React.FC<PopoverPortalProps> = PopoverPortal;
+const Content: React.ForwardRefExoticComponent<PopoverContentProps & React.RefAttributes<HTMLDivElement>> = PopoverContent;
+const Close: React.ForwardRefExoticComponent<PopoverCloseProps & React.RefAttributes<HTMLButtonElement>> = PopoverClose;
+const Arrow: React.ForwardRefExoticComponent<PopoverArrowProps & React.RefAttributes<SVGSVGElement>> = PopoverArrow;
 
 export {
   createPopoverScope,

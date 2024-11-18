@@ -38,7 +38,7 @@ interface CollapsibleProps extends PrimitiveDivProps {
   onOpenChange?(open: boolean): void;
 }
 
-const Collapsible = React.forwardRef<CollapsibleElement, CollapsibleProps>(
+const Collapsible: React.ForwardRefExoticComponent<CollapsibleProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<CollapsibleElement, CollapsibleProps>(
   (props: ScopedProps<CollapsibleProps>, forwardedRef) => {
     const {
       __scopeCollapsible,
@@ -86,7 +86,7 @@ type CollapsibleTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface CollapsibleTriggerProps extends PrimitiveButtonProps {}
 
-const CollapsibleTrigger = React.forwardRef<CollapsibleTriggerElement, CollapsibleTriggerProps>(
+const CollapsibleTrigger: React.ForwardRefExoticComponent<CollapsibleTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<CollapsibleTriggerElement, CollapsibleTriggerProps>(
   (props: ScopedProps<CollapsibleTriggerProps>, forwardedRef) => {
     const { __scopeCollapsible, ...triggerProps } = props;
     const context = useCollapsibleContext(TRIGGER_NAME, __scopeCollapsible);
@@ -123,7 +123,7 @@ interface CollapsibleContentProps extends Omit<CollapsibleContentImplProps, 'pre
   forceMount?: true;
 }
 
-const CollapsibleContent = React.forwardRef<CollapsibleContentElement, CollapsibleContentProps>(
+const CollapsibleContent: React.ForwardRefExoticComponent<CollapsibleContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<CollapsibleContentElement, CollapsibleContentProps>(
   (props: ScopedProps<CollapsibleContentProps>, forwardedRef) => {
     const { forceMount, ...contentProps } = props;
     const context = useCollapsibleContext(CONTENT_NAME, props.__scopeCollapsible);
@@ -227,9 +227,9 @@ function getState(open?: boolean) {
   return open ? 'open' : 'closed';
 }
 
-const Root = Collapsible;
-const Trigger = CollapsibleTrigger;
-const Content = CollapsibleContent;
+const Root: React.ForwardRefExoticComponent<CollapsibleProps & React.RefAttributes<HTMLDivElement>> = Collapsible;
+const Trigger: React.ForwardRefExoticComponent<CollapsibleTriggerProps & React.RefAttributes<HTMLButtonElement>> = CollapsibleTrigger;
+const Content: React.ForwardRefExoticComponent<CollapsibleContentProps & React.RefAttributes<HTMLDivElement>> = CollapsibleContent;
 
 export {
   createCollapsibleScope,

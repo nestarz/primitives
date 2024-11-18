@@ -52,7 +52,7 @@ interface RadioGroupProps extends PrimitiveDivProps {
   onValueChange?: RadioGroupContextValue['onValueChange'];
 }
 
-const RadioGroup = React.forwardRef<RadioGroupElement, RadioGroupProps>(
+const RadioGroup: React.ForwardRefExoticComponent<RadioGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<RadioGroupElement, RadioGroupProps>(
   (props: ScopedProps<RadioGroupProps>, forwardedRef) => {
     const {
       __scopeRadioGroup,
@@ -120,7 +120,7 @@ interface RadioGroupItemProps extends Omit<RadioProps, 'onCheck' | 'name'> {
   value: string;
 }
 
-const RadioGroupItem = React.forwardRef<RadioGroupItemElement, RadioGroupItemProps>(
+const RadioGroupItem: React.ForwardRefExoticComponent<RadioGroupItemProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<RadioGroupItemElement, RadioGroupItemProps>(
   (props: ScopedProps<RadioGroupItemProps>, forwardedRef) => {
     const { __scopeRadioGroup, disabled, ...itemProps } = props;
     const context = useRadioGroupContext(ITEM_NAME, __scopeRadioGroup);
@@ -193,7 +193,7 @@ type RadioGroupIndicatorElement = React.ElementRef<typeof RadioIndicator>;
 type RadioIndicatorProps = React.ComponentPropsWithoutRef<typeof RadioIndicator>;
 interface RadioGroupIndicatorProps extends RadioIndicatorProps {}
 
-const RadioGroupIndicator = React.forwardRef<RadioGroupIndicatorElement, RadioGroupIndicatorProps>(
+const RadioGroupIndicator: React.ForwardRefExoticComponent<RadioGroupIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<RadioGroupIndicatorElement, RadioGroupIndicatorProps>(
   (props: ScopedProps<RadioGroupIndicatorProps>, forwardedRef) => {
     const { __scopeRadioGroup, ...indicatorProps } = props;
     const radioScope = useRadioScope(__scopeRadioGroup);
@@ -205,9 +205,9 @@ RadioGroupIndicator.displayName = INDICATOR_NAME;
 
 /* ---------------------------------------------------------------------------------------------- */
 
-const Root = RadioGroup;
-const Item = RadioGroupItem;
-const Indicator = RadioGroupIndicator;
+const Root: React.ForwardRefExoticComponent<RadioGroupProps & React.RefAttributes<HTMLDivElement>> = RadioGroup;
+const Item: React.ForwardRefExoticComponent<RadioGroupItemProps & React.RefAttributes<HTMLButtonElement>> = RadioGroupItem;
+const Indicator: React.ForwardRefExoticComponent<RadioGroupIndicatorProps & React.RefAttributes<HTMLSpanElement>> = RadioGroupIndicator;
 
 export {
   createRadioGroupScope,

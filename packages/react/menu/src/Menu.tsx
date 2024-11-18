@@ -144,7 +144,7 @@ type MenuAnchorElement = React.ElementRef<typeof PopperPrimitive.Anchor>;
 type PopperAnchorProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Anchor>;
 interface MenuAnchorProps extends PopperAnchorProps {}
 
-const MenuAnchor = React.forwardRef<MenuAnchorElement, MenuAnchorProps>(
+const MenuAnchor: React.ForwardRefExoticComponent<MenuAnchorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuAnchorElement, MenuAnchorProps>(
   (props: ScopedProps<MenuAnchorProps>, forwardedRef) => {
     const { __scopeMenu, ...anchorProps } = props;
     const popperScope = usePopperScope(__scopeMenu);
@@ -226,7 +226,7 @@ interface MenuContentProps extends MenuRootContentTypeProps {
   forceMount?: true;
 }
 
-const MenuContent = React.forwardRef<MenuContentElement, MenuContentProps>(
+const MenuContent: React.ForwardRefExoticComponent<MenuContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuContentElement, MenuContentProps>(
   (props: ScopedProps<MenuContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeMenu);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
@@ -570,7 +570,7 @@ type MenuGroupElement = React.ElementRef<typeof Primitive.div>;
 type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
 interface MenuGroupProps extends PrimitiveDivProps {}
 
-const MenuGroup = React.forwardRef<MenuGroupElement, MenuGroupProps>(
+const MenuGroup: React.ForwardRefExoticComponent<MenuGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuGroupElement, MenuGroupProps>(
   (props: ScopedProps<MenuGroupProps>, forwardedRef) => {
     const { __scopeMenu, ...groupProps } = props;
     return <Primitive.div role="group" {...groupProps} ref={forwardedRef} />;
@@ -588,7 +588,7 @@ const LABEL_NAME = 'MenuLabel';
 type MenuLabelElement = React.ElementRef<typeof Primitive.div>;
 interface MenuLabelProps extends PrimitiveDivProps {}
 
-const MenuLabel = React.forwardRef<MenuLabelElement, MenuLabelProps>(
+const MenuLabel: React.ForwardRefExoticComponent<MenuLabelProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuLabelElement, MenuLabelProps>(
   (props: ScopedProps<MenuLabelProps>, forwardedRef) => {
     const { __scopeMenu, ...labelProps } = props;
     return <Primitive.div {...labelProps} ref={forwardedRef} />;
@@ -609,7 +609,7 @@ interface MenuItemProps extends Omit<MenuItemImplProps, 'onSelect'> {
   onSelect?: (event: Event) => void;
 }
 
-const MenuItem = React.forwardRef<MenuItemElement, MenuItemProps>(
+const MenuItem: React.ForwardRefExoticComponent<MenuItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuItemElement, MenuItemProps>(
   (props: ScopedProps<MenuItemProps>, forwardedRef) => {
     const { disabled = false, onSelect, ...itemProps } = props;
     const ref = React.useRef<HTMLDivElement>(null);
@@ -763,7 +763,7 @@ interface MenuCheckboxItemProps extends MenuItemProps {
   onCheckedChange?: (checked: boolean) => void;
 }
 
-const MenuCheckboxItem = React.forwardRef<MenuCheckboxItemElement, MenuCheckboxItemProps>(
+const MenuCheckboxItem: React.ForwardRefExoticComponent<MenuCheckboxItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuCheckboxItemElement, MenuCheckboxItemProps>(
   (props: ScopedProps<MenuCheckboxItemProps>, forwardedRef) => {
     const { checked = false, onCheckedChange, ...checkboxItemProps } = props;
     return (
@@ -804,7 +804,7 @@ interface MenuRadioGroupProps extends MenuGroupProps {
   onValueChange?: (value: string) => void;
 }
 
-const MenuRadioGroup = React.forwardRef<MenuRadioGroupElement, MenuRadioGroupProps>(
+const MenuRadioGroup: React.ForwardRefExoticComponent<MenuRadioGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuRadioGroupElement, MenuRadioGroupProps>(
   (props: ScopedProps<MenuRadioGroupProps>, forwardedRef) => {
     const { value, onValueChange, ...groupProps } = props;
     const handleValueChange = useCallbackRef(onValueChange);
@@ -829,7 +829,7 @@ interface MenuRadioItemProps extends MenuItemProps {
   value: string;
 }
 
-const MenuRadioItem = React.forwardRef<MenuRadioItemElement, MenuRadioItemProps>(
+const MenuRadioItem: React.ForwardRefExoticComponent<MenuRadioItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuRadioItemElement, MenuRadioItemProps>(
   (props: ScopedProps<MenuRadioItemProps>, forwardedRef) => {
     const { value, ...radioItemProps } = props;
     const context = useRadioGroupContext(RADIO_ITEM_NAME, props.__scopeMenu);
@@ -878,7 +878,7 @@ interface MenuItemIndicatorProps extends PrimitiveSpanProps {
   forceMount?: true;
 }
 
-const MenuItemIndicator = React.forwardRef<MenuItemIndicatorElement, MenuItemIndicatorProps>(
+const MenuItemIndicator: React.ForwardRefExoticComponent<MenuItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<MenuItemIndicatorElement, MenuItemIndicatorProps>(
   (props: ScopedProps<MenuItemIndicatorProps>, forwardedRef) => {
     const { __scopeMenu, forceMount, ...itemIndicatorProps } = props;
     const indicatorContext = useItemIndicatorContext(ITEM_INDICATOR_NAME, __scopeMenu);
@@ -911,7 +911,7 @@ const SEPARATOR_NAME = 'MenuSeparator';
 type MenuSeparatorElement = React.ElementRef<typeof Primitive.div>;
 interface MenuSeparatorProps extends PrimitiveDivProps {}
 
-const MenuSeparator = React.forwardRef<MenuSeparatorElement, MenuSeparatorProps>(
+const MenuSeparator: React.ForwardRefExoticComponent<MenuSeparatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuSeparatorElement, MenuSeparatorProps>(
   (props: ScopedProps<MenuSeparatorProps>, forwardedRef) => {
     const { __scopeMenu, ...separatorProps } = props;
     return (
@@ -937,7 +937,7 @@ type MenuArrowElement = React.ElementRef<typeof PopperPrimitive.Arrow>;
 type PopperArrowProps = React.ComponentPropsWithoutRef<typeof PopperPrimitive.Arrow>;
 interface MenuArrowProps extends PopperArrowProps {}
 
-const MenuArrow = React.forwardRef<MenuArrowElement, MenuArrowProps>(
+const MenuArrow: React.ForwardRefExoticComponent<MenuArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<MenuArrowElement, MenuArrowProps>(
   (props: ScopedProps<MenuArrowProps>, forwardedRef) => {
     const { __scopeMenu, ...arrowProps } = props;
     const popperScope = usePopperScope(__scopeMenu);
@@ -1016,7 +1016,7 @@ const SUB_TRIGGER_NAME = 'MenuSubTrigger';
 type MenuSubTriggerElement = MenuItemImplElement;
 interface MenuSubTriggerProps extends MenuItemImplProps {}
 
-const MenuSubTrigger = React.forwardRef<MenuSubTriggerElement, MenuSubTriggerProps>(
+const MenuSubTrigger: React.ForwardRefExoticComponent<MenuSubTriggerProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuSubTriggerElement, MenuSubTriggerProps>(
   (props: ScopedProps<MenuSubTriggerProps>, forwardedRef) => {
     const context = useMenuContext(SUB_TRIGGER_NAME, props.__scopeMenu);
     const rootContext = useMenuRootContext(SUB_TRIGGER_NAME, props.__scopeMenu);
@@ -1158,7 +1158,7 @@ interface MenuSubContentProps
   forceMount?: true;
 }
 
-const MenuSubContent = React.forwardRef<MenuSubContentElement, MenuSubContentProps>(
+const MenuSubContent: React.ForwardRefExoticComponent<MenuSubContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<MenuSubContentElement, MenuSubContentProps>(
   (props: ScopedProps<MenuSubContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeMenu);
     const { forceMount = portalContext.forceMount, ...subContentProps } = props;
@@ -1317,22 +1317,22 @@ function whenMouse<E>(handler: React.PointerEventHandler<E>): React.PointerEvent
   return (event) => (event.pointerType === 'mouse' ? handler(event) : undefined);
 }
 
-const Root = Menu;
-const Anchor = MenuAnchor;
-const Portal = MenuPortal;
-const Content = MenuContent;
-const Group = MenuGroup;
-const Label = MenuLabel;
-const Item = MenuItem;
-const CheckboxItem = MenuCheckboxItem;
-const RadioGroup = MenuRadioGroup;
-const RadioItem = MenuRadioItem;
-const ItemIndicator = MenuItemIndicator;
-const Separator = MenuSeparator;
-const Arrow = MenuArrow;
-const Sub = MenuSub;
-const SubTrigger = MenuSubTrigger;
-const SubContent = MenuSubContent;
+const Root: React.FC<MenuProps> = Menu;
+const Anchor: React.ForwardRefExoticComponent<MenuAnchorProps & React.RefAttributes<HTMLDivElement>> = MenuAnchor;
+const Portal: React.FC<MenuPortalProps> = MenuPortal;
+const Content: React.ForwardRefExoticComponent<MenuContentProps & React.RefAttributes<HTMLDivElement>> = MenuContent;
+const Group: React.ForwardRefExoticComponent<MenuGroupProps & React.RefAttributes<HTMLDivElement>> = MenuGroup;
+const Label: React.ForwardRefExoticComponent<MenuLabelProps & React.RefAttributes<HTMLDivElement>> = MenuLabel;
+const Item: React.ForwardRefExoticComponent<MenuItemProps & React.RefAttributes<HTMLDivElement>> = MenuItem;
+const CheckboxItem: React.ForwardRefExoticComponent<MenuCheckboxItemProps & React.RefAttributes<HTMLDivElement>> = MenuCheckboxItem;
+const RadioGroup: React.ForwardRefExoticComponent<MenuRadioGroupProps & React.RefAttributes<HTMLDivElement>> = MenuRadioGroup;
+const RadioItem: React.ForwardRefExoticComponent<MenuRadioItemProps & React.RefAttributes<HTMLDivElement>> = MenuRadioItem;
+const ItemIndicator: React.ForwardRefExoticComponent<MenuItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = MenuItemIndicator;
+const Separator: React.ForwardRefExoticComponent<MenuSeparatorProps & React.RefAttributes<HTMLDivElement>> = MenuSeparator;
+const Arrow: React.ForwardRefExoticComponent<MenuArrowProps & React.RefAttributes<SVGSVGElement>> = MenuArrow;
+const Sub: React.FC<MenuSubProps> = MenuSub;
+const SubTrigger: React.ForwardRefExoticComponent<MenuSubTriggerProps & React.RefAttributes<HTMLDivElement>> = MenuSubTrigger;
+const SubContent: React.ForwardRefExoticComponent<MenuSubContentProps & React.RefAttributes<HTMLDivElement>> = MenuSubContent;
 
 export {
   createMenuScope,

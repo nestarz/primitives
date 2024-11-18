@@ -39,7 +39,7 @@ function createFocusGuard() {
   return element;
 }
 
-const Root = FocusGuards;
+const Root: typeof FocusGuards = FocusGuards;
 
 export {
   FocusGuards,

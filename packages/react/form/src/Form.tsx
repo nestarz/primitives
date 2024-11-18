@@ -53,7 +53,7 @@ interface FormProps extends PrimitiveFormProps {
   onClearServerErrors?(): void;
 }
 
-const Form = React.forwardRef<FormElement, FormProps>(
+const Form: React.ForwardRefExoticComponent<FormProps & React.RefAttributes<HTMLFormElement>> = React.forwardRef<FormElement, FormProps>(
   (props: ScopedProps<FormProps>, forwardedRef) => {
     const { __scopeForm, onClearServerErrors = () => {}, ...rootProps } = props;
     const formRef = React.useRef<HTMLFormElement>(null);
@@ -207,7 +207,7 @@ interface FormFieldProps extends PrimitiveDivProps {
   serverInvalid?: boolean;
 }
 
-const FormField = React.forwardRef<FormFieldElement, FormFieldProps>(
+const FormField: React.ForwardRefExoticComponent<FormFieldProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<FormFieldElement, FormFieldProps>(
   (props: ScopedProps<FormFieldProps>, forwardedRef) => {
     const { __scopeForm, name, serverInvalid = false, ...fieldProps } = props;
     const validationContext = useValidationContext(FIELD_NAME, __scopeForm);
@@ -239,7 +239,7 @@ type FormLabelElement = React.ElementRef<typeof LabelPrimitive>;
 type LabelProps = React.ComponentPropsWithoutRef<typeof LabelPrimitive>;
 interface FormLabelProps extends LabelProps {}
 
-const FormLabel = React.forwardRef<FormLabelElement, FormLabelProps>(
+const FormLabel: React.ForwardRefExoticComponent<FormLabelProps & React.RefAttributes<HTMLLabelElement>> = React.forwardRef<FormLabelElement, FormLabelProps>(
   (props: ScopedProps<FormLabelProps>, forwardedRef) => {
     const { __scopeForm, ...labelProps } = props;
     const validationContext = useValidationContext(LABEL_NAME, __scopeForm);
@@ -271,7 +271,7 @@ type FormControlElement = React.ElementRef<typeof Primitive.input>;
 type PrimitiveInputProps = React.ComponentPropsWithoutRef<typeof Primitive.input>;
 interface FormControlProps extends PrimitiveInputProps {}
 
-const FormControl = React.forwardRef<FormControlElement, FormControlProps>(
+const FormControl: React.ForwardRefExoticComponent<FormControlProps & React.RefAttributes<HTMLInputElement>> = React.forwardRef<FormControlElement, FormControlProps>(
   (props: ScopedProps<FormControlProps>, forwardedRef) => {
     const { __scopeForm, ...controlProps } = props;
 
@@ -459,7 +459,7 @@ interface FormMessageProps extends Omit<FormMessageImplProps, 'name'> {
   name?: string;
 }
 
-const FormMessage = React.forwardRef<FormMessageElement, FormMessageProps>(
+const FormMessage: React.ForwardRefExoticComponent<FormMessageProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<FormMessageElement, FormMessageProps>(
   (props: ScopedProps<FormMessageProps>, forwardedRef) => {
     const { match, name: nameProp, ...messageProps } = props;
     const fieldContext = useFormFieldContext(MESSAGE_NAME, props.__scopeForm);
@@ -603,7 +603,7 @@ type FormSubmitElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface FormSubmitProps extends PrimitiveButtonProps {}
 
-const FormSubmit = React.forwardRef<FormSubmitElement, FormSubmitProps>(
+const FormSubmit: React.ForwardRefExoticComponent<FormSubmitProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<FormSubmitElement, FormSubmitProps>(
   (props: ScopedProps<FormSubmitProps>, forwardedRef) => {
     const { __scopeForm, ...submitProps } = props;
     return <Primitive.button type="submit" {...submitProps} ref={forwardedRef} />;
@@ -690,13 +690,16 @@ function getInvalidAttribute(validity: ValidityState | undefined, serverInvalid:
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = Form;
-const Field = FormField;
-const Label = FormLabel;
-const Control = FormControl;
-const Message = FormMessage;
-const ValidityState = FormValidityState;
-const Submit = FormSubmit;
+const Root: React.ForwardRefExoticComponent<FormProps & React.RefAttributes<HTMLFormElement>> = Form;
+const Field: React.ForwardRefExoticComponent<FormFieldProps & React.RefAttributes<HTMLDivElement>> = FormField;
+const Label: React.ForwardRefExoticComponent<FormLabelProps & React.RefAttributes<HTMLLabelElement>> = FormLabel;
+const Control: React.ForwardRefExoticComponent<FormControlProps & React.RefAttributes<HTMLInputElement>> = FormControl;
+const Message: React.ForwardRefExoticComponent<FormMessageProps & React.RefAttributes<HTMLSpanElement>> = FormMessage;
+const ValidityState: {
+    (props: ScopedProps<FormValidityStateProps>): import("react/jsx-runtime").JSX.Element;
+    displayName: string;
+} = FormValidityState;
+const Submit: React.ForwardRefExoticComponent<FormSubmitProps & React.RefAttributes<HTMLButtonElement>> = FormSubmit;
 
 export {
   createFormScope,

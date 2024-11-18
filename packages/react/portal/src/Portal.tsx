@@ -18,7 +18,7 @@ interface PortalProps extends PrimitiveDivProps {
   container?: Element | DocumentFragment | null;
 }
 
-const Portal = React.forwardRef<PortalElement, PortalProps>((props, forwardedRef) => {
+const Portal: React.ForwardRefExoticComponent<PortalProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<PortalElement, PortalProps>((props, forwardedRef) => {
   const { container: containerProp, ...portalProps } = props;
   const [mounted, setMounted] = React.useState(false);
   useLayoutEffect(() => setMounted(true), []);
@@ -32,7 +32,7 @@ Portal.displayName = PORTAL_NAME;
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = Portal;
+const Root: React.ForwardRefExoticComponent<PortalProps & React.RefAttributes<HTMLDivElement>> = Portal;
 
 export {
   Portal,

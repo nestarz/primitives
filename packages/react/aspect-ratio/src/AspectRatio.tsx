@@ -13,7 +13,7 @@ interface AspectRatioProps extends PrimitiveDivProps {
   ratio?: number;
 }
 
-const AspectRatio = React.forwardRef<AspectRatioElement, AspectRatioProps>(
+const AspectRatio: React.ForwardRefExoticComponent<AspectRatioProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<AspectRatioElement, AspectRatioProps>(
   (props, forwardedRef) => {
     const { ratio = 1 / 1, style, ...aspectRatioProps } = props;
     return (
@@ -49,7 +49,7 @@ AspectRatio.displayName = NAME;
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = AspectRatio;
+const Root: React.ForwardRefExoticComponent<AspectRatioProps & React.RefAttributes<HTMLDivElement>> = AspectRatio;
 
 export {
   AspectRatio,

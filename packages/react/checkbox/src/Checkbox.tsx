@@ -38,7 +38,7 @@ interface CheckboxProps extends Omit<PrimitiveButtonProps, 'checked' | 'defaultC
   onCheckedChange?(checked: CheckedState): void;
 }
 
-const Checkbox = React.forwardRef<CheckboxElement, CheckboxProps>(
+const Checkbox: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<CheckboxElement, CheckboxProps>(
   (props: ScopedProps<CheckboxProps>, forwardedRef) => {
     const {
       __scopeCheckbox,
@@ -140,7 +140,7 @@ interface CheckboxIndicatorProps extends PrimitiveSpanProps {
   forceMount?: true;
 }
 
-const CheckboxIndicator = React.forwardRef<CheckboxIndicatorElement, CheckboxIndicatorProps>(
+const CheckboxIndicator: React.ForwardRefExoticComponent<CheckboxIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<CheckboxIndicatorElement, CheckboxIndicatorProps>(
   (props: ScopedProps<CheckboxIndicatorProps>, forwardedRef) => {
     const { __scopeCheckbox, forceMount, ...indicatorProps } = props;
     const context = useCheckboxContext(INDICATOR_NAME, __scopeCheckbox);
@@ -219,8 +219,8 @@ function getState(checked: CheckedState) {
   return isIndeterminate(checked) ? 'indeterminate' : checked ? 'checked' : 'unchecked';
 }
 
-const Root = Checkbox;
-const Indicator = CheckboxIndicator;
+const Root: React.ForwardRefExoticComponent<CheckboxProps & React.RefAttributes<HTMLButtonElement>> = Checkbox;
+const Indicator: React.ForwardRefExoticComponent<CheckboxIndicatorProps & React.RefAttributes<HTMLSpanElement>> = CheckboxIndicator;
 
 export {
   createCheckboxScope,

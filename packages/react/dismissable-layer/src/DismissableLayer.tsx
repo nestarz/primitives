@@ -58,7 +58,7 @@ interface DismissableLayerProps extends PrimitiveDivProps {
   onDismiss?: () => void;
 }
 
-const DismissableLayer = React.forwardRef<DismissableLayerElement, DismissableLayerProps>(
+const DismissableLayer: React.ForwardRefExoticComponent<DismissableLayerProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<DismissableLayerElement, DismissableLayerProps>(
   (props, forwardedRef) => {
     const {
       disableOutsidePointerEvents = false,
@@ -185,7 +185,7 @@ const BRANCH_NAME = 'DismissableLayerBranch';
 type DismissableLayerBranchElement = React.ElementRef<typeof Primitive.div>;
 interface DismissableLayerBranchProps extends PrimitiveDivProps {}
 
-const DismissableLayerBranch = React.forwardRef<
+const DismissableLayerBranch: React.ForwardRefExoticComponent<DismissableLayerBranchProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   DismissableLayerBranchElement,
   DismissableLayerBranchProps
 >((props, forwardedRef) => {
@@ -347,8 +347,8 @@ function handleAndDispatchCustomEvent<E extends CustomEvent, OriginalEvent exten
   }
 }
 
-const Root = DismissableLayer;
-const Branch = DismissableLayerBranch;
+const Root: React.ForwardRefExoticComponent<DismissableLayerProps & React.RefAttributes<HTMLDivElement>> = DismissableLayer;
+const Branch: React.ForwardRefExoticComponent<DismissableLayerBranchProps & React.RefAttributes<HTMLDivElement>> = DismissableLayerBranch;
 
 export {
   DismissableLayer,

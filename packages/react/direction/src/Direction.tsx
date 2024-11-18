@@ -23,7 +23,7 @@ function useDirection(localDir?: Direction) {
   return localDir || globalDir || 'ltr';
 }
 
-const Provider = DirectionProvider;
+const Provider: React.FC<DirectionProviderProps> = DirectionProvider;
 
 export {
   useDirection,

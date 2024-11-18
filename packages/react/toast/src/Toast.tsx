@@ -137,7 +137,7 @@ interface ToastViewportProps extends PrimitiveOrderedListProps {
   label?: string;
 }
 
-const ToastViewport = React.forwardRef<ToastViewportElement, ToastViewportProps>(
+const ToastViewport: React.ForwardRefExoticComponent<ToastViewportProps & React.RefAttributes<HTMLOListElement>> = React.forwardRef<ToastViewportElement, ToastViewportProps>(
   (props: ScopedProps<ToastViewportProps>, forwardedRef) => {
     const {
       __scopeToast,
@@ -380,7 +380,7 @@ interface ToastProps extends Omit<ToastImplProps, keyof ToastImplPrivateProps> {
   forceMount?: true;
 }
 
-const Toast = React.forwardRef<ToastElement, ToastProps>(
+const Toast: React.ForwardRefExoticComponent<ToastProps & React.RefAttributes<HTMLLIElement>> = React.forwardRef<ToastElement, ToastProps>(
   (props: ScopedProps<ToastProps>, forwardedRef) => {
     const { forceMount, open: openProp, defaultOpen, onOpenChange, ...toastProps } = props;
     const [open = true, setOpen] = useControllableState({
@@ -713,7 +713,7 @@ type ToastTitleElement = React.ElementRef<typeof Primitive.div>;
 type PrimitiveDivProps = React.ComponentPropsWithoutRef<typeof Primitive.div>;
 interface ToastTitleProps extends PrimitiveDivProps {}
 
-const ToastTitle = React.forwardRef<ToastTitleElement, ToastTitleProps>(
+const ToastTitle: React.ForwardRefExoticComponent<ToastTitleProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ToastTitleElement, ToastTitleProps>(
   (props: ScopedProps<ToastTitleProps>, forwardedRef) => {
     const { __scopeToast, ...titleProps } = props;
     return <Primitive.div {...titleProps} ref={forwardedRef} />;
@@ -731,7 +731,7 @@ const DESCRIPTION_NAME = 'ToastDescription';
 type ToastDescriptionElement = React.ElementRef<typeof Primitive.div>;
 interface ToastDescriptionProps extends PrimitiveDivProps {}
 
-const ToastDescription = React.forwardRef<ToastDescriptionElement, ToastDescriptionProps>(
+const ToastDescription: React.ForwardRefExoticComponent<ToastDescriptionProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ToastDescriptionElement, ToastDescriptionProps>(
   (props: ScopedProps<ToastDescriptionProps>, forwardedRef) => {
     const { __scopeToast, ...descriptionProps } = props;
     return <Primitive.div {...descriptionProps} ref={forwardedRef} />;
@@ -757,7 +757,7 @@ interface ToastActionProps extends ToastCloseProps {
   altText: string;
 }
 
-const ToastAction = React.forwardRef<ToastActionElement, ToastActionProps>(
+const ToastAction: React.ForwardRefExoticComponent<ToastActionProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToastActionElement, ToastActionProps>(
   (props: ScopedProps<ToastActionProps>, forwardedRef) => {
     const { altText, ...actionProps } = props;
 
@@ -788,7 +788,7 @@ type ToastCloseElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface ToastCloseProps extends PrimitiveButtonProps {}
 
-const ToastClose = React.forwardRef<ToastCloseElement, ToastCloseProps>(
+const ToastClose: React.ForwardRefExoticComponent<ToastCloseProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToastCloseElement, ToastCloseProps>(
   (props: ScopedProps<ToastCloseProps>, forwardedRef) => {
     const { __scopeToast, ...closeProps } = props;
     const interactiveContext = useToastInteractiveContext(CLOSE_NAME, __scopeToast);
@@ -949,13 +949,13 @@ function focusFirst(candidates: HTMLElement[]) {
   });
 }
 
-const Provider = ToastProvider;
-const Viewport = ToastViewport;
-const Root = Toast;
-const Title = ToastTitle;
-const Description = ToastDescription;
-const Action = ToastAction;
-const Close = ToastClose;
+const Provider: React.FC<ToastProviderProps> = ToastProvider;
+const Viewport: React.ForwardRefExoticComponent<ToastViewportProps & React.RefAttributes<HTMLOListElement>> = ToastViewport;
+const Root: React.ForwardRefExoticComponent<ToastProps & React.RefAttributes<HTMLLIElement>> = Toast;
+const Title: React.ForwardRefExoticComponent<ToastTitleProps & React.RefAttributes<HTMLDivElement>> = ToastTitle;
+const Description: React.ForwardRefExoticComponent<ToastDescriptionProps & React.RefAttributes<HTMLDivElement>> = ToastDescription;
+const Action: React.ForwardRefExoticComponent<ToastActionProps & React.RefAttributes<HTMLButtonElement>> = ToastAction;
+const Close: React.ForwardRefExoticComponent<ToastCloseProps & React.RefAttributes<HTMLButtonElement>> = ToastClose;
 
 export {
   createToastScope,

@@ -24,7 +24,7 @@ interface SeparatorProps extends PrimitiveDivProps {
   decorative?: boolean;
 }
 
-const Separator = React.forwardRef<SeparatorElement, SeparatorProps>((props, forwardedRef) => {
+const Separator: React.ForwardRefExoticComponent<SeparatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<SeparatorElement, SeparatorProps>((props, forwardedRef) => {
   const { decorative, orientation: orientationProp = DEFAULT_ORIENTATION, ...domProps } = props;
   const orientation = isValidOrientation(orientationProp) ? orientationProp : DEFAULT_ORIENTATION;
   // `aria-orientation` defaults to `horizontal` so we only need it if `orientation` is vertical
@@ -51,7 +51,7 @@ function isValidOrientation(orientation: any): orientation is Orientation {
   return ORIENTATIONS.includes(orientation);
 }
 
-const Root = Separator;
+const Root: React.ForwardRefExoticComponent<SeparatorProps & React.RefAttributes<HTMLDivElement>> = Separator;
 
 export {
   Separator,

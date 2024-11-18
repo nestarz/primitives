@@ -88,7 +88,7 @@ interface ContextMenuTriggerProps extends PrimitiveSpanProps {
   disabled?: boolean;
 }
 
-const ContextMenuTrigger = React.forwardRef<ContextMenuTriggerElement, ContextMenuTriggerProps>(
+const ContextMenuTrigger: React.ForwardRefExoticComponent<ContextMenuTriggerProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<ContextMenuTriggerElement, ContextMenuTriggerProps>(
   (props: ScopedProps<ContextMenuTriggerProps>, forwardedRef) => {
     const { __scopeContextMenu, disabled = false, ...triggerProps } = props;
     const context = useContextMenuContext(TRIGGER_NAME, __scopeContextMenu);
@@ -197,7 +197,7 @@ type MenuContentProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Cont
 interface ContextMenuContentProps
   extends Omit<MenuContentProps, 'onEntryFocus' | 'side' | 'sideOffset' | 'align'> {}
 
-const ContextMenuContent = React.forwardRef<ContextMenuContentElement, ContextMenuContentProps>(
+const ContextMenuContent: React.ForwardRefExoticComponent<ContextMenuContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ContextMenuContentElement, ContextMenuContentProps>(
   (props: ScopedProps<ContextMenuContentProps>, forwardedRef) => {
     const { __scopeContextMenu, ...contentProps } = props;
     const context = useContextMenuContext(CONTENT_NAME, __scopeContextMenu);
@@ -254,7 +254,7 @@ type ContextMenuGroupElement = React.ElementRef<typeof MenuPrimitive.Group>;
 type MenuGroupProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Group>;
 interface ContextMenuGroupProps extends MenuGroupProps {}
 
-const ContextMenuGroup = React.forwardRef<ContextMenuGroupElement, ContextMenuGroupProps>(
+const ContextMenuGroup: React.ForwardRefExoticComponent<ContextMenuGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ContextMenuGroupElement, ContextMenuGroupProps>(
   (props: ScopedProps<ContextMenuGroupProps>, forwardedRef) => {
     const { __scopeContextMenu, ...groupProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
@@ -274,7 +274,7 @@ type ContextMenuLabelElement = React.ElementRef<typeof MenuPrimitive.Label>;
 type MenuLabelProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Label>;
 interface ContextMenuLabelProps extends MenuLabelProps {}
 
-const ContextMenuLabel = React.forwardRef<ContextMenuLabelElement, ContextMenuLabelProps>(
+const ContextMenuLabel: React.ForwardRefExoticComponent<ContextMenuLabelProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ContextMenuLabelElement, ContextMenuLabelProps>(
   (props: ScopedProps<ContextMenuLabelProps>, forwardedRef) => {
     const { __scopeContextMenu, ...labelProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
@@ -294,7 +294,7 @@ type ContextMenuItemElement = React.ElementRef<typeof MenuPrimitive.Item>;
 type MenuItemProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Item>;
 interface ContextMenuItemProps extends MenuItemProps {}
 
-const ContextMenuItem = React.forwardRef<ContextMenuItemElement, ContextMenuItemProps>(
+const ContextMenuItem: React.ForwardRefExoticComponent<ContextMenuItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ContextMenuItemElement, ContextMenuItemProps>(
   (props: ScopedProps<ContextMenuItemProps>, forwardedRef) => {
     const { __scopeContextMenu, ...itemProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
@@ -314,7 +314,7 @@ type ContextMenuCheckboxItemElement = React.ElementRef<typeof MenuPrimitive.Chec
 type MenuCheckboxItemProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.CheckboxItem>;
 interface ContextMenuCheckboxItemProps extends MenuCheckboxItemProps {}
 
-const ContextMenuCheckboxItem = React.forwardRef<
+const ContextMenuCheckboxItem: React.ForwardRefExoticComponent<ContextMenuCheckboxItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuCheckboxItemElement,
   ContextMenuCheckboxItemProps
 >((props: ScopedProps<ContextMenuCheckboxItemProps>, forwardedRef) => {
@@ -335,7 +335,7 @@ type ContextMenuRadioGroupElement = React.ElementRef<typeof MenuPrimitive.RadioG
 type MenuRadioGroupProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.RadioGroup>;
 interface ContextMenuRadioGroupProps extends MenuRadioGroupProps {}
 
-const ContextMenuRadioGroup = React.forwardRef<
+const ContextMenuRadioGroup: React.ForwardRefExoticComponent<ContextMenuRadioGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuRadioGroupElement,
   ContextMenuRadioGroupProps
 >((props: ScopedProps<ContextMenuRadioGroupProps>, forwardedRef) => {
@@ -356,7 +356,7 @@ type ContextMenuRadioItemElement = React.ElementRef<typeof MenuPrimitive.RadioIt
 type MenuRadioItemProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.RadioItem>;
 interface ContextMenuRadioItemProps extends MenuRadioItemProps {}
 
-const ContextMenuRadioItem = React.forwardRef<
+const ContextMenuRadioItem: React.ForwardRefExoticComponent<ContextMenuRadioItemProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuRadioItemElement,
   ContextMenuRadioItemProps
 >((props: ScopedProps<ContextMenuRadioItemProps>, forwardedRef) => {
@@ -377,7 +377,7 @@ type ContextMenuItemIndicatorElement = React.ElementRef<typeof MenuPrimitive.Ite
 type MenuItemIndicatorProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.ItemIndicator>;
 interface ContextMenuItemIndicatorProps extends MenuItemIndicatorProps {}
 
-const ContextMenuItemIndicator = React.forwardRef<
+const ContextMenuItemIndicator: React.ForwardRefExoticComponent<ContextMenuItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<
   ContextMenuItemIndicatorElement,
   ContextMenuItemIndicatorProps
 >((props: ScopedProps<ContextMenuItemIndicatorProps>, forwardedRef) => {
@@ -398,7 +398,7 @@ type ContextMenuSeparatorElement = React.ElementRef<typeof MenuPrimitive.Separat
 type MenuSeparatorProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Separator>;
 interface ContextMenuSeparatorProps extends MenuSeparatorProps {}
 
-const ContextMenuSeparator = React.forwardRef<
+const ContextMenuSeparator: React.ForwardRefExoticComponent<ContextMenuSeparatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuSeparatorElement,
   ContextMenuSeparatorProps
 >((props: ScopedProps<ContextMenuSeparatorProps>, forwardedRef) => {
@@ -419,7 +419,7 @@ type ContextMenuArrowElement = React.ElementRef<typeof MenuPrimitive.Arrow>;
 type MenuArrowProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.Arrow>;
 interface ContextMenuArrowProps extends MenuArrowProps {}
 
-const ContextMenuArrow = React.forwardRef<ContextMenuArrowElement, ContextMenuArrowProps>(
+const ContextMenuArrow: React.ForwardRefExoticComponent<ContextMenuArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<ContextMenuArrowElement, ContextMenuArrowProps>(
   (props: ScopedProps<ContextMenuArrowProps>, forwardedRef) => {
     const { __scopeContextMenu, ...arrowProps } = props;
     const menuScope = useMenuScope(__scopeContextMenu);
@@ -470,7 +470,7 @@ type ContextMenuSubTriggerElement = React.ElementRef<typeof MenuPrimitive.SubTri
 type MenuSubTriggerProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.SubTrigger>;
 interface ContextMenuSubTriggerProps extends MenuSubTriggerProps {}
 
-const ContextMenuSubTrigger = React.forwardRef<
+const ContextMenuSubTrigger: React.ForwardRefExoticComponent<ContextMenuSubTriggerProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuSubTriggerElement,
   ContextMenuSubTriggerProps
 >((props: ScopedProps<ContextMenuSubTriggerProps>, forwardedRef) => {
@@ -491,7 +491,7 @@ type ContextMenuSubContentElement = React.ElementRef<typeof MenuPrimitive.Conten
 type MenuSubContentProps = React.ComponentPropsWithoutRef<typeof MenuPrimitive.SubContent>;
 interface ContextMenuSubContentProps extends MenuSubContentProps {}
 
-const ContextMenuSubContent = React.forwardRef<
+const ContextMenuSubContent: React.ForwardRefExoticComponent<ContextMenuSubContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ContextMenuSubContentElement,
   ContextMenuSubContentProps
 >((props: ScopedProps<ContextMenuSubContentProps>, forwardedRef) => {
@@ -526,22 +526,22 @@ function whenTouchOrPen<E>(handler: React.PointerEventHandler<E>): React.Pointer
   return (event) => (event.pointerType !== 'mouse' ? handler(event) : undefined);
 }
 
-const Root = ContextMenu;
-const Trigger = ContextMenuTrigger;
-const Portal = ContextMenuPortal;
-const Content = ContextMenuContent;
-const Group = ContextMenuGroup;
-const Label = ContextMenuLabel;
-const Item = ContextMenuItem;
-const CheckboxItem = ContextMenuCheckboxItem;
-const RadioGroup = ContextMenuRadioGroup;
-const RadioItem = ContextMenuRadioItem;
-const ItemIndicator = ContextMenuItemIndicator;
-const Separator = ContextMenuSeparator;
-const Arrow = ContextMenuArrow;
-const Sub = ContextMenuSub;
-const SubTrigger = ContextMenuSubTrigger;
-const SubContent = ContextMenuSubContent;
+const Root: React.FC<ContextMenuProps> = ContextMenu;
+const Trigger: React.ForwardRefExoticComponent<ContextMenuTriggerProps & React.RefAttributes<HTMLSpanElement>> = ContextMenuTrigger;
+const Portal: React.FC<ContextMenuPortalProps> = ContextMenuPortal;
+const Content: React.ForwardRefExoticComponent<ContextMenuContentProps & React.RefAttributes<HTMLDivElement>> = ContextMenuContent;
+const Group: React.ForwardRefExoticComponent<ContextMenuGroupProps & React.RefAttributes<HTMLDivElement>> = ContextMenuGroup;
+const Label: React.ForwardRefExoticComponent<ContextMenuLabelProps & React.RefAttributes<HTMLDivElement>> = ContextMenuLabel;
+const Item: React.ForwardRefExoticComponent<ContextMenuItemProps & React.RefAttributes<HTMLDivElement>> = ContextMenuItem;
+const CheckboxItem: React.ForwardRefExoticComponent<ContextMenuCheckboxItemProps & React.RefAttributes<HTMLDivElement>> = ContextMenuCheckboxItem;
+const RadioGroup: React.ForwardRefExoticComponent<ContextMenuRadioGroupProps & React.RefAttributes<HTMLDivElement>> = ContextMenuRadioGroup;
+const RadioItem: React.ForwardRefExoticComponent<ContextMenuRadioItemProps & React.RefAttributes<HTMLDivElement>> = ContextMenuRadioItem;
+const ItemIndicator: React.ForwardRefExoticComponent<ContextMenuItemIndicatorProps & React.RefAttributes<HTMLSpanElement>> = ContextMenuItemIndicator;
+const Separator: React.ForwardRefExoticComponent<ContextMenuSeparatorProps & React.RefAttributes<HTMLDivElement>> = ContextMenuSeparator;
+const Arrow: React.ForwardRefExoticComponent<ContextMenuArrowProps & React.RefAttributes<SVGSVGElement>> = ContextMenuArrow;
+const Sub: React.FC<ContextMenuSubProps> = ContextMenuSub;
+const SubTrigger: React.ForwardRefExoticComponent<ContextMenuSubTriggerProps & React.RefAttributes<HTMLDivElement>> = ContextMenuSubTrigger;
+const SubContent: React.ForwardRefExoticComponent<ContextMenuSubContentProps & React.RefAttributes<HTMLDivElement>> = ContextMenuSubContent;
 
 export {
   createContextMenuScope,

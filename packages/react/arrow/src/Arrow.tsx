@@ -11,7 +11,7 @@ type ArrowElement = React.ElementRef<typeof Primitive.svg>;
 type PrimitiveSvgProps = React.ComponentPropsWithoutRef<typeof Primitive.svg>;
 interface ArrowProps extends PrimitiveSvgProps {}
 
-const Arrow = React.forwardRef<ArrowElement, ArrowProps>((props, forwardedRef) => {
+const Arrow: React.ForwardRefExoticComponent<ArrowProps & React.RefAttributes<SVGSVGElement>> = React.forwardRef<ArrowElement, ArrowProps>((props, forwardedRef) => {
   const { children, width = 10, height = 5, ...arrowProps } = props;
   return (
     <Primitive.svg
@@ -32,7 +32,7 @@ Arrow.displayName = NAME;
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = Arrow;
+const Root: React.ForwardRefExoticComponent<ArrowProps & React.RefAttributes<SVGSVGElement>> = Arrow;
 
 export {
   Arrow,

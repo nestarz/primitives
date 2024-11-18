@@ -29,7 +29,7 @@ interface ToggleGroupMultipleProps extends ToggleGroupImplMultipleProps {
   type: 'multiple';
 }
 
-const ToggleGroup = React.forwardRef<
+const ToggleGroup: React.ForwardRefExoticComponent<(ToggleGroupSingleProps | ToggleGroupMultipleProps) & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ToggleGroupElement,
   ToggleGroupSingleProps | ToggleGroupMultipleProps
 >((props, forwardedRef) => {
@@ -238,7 +238,7 @@ const ITEM_NAME = 'ToggleGroupItem';
 type ToggleGroupItemElement = ToggleGroupItemImplElement;
 interface ToggleGroupItemProps extends Omit<ToggleGroupItemImplProps, 'pressed'> {}
 
-const ToggleGroupItem = React.forwardRef<ToggleGroupItemElement, ToggleGroupItemProps>(
+const ToggleGroupItem: React.ForwardRefExoticComponent<ToggleGroupItemProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToggleGroupItemElement, ToggleGroupItemProps>(
   (props: ScopedProps<ToggleGroupItemProps>, forwardedRef) => {
     const valueContext = useToggleGroupValueContext(ITEM_NAME, props.__scopeToggleGroup);
     const context = useToggleGroupContext(ITEM_NAME, props.__scopeToggleGroup);
@@ -301,8 +301,8 @@ const ToggleGroupItemImpl = React.forwardRef<ToggleGroupItemImplElement, ToggleG
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = ToggleGroup;
-const Item = ToggleGroupItem;
+const Root: React.ForwardRefExoticComponent<(ToggleGroupSingleProps | ToggleGroupMultipleProps) & React.RefAttributes<HTMLDivElement>> = ToggleGroup;
+const Item: React.ForwardRefExoticComponent<ToggleGroupItemProps & React.RefAttributes<HTMLButtonElement>> = ToggleGroupItem;
 
 export {
   createToggleGroupScope,

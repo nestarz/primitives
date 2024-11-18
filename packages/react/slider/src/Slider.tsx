@@ -75,7 +75,7 @@ interface SliderProps
   form?: string;
 }
 
-const Slider = React.forwardRef<SliderElement, SliderProps>(
+const Slider: React.ForwardRefExoticComponent<SliderProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SliderElement, SliderProps>(
   (props: ScopedProps<SliderProps>, forwardedRef) => {
     const {
       name,
@@ -466,7 +466,7 @@ type SliderTrackElement = React.ElementRef<typeof Primitive.span>;
 type PrimitiveSpanProps = React.ComponentPropsWithoutRef<typeof Primitive.span>;
 interface SliderTrackProps extends PrimitiveSpanProps {}
 
-const SliderTrack = React.forwardRef<SliderTrackElement, SliderTrackProps>(
+const SliderTrack: React.ForwardRefExoticComponent<SliderTrackProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SliderTrackElement, SliderTrackProps>(
   (props: ScopedProps<SliderTrackProps>, forwardedRef) => {
     const { __scopeSlider, ...trackProps } = props;
     const context = useSliderContext(TRACK_NAME, __scopeSlider);
@@ -492,7 +492,7 @@ const RANGE_NAME = 'SliderRange';
 type SliderRangeElement = React.ElementRef<typeof Primitive.span>;
 interface SliderRangeProps extends PrimitiveSpanProps {}
 
-const SliderRange = React.forwardRef<SliderRangeElement, SliderRangeProps>(
+const SliderRange: React.ForwardRefExoticComponent<SliderRangeProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SliderRangeElement, SliderRangeProps>(
   (props: ScopedProps<SliderRangeProps>, forwardedRef) => {
     const { __scopeSlider, ...rangeProps } = props;
     const context = useSliderContext(RANGE_NAME, __scopeSlider);
@@ -533,7 +533,7 @@ const THUMB_NAME = 'SliderThumb';
 type SliderThumbElement = SliderThumbImplElement;
 interface SliderThumbProps extends Omit<SliderThumbImplProps, 'index'> {}
 
-const SliderThumb = React.forwardRef<SliderThumbElement, SliderThumbProps>(
+const SliderThumb: React.ForwardRefExoticComponent<SliderThumbProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<SliderThumbElement, SliderThumbProps>(
   (props: ScopedProps<SliderThumbProps>, forwardedRef) => {
     const getItems = useCollection(props.__scopeSlider);
     const [thumb, setThumb] = React.useState<SliderThumbImplElement | null>(null);
@@ -767,10 +767,10 @@ function roundValue(value: number, decimalCount: number) {
   return Math.round(value * rounder) / rounder;
 }
 
-const Root = Slider;
-const Track = SliderTrack;
-const Range = SliderRange;
-const Thumb = SliderThumb;
+const Root: React.ForwardRefExoticComponent<SliderProps & React.RefAttributes<HTMLSpanElement>> = Slider;
+const Track: React.ForwardRefExoticComponent<SliderTrackProps & React.RefAttributes<HTMLSpanElement>> = SliderTrack;
+const Range: React.ForwardRefExoticComponent<SliderRangeProps & React.RefAttributes<HTMLSpanElement>> = SliderRange;
+const Thumb: React.ForwardRefExoticComponent<SliderThumbProps & React.RefAttributes<HTMLSpanElement>> = SliderThumb;
 
 export {
   createSliderScope,

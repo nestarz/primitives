@@ -94,7 +94,7 @@ type DialogTriggerElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface DialogTriggerProps extends PrimitiveButtonProps {}
 
-const DialogTrigger = React.forwardRef<DialogTriggerElement, DialogTriggerProps>(
+const DialogTrigger: React.ForwardRefExoticComponent<DialogTriggerProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<DialogTriggerElement, DialogTriggerProps>(
   (props: ScopedProps<DialogTriggerProps>, forwardedRef) => {
     const { __scopeDialog, ...triggerProps } = props;
     const context = useDialogContext(TRIGGER_NAME, __scopeDialog);
@@ -174,7 +174,7 @@ interface DialogOverlayProps extends DialogOverlayImplProps {
   forceMount?: true;
 }
 
-const DialogOverlay = React.forwardRef<DialogOverlayElement, DialogOverlayProps>(
+const DialogOverlay: React.ForwardRefExoticComponent<DialogOverlayProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<DialogOverlayElement, DialogOverlayProps>(
   (props: ScopedProps<DialogOverlayProps>, forwardedRef) => {
     const portalContext = usePortalContext(OVERLAY_NAME, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...overlayProps } = props;
@@ -228,7 +228,7 @@ interface DialogContentProps extends DialogContentTypeProps {
   forceMount?: true;
 }
 
-const DialogContent = React.forwardRef<DialogContentElement, DialogContentProps>(
+const DialogContent: React.ForwardRefExoticComponent<DialogContentProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<DialogContentElement, DialogContentProps>(
   (props: ScopedProps<DialogContentProps>, forwardedRef) => {
     const portalContext = usePortalContext(CONTENT_NAME, props.__scopeDialog);
     const { forceMount = portalContext.forceMount, ...contentProps } = props;
@@ -430,7 +430,7 @@ type DialogTitleElement = React.ElementRef<typeof Primitive.h2>;
 type PrimitiveHeading2Props = React.ComponentPropsWithoutRef<typeof Primitive.h2>;
 interface DialogTitleProps extends PrimitiveHeading2Props {}
 
-const DialogTitle = React.forwardRef<DialogTitleElement, DialogTitleProps>(
+const DialogTitle: React.ForwardRefExoticComponent<DialogTitleProps & React.RefAttributes<HTMLHeadingElement>> = React.forwardRef<DialogTitleElement, DialogTitleProps>(
   (props: ScopedProps<DialogTitleProps>, forwardedRef) => {
     const { __scopeDialog, ...titleProps } = props;
     const context = useDialogContext(TITLE_NAME, __scopeDialog);
@@ -450,7 +450,7 @@ type DialogDescriptionElement = React.ElementRef<typeof Primitive.p>;
 type PrimitiveParagraphProps = React.ComponentPropsWithoutRef<typeof Primitive.p>;
 interface DialogDescriptionProps extends PrimitiveParagraphProps {}
 
-const DialogDescription = React.forwardRef<DialogDescriptionElement, DialogDescriptionProps>(
+const DialogDescription: React.ForwardRefExoticComponent<DialogDescriptionProps & React.RefAttributes<HTMLParagraphElement>> = React.forwardRef<DialogDescriptionElement, DialogDescriptionProps>(
   (props: ScopedProps<DialogDescriptionProps>, forwardedRef) => {
     const { __scopeDialog, ...descriptionProps } = props;
     const context = useDialogContext(DESCRIPTION_NAME, __scopeDialog);
@@ -469,7 +469,7 @@ const CLOSE_NAME = 'DialogClose';
 type DialogCloseElement = React.ElementRef<typeof Primitive.button>;
 interface DialogCloseProps extends PrimitiveButtonProps {}
 
-const DialogClose = React.forwardRef<DialogCloseElement, DialogCloseProps>(
+const DialogClose: React.ForwardRefExoticComponent<DialogCloseProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<DialogCloseElement, DialogCloseProps>(
   (props: ScopedProps<DialogCloseProps>, forwardedRef) => {
     const { __scopeDialog, ...closeProps } = props;
     const context = useDialogContext(CLOSE_NAME, __scopeDialog);
@@ -544,14 +544,14 @@ const DescriptionWarning: React.FC<DescriptionWarningProps> = ({ contentRef, des
   return null;
 };
 
-const Root = Dialog;
-const Trigger = DialogTrigger;
-const Portal = DialogPortal;
-const Overlay = DialogOverlay;
-const Content = DialogContent;
-const Title = DialogTitle;
-const Description = DialogDescription;
-const Close = DialogClose;
+const Root: React.FC<DialogProps> = Dialog;
+const Trigger: React.ForwardRefExoticComponent<DialogTriggerProps & React.RefAttributes<HTMLButtonElement>> = DialogTrigger;
+const Portal: React.FC<DialogPortalProps> = DialogPortal;
+const Overlay: React.ForwardRefExoticComponent<DialogOverlayProps & React.RefAttributes<HTMLDivElement>> = DialogOverlay;
+const Content: React.ForwardRefExoticComponent<DialogContentProps & React.RefAttributes<HTMLDivElement>> = DialogContent;
+const Title: React.ForwardRefExoticComponent<DialogTitleProps & React.RefAttributes<HTMLHeadingElement>> = DialogTitle;
+const Description: React.ForwardRefExoticComponent<DialogDescriptionProps & React.RefAttributes<HTMLParagraphElement>> = DialogDescription;
+const Close: React.ForwardRefExoticComponent<DialogCloseProps & React.RefAttributes<HTMLButtonElement>> = DialogClose;
 
 export {
   createDialogScope,

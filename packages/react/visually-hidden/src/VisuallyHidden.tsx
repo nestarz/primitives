@@ -11,7 +11,7 @@ type VisuallyHiddenElement = React.ElementRef<typeof Primitive.span>;
 type PrimitiveSpanProps = React.ComponentPropsWithoutRef<typeof Primitive.span>;
 interface VisuallyHiddenProps extends PrimitiveSpanProps {}
 
-const VisuallyHidden = React.forwardRef<VisuallyHiddenElement, VisuallyHiddenProps>(
+const VisuallyHidden: React.ForwardRefExoticComponent<VisuallyHiddenProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<VisuallyHiddenElement, VisuallyHiddenProps>(
   (props, forwardedRef) => {
     return (
       <Primitive.span
@@ -40,7 +40,7 @@ VisuallyHidden.displayName = NAME;
 
 /* -----------------------------------------------------------------------------------------------*/
 
-const Root = VisuallyHidden;
+const Root: React.ForwardRefExoticComponent<VisuallyHiddenProps & React.RefAttributes<HTMLSpanElement>> = VisuallyHidden;
 
 export {
   VisuallyHidden,

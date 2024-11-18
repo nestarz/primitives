@@ -41,7 +41,7 @@ interface ToolbarProps extends PrimitiveDivProps {
   dir?: RovingFocusGroupProps['dir'];
 }
 
-const Toolbar = React.forwardRef<ToolbarElement, ToolbarProps>(
+const Toolbar: React.ForwardRefExoticComponent<ToolbarProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ToolbarElement, ToolbarProps>(
   (props: ScopedProps<ToolbarProps>, forwardedRef) => {
     const { __scopeToolbar, orientation = 'horizontal', dir, loop = true, ...toolbarProps } = props;
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeToolbar);
@@ -80,7 +80,7 @@ type ToolbarSeparatorElement = React.ElementRef<typeof SeparatorPrimitive.Root>;
 type SeparatorProps = React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>;
 interface ToolbarSeparatorProps extends SeparatorProps {}
 
-const ToolbarSeparator = React.forwardRef<ToolbarSeparatorElement, ToolbarSeparatorProps>(
+const ToolbarSeparator: React.ForwardRefExoticComponent<ToolbarSeparatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ToolbarSeparatorElement, ToolbarSeparatorProps>(
   (props: ScopedProps<ToolbarSeparatorProps>, forwardedRef) => {
     const { __scopeToolbar, ...separatorProps } = props;
     const context = useToolbarContext(SEPARATOR_NAME, __scopeToolbar);
@@ -106,7 +106,7 @@ type ToolbarButtonElement = React.ElementRef<typeof Primitive.button>;
 type PrimitiveButtonProps = React.ComponentPropsWithoutRef<typeof Primitive.button>;
 interface ToolbarButtonProps extends PrimitiveButtonProps {}
 
-const ToolbarButton = React.forwardRef<ToolbarButtonElement, ToolbarButtonProps>(
+const ToolbarButton: React.ForwardRefExoticComponent<ToolbarButtonProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToolbarButtonElement, ToolbarButtonProps>(
   (props: ScopedProps<ToolbarButtonProps>, forwardedRef) => {
     const { __scopeToolbar, ...buttonProps } = props;
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeToolbar);
@@ -130,7 +130,7 @@ type ToolbarLinkElement = React.ElementRef<typeof Primitive.a>;
 type PrimitiveLinkProps = React.ComponentPropsWithoutRef<typeof Primitive.a>;
 interface ToolbarLinkProps extends PrimitiveLinkProps {}
 
-const ToolbarLink = React.forwardRef<ToolbarLinkElement, ToolbarLinkProps>(
+const ToolbarLink: React.ForwardRefExoticComponent<ToolbarLinkProps & React.RefAttributes<HTMLAnchorElement>> = React.forwardRef<ToolbarLinkElement, ToolbarLinkProps>(
   (props: ScopedProps<ToolbarLinkProps>, forwardedRef) => {
     const { __scopeToolbar, ...linkProps } = props;
     const rovingFocusGroupScope = useRovingFocusGroupScope(__scopeToolbar);
@@ -161,7 +161,7 @@ type ToggleGroupProps = React.ComponentPropsWithoutRef<typeof ToggleGroupPrimiti
 interface ToolbarToggleGroupSingleProps extends Extract<ToggleGroupProps, { type: 'single' }> {}
 interface ToolbarToggleGroupMultipleProps extends Extract<ToggleGroupProps, { type: 'multiple' }> {}
 
-const ToolbarToggleGroup = React.forwardRef<
+const ToolbarToggleGroup: React.ForwardRefExoticComponent<(ToolbarToggleGroupSingleProps | ToolbarToggleGroupMultipleProps) & React.RefAttributes<HTMLDivElement>> = React.forwardRef<
   ToolbarToggleGroupElement,
   ToolbarToggleGroupSingleProps | ToolbarToggleGroupMultipleProps
 >(
@@ -197,7 +197,7 @@ type ToolbarToggleItemElement = React.ElementRef<typeof ToggleGroupPrimitive.Ite
 type ToggleGroupItemProps = React.ComponentPropsWithoutRef<typeof ToggleGroupPrimitive.Item>;
 interface ToolbarToggleItemProps extends ToggleGroupItemProps {}
 
-const ToolbarToggleItem = React.forwardRef<ToolbarToggleItemElement, ToolbarToggleItemProps>(
+const ToolbarToggleItem: React.ForwardRefExoticComponent<ToolbarToggleItemProps & React.RefAttributes<HTMLButtonElement>> = React.forwardRef<ToolbarToggleItemElement, ToolbarToggleItemProps>(
   (props: ScopedProps<ToolbarToggleItemProps>, forwardedRef) => {
     const { __scopeToolbar, ...toggleItemProps } = props;
     const toggleGroupScope = useToggleGroupScope(__scopeToolbar);
@@ -215,12 +215,12 @@ ToolbarToggleItem.displayName = TOGGLE_ITEM_NAME;
 
 /* ---------------------------------------------------------------------------------------------- */
 
-const Root = Toolbar;
-const Separator = ToolbarSeparator;
-const Button = ToolbarButton;
-const Link = ToolbarLink;
-const ToggleGroup = ToolbarToggleGroup;
-const ToggleItem = ToolbarToggleItem;
+const Root: React.ForwardRefExoticComponent<ToolbarProps & React.RefAttributes<HTMLDivElement>> = Toolbar;
+const Separator: React.ForwardRefExoticComponent<ToolbarSeparatorProps & React.RefAttributes<HTMLDivElement>> = ToolbarSeparator;
+const Button: React.ForwardRefExoticComponent<ToolbarButtonProps & React.RefAttributes<HTMLButtonElement>> = ToolbarButton;
+const Link: React.ForwardRefExoticComponent<ToolbarLinkProps & React.RefAttributes<HTMLAnchorElement>> = ToolbarLink;
+const ToggleGroup: React.ForwardRefExoticComponent<(ToolbarToggleGroupSingleProps | ToolbarToggleGroupMultipleProps) & React.RefAttributes<HTMLDivElement>> = ToolbarToggleGroup;
+const ToggleItem: React.ForwardRefExoticComponent<ToolbarToggleItemProps & React.RefAttributes<HTMLButtonElement>> = ToolbarToggleItem;
 
 export {
   createToolbarScope,

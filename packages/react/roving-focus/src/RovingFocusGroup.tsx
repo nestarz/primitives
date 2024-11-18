@@ -66,7 +66,7 @@ const [RovingFocusProvider, useRovingFocusContext] =
 type RovingFocusGroupElement = RovingFocusGroupImplElement;
 interface RovingFocusGroupProps extends RovingFocusGroupImplProps {}
 
-const RovingFocusGroup = React.forwardRef<RovingFocusGroupElement, RovingFocusGroupProps>(
+const RovingFocusGroup: React.ForwardRefExoticComponent<RovingFocusGroupProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<RovingFocusGroupElement, RovingFocusGroupProps>(
   (props: ScopedProps<RovingFocusGroupProps>, forwardedRef) => {
     return (
       <Collection.Provider scope={props.__scopeRovingFocusGroup}>
@@ -207,7 +207,7 @@ interface RovingFocusItemProps extends PrimitiveSpanProps {
   active?: boolean;
 }
 
-const RovingFocusGroupItem = React.forwardRef<RovingFocusItemElement, RovingFocusItemProps>(
+const RovingFocusGroupItem: React.ForwardRefExoticComponent<RovingFocusItemProps & React.RefAttributes<HTMLSpanElement>> = React.forwardRef<RovingFocusItemElement, RovingFocusItemProps>(
   (props: ScopedProps<RovingFocusItemProps>, forwardedRef) => {
     const {
       __scopeRovingFocusGroup,
@@ -333,8 +333,8 @@ function wrapArray<T>(array: T[], startIndex: number) {
   return array.map((_, index) => array[(startIndex + index) % array.length]);
 }
 
-const Root = RovingFocusGroup;
-const Item = RovingFocusGroupItem;
+const Root: React.ForwardRefExoticComponent<RovingFocusGroupProps & React.RefAttributes<HTMLDivElement>> = RovingFocusGroup;
+const Item: React.ForwardRefExoticComponent<RovingFocusItemProps & React.RefAttributes<HTMLSpanElement>> = RovingFocusGroupItem;
 
 export {
   createRovingFocusGroupScope,

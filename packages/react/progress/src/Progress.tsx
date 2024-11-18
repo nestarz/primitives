@@ -27,7 +27,7 @@ interface ProgressProps extends PrimitiveDivProps {
   getValueLabel?(value: number, max: number): string;
 }
 
-const Progress = React.forwardRef<ProgressElement, ProgressProps>(
+const Progress: React.ForwardRefExoticComponent<ProgressProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ProgressElement, ProgressProps>(
   (props: ScopedProps<ProgressProps>, forwardedRef) => {
     const {
       __scopeProgress,
@@ -80,7 +80,7 @@ const INDICATOR_NAME = 'ProgressIndicator';
 type ProgressIndicatorElement = React.ElementRef<typeof Primitive.div>;
 interface ProgressIndicatorProps extends PrimitiveDivProps {}
 
-const ProgressIndicator = React.forwardRef<ProgressIndicatorElement, ProgressIndicatorProps>(
+const ProgressIndicator: React.ForwardRefExoticComponent<ProgressIndicatorProps & React.RefAttributes<HTMLDivElement>> = React.forwardRef<ProgressIndicatorElement, ProgressIndicatorProps>(
   (props: ScopedProps<ProgressIndicatorProps>, forwardedRef) => {
     const { __scopeProgress, ...indicatorProps } = props;
     const context = useProgressContext(INDICATOR_NAME, __scopeProgress);
@@ -145,8 +145,8 @@ function getInvalidValueError(propValue: string, componentName: string) {
 Defaulting to \`null\`.`;
 }
 
-const Root = Progress;
-const Indicator = ProgressIndicator;
+const Root: React.ForwardRefExoticComponent<ProgressProps & React.RefAttributes<HTMLDivElement>> = Progress;
+const Indicator: React.ForwardRefExoticComponent<ProgressIndicatorProps & React.RefAttributes<HTMLDivElement>> = ProgressIndicator;
 
 export {
   createProgressScope,
