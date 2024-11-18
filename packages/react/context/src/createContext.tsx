@@ -41,7 +41,10 @@ interface CreateScope {
   (): ScopeHook;
 }
 
-function createContextScope(scopeName: string, createContextScopeDeps: CreateScope[] = []) {
+function createContextScope(scopeName: string, createContextScopeDeps: CreateScope[] = []):readonly [<ContextValueType extends object | null>(rootComponentName: string, defaultContext?: ContextValueType) => readonly [React.FC<ContextValueType & {
+  scope: Scope<ContextValueType>;
+  children: React.ReactNode;
+}>, (consumerName: string, scope: Scope) => ContextValueType], CreateScope] {
   let defaultContexts: any[] = [];
 
   /* -----------------------------------------------------------------------------------------------

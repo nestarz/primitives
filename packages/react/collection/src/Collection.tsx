@@ -10,12 +10,34 @@ interface CollectionProps extends SlotProps {
   scope: any;
 }
 
+type CollectionItemSlotProps<ItemData = {}> = ItemData & {
+  children: React.ReactNode;
+  scope: any;
+};
+
+type Collection<ItemElement extends HTMLElement, ItemData = {}> = readonly [
+  {
+    readonly Provider: React.FC<{ children?: React.ReactNode; scope: any }>;
+    readonly Slot: React.ForwardRefExoticComponent<
+      CollectionProps & React.RefAttributes<CollectionElement>
+    >;
+    readonly ItemSlot: React.ForwardRefExoticComponent<
+      & React.PropsWithoutRef<CollectionItemSlotProps<ItemData>>
+      & React.RefAttributes<ItemElement>
+    >;
+  },
+  (scope: any) => () => ({
+    ref: React.RefObject<ItemElement>;
+} & ItemData)[],
+  ReturnType<typeof createContextScope>[1]
+];
+
 // We have resorted to returning slots directly rather than exposing primitives that can then
 // be slotted like `<CollectionItem as={Slot}>…</CollectionItem>`.
 // This is because we encountered issues with generic types that cannot be statically analysed
 // due to creating them dynamically via createCollection.
 
-function createCollection<ItemElement extends HTMLElement, ItemData = {}>(name: string) {
+function createCollection<ItemElement extends HTMLElement, ItemData = {}>(name: string): Collection<ItemElement, ItemData> {
   /* -----------------------------------------------------------------------------------------------
    * CollectionProvider
    * ---------------------------------------------------------------------------------------------*/
